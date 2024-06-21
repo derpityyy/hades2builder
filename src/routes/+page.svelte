@@ -46,6 +46,30 @@
 	function toggleOpenGain(){
 		isOpenGain = !isOpenGain
 	}
+
+	const mainTraitElements = {
+		attack: {
+			"None": "None",
+			"Apollo": "Air",
+			"Zeus": "Air",
+			"Aphrodite": "Water",
+			"Demeter": "Water",
+			"Poseidon": "Water",
+			"Hera": "Earth",
+			"Hephaestus": "Fire",
+			"Hestia": "Fire"
+		}
+	}
+
+
+	/**
+	 * @param {string} value
+	 * @param {string} type
+	 */
+	function mainTraitElementImagePath(type, value){
+		let element = mainTraitElements[type][value]
+		return "/element/" + element + ".webp"
+	}
 </script>
 
 <svelte:head>
@@ -53,6 +77,7 @@
 	<meta name="description" content="Custom build creator for Hades 2" />
 </svelte:head>
 
+<!-- svelte-ignore a11y-missing-attribute -->
 <body>
 	<div class="container">
 
@@ -60,85 +85,116 @@
 
 		<div class="main-traits">
 			<div class="slot-menu">
-				<button on:click={toggleOpenAttack}>
-					<img src={genImagePath("attack", attackTrait)}>
-				</button>
+				<div class="trait-element">
+					<button class="trait-container" on:click={toggleOpenAttack}>
+					
+						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
+					</button>
+					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
+				</div>
 				<h5>{mainTraitName("attack", attackTrait)}</h5>
 				{#if isOpenAttack}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<button on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
-									<img src={genImagePath("attack", option)}>
-								</button>
+								<div class="trait-element">
+									<button class="trait-container" on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
+										<img class="trait-image" src={genImagePath("attack", option)}>
+									</button>
+									<img class="element" src={mainTraitElementImagePath("attack", option)}>
+								</div>
 							</li>
 						{/each}
 					</ul>
 				{/if}
 			</div>
 			<div class="slot-menu">
-				<button on:click={toggleOpenSpecial}>
-					<img src={genImagePath("special", specialTrait)}>
-				</button>
+				<div class="trait-element">
+					<button class="trait-container" on:click={toggleOpenSpecial}>
+						<img class="trait-image" src={genImagePath("special", specialTrait)}>
+					</button>
+					<img class="element" src={genImagePath("special", specialTrait)}>
+				</div>
 				<h5>{mainTraitName("special", specialTrait)}</h5>
 				{#if isOpenSpecial}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<button on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
-									<img src={genImagePath("special", option)}>
-								</button>
+								<div class="trait-element">
+									<button class="trait-container" on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
+										<img class="trait-image" src={genImagePath("special", option)}>
+									</button>
+									<img class="element" src={genImagePath("special", option)}>
+								</div>
 							</li>
 						{/each}
 					</ul>
 				{/if}
 			</div>
 			<div class="slot-menu">
-				<button on:click={toggleOpenCast}>
-					<img src={genImagePath("cast", castTrait)}>
-				</button>
+				<div class="trait-element">
+					<button class="trait-container" on:click={toggleOpenCast}>
+						<img class="trait-image" src={genImagePath("cast", castTrait)}>
+					</button>
+					<img class="element" src={genImagePath("cast", castTrait)}>
+				</div>
 				<h5>{mainTraitName("cast", castTrait)}</h5>
 				{#if isOpenCast}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<button on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
-									<img src={genImagePath("cast", option)}>
-								</button>
+								<div class="trait-element">
+									<button class="trait-container" on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
+										<img class="trait-image" src={genImagePath("cast", option)}>
+									</button>
+									<img class="element" src={genImagePath("cast", option)}>
+								</div>
 							</li>
 						{/each}
 					</ul>
 				{/if}
 			</div>
 			<div class="slot-menu">
-				<button on:click={toggleOpenSprint}>
-					<img src={genImagePath("sprint", sprintTrait)}>
-				</button>
+				<div class="trait-element">
+					<button class="trait-container" on:click={toggleOpenSprint}>
+						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
+					</button>
+					<img class="element" src={genImagePath("sprint", sprintTrait)}>
+				</div>
 				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
 				{#if isOpenSprint}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<button on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
-									<img src={genImagePath("sprint", option)}>
-								</button>
+								<div class="trait-element">
+									<button class="trait-container" on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
+										<img class="trait-image" src={genImagePath("sprint", option)}>
+									</button>
+									<img class="element" src={genImagePath("sprint", option)}>
+								</div>
 							</li>
 						{/each}
 					</ul>
 				{/if}
 			</div>
 			<div class="slot-menu">
-				<button on:click={toggleOpenGain}>
-					<img src={genImagePath("gain", gainTrait)}>
-				</button>
+				<div class="trait-element">
+					<button class="trait-container" on:click={toggleOpenGain}>
+						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
+					</button>
+					<img class="element" src={genImagePath("gain", gainTrait)}>
+				</div>
 				<h5>{mainTraitName("gain", gainTrait)}</h5>
 				{#if isOpenGain}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<button on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
-									<img src={genImagePath("gain", option)}>
-								</button>
+								<div class="trait-element">
+									<button class="trait-container" on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
+										<img class="trait-image" src={genImagePath("gain", option)}>
+									</button>
+									<img class="element" src={genImagePath("gain", option)}>
+								</div>
 							</li>
 						{/each}
 					</ul>
@@ -172,26 +228,46 @@
 		height: 75px;
 		width: 75px;
 	}
-	img{
+	.trait-element{
+		position: relative;
+		height: 75px;
+		width: 125px;
+		margin-top: 10px;
+	}
+	.trait-image{
 		height: 75px;
 		width: 75px;
 	}
+	.trait-container{
+		position: absolute;
+		left: 25px;
+	}
+	.element {
+		height: 40px;
+		width: 40px;
+		position: absolute;
+		left: 75px;
+		top: -10px;
+		z-index: 1;
+	}
 	li {
 		height: 75px;
-		width: 75px;	
+		width: 125px;	
 		padding-top: 5px;
 		padding-bottom: 5px;
 		align-self: center;
 	}
 	ul{
-		padding: 5px;
+		padding: 0;
+		padding-top: 10px;
+		padding-bottom: 15px;
 		border: 2px;
 		border-style: solid;
 		border-radius: 10px;
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
-		width: 75px;
+		width: 125px;
 		align-items: center;
 		margin: 0;
 		margin-top: 20px;
@@ -208,7 +284,7 @@
 		align-items: flex-start;
 		
 		justify-content: space-between;
-		height: 90px;
+		height: 100px;
 		width: 750px;
 		padding: 5px;
 		border: 2px;
@@ -223,7 +299,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
-		height: 1000px;
+		height: 2000px;
 		width: 100%;
 		background: rgb(31, 31, 45);
 	}
