@@ -4,7 +4,7 @@
 	let isOpenSpecial = false
 	let isOpenCast = false
 	let isOpenSprint = false
-	let isOpenRegen = false
+	let isOpenGain = false
 
 	const mainGods = ["None", "Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia"]
 
@@ -12,7 +12,7 @@
 	let specialTrait = "None"
 	let castTrait = "None"
 	let sprintTrait = "None"
-	let regenTrait = "None"
+	let gainTrait = "None"
 	/**
 	 * @param {string} type
 	 * @param {string} god
@@ -37,6 +37,15 @@
 	function toggleOpenSpecial(){
 		isOpenSpecial = !isOpenSpecial
 	}
+	function toggleOpenCast(){
+		isOpenCast = !isOpenCast
+	}
+	function toggleOpenSprint(){
+		isOpenSprint = !isOpenSprint
+	}
+	function toggleOpenGain(){
+		isOpenGain = !isOpenGain
+	}
 </script>
 
 <svelte:head>
@@ -46,7 +55,9 @@
 
 <body>
 	<div class="container">
+
 		<h1>Hades 2 Build Creator</h1>
+
 		<div class="main-traits">
 			<div class="slot-menu">
 				<button on:click={toggleOpenAttack}>
@@ -65,7 +76,6 @@
 					</ul>
 				{/if}
 			</div>
-
 			<div class="slot-menu">
 				<button on:click={toggleOpenSpecial}>
 					<img src={genImagePath("special", specialTrait)}>
@@ -77,6 +87,57 @@
 							<li>
 								<button on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
 									<img src={genImagePath("special", option)}>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+			<div class="slot-menu">
+				<button on:click={toggleOpenCast}>
+					<img src={genImagePath("cast", castTrait)}>
+				</button>
+				<h5>{mainTraitName("cast", castTrait)}</h5>
+				{#if isOpenCast}
+					<ul transition:slide>
+						{#each mainGods as option}
+							<li>
+								<button on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
+									<img src={genImagePath("cast", option)}>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+			<div class="slot-menu">
+				<button on:click={toggleOpenSprint}>
+					<img src={genImagePath("sprint", sprintTrait)}>
+				</button>
+				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
+				{#if isOpenSprint}
+					<ul transition:slide>
+						{#each mainGods as option}
+							<li>
+								<button on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
+									<img src={genImagePath("sprint", option)}>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+			<div class="slot-menu">
+				<button on:click={toggleOpenGain}>
+					<img src={genImagePath("gain", gainTrait)}>
+				</button>
+				<h5>{mainTraitName("gain", gainTrait)}</h5>
+				{#if isOpenGain}
+					<ul transition:slide>
+						{#each mainGods as option}
+							<li>
+								<button on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
+									<img src={genImagePath("gain", option)}>
 								</button>
 							</li>
 						{/each}
