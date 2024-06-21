@@ -13,7 +13,16 @@
 	let castTrait = "None"
 	let sprintTrait = "None"
 	let regenTrait = "None"
-
+	/**
+	 * @param {string} type
+	 * @param {string} god
+	 */
+	function mainTraitName(type, god){
+		if (god == "None"){
+			return god
+		}
+		return "Filler Text"
+	}
 	/**
 	 * @param {string} type
 	 * @param {string} value
@@ -21,6 +30,7 @@
 	function genImagePath(type, value){
 		return "/" + type + "/" + value + ".webp"
 	}
+
 	function toggleOpenAttack(){
 		isOpenAttack = !isOpenAttack
 	}
@@ -35,54 +45,64 @@
 </svelte:head>
 
 <body>
-	<div class="main-traits">
-		<div class="slot-menu">
-			<button on:click={toggleOpenAttack}>
-				<img src={genImagePath("attack", attackTrait)}>
-			</button>
-			{#if isOpenAttack}
-				<ul transition:slide>
-					{#each mainGods as option}
-						<li>
-							<button on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
-								<img src={genImagePath("attack", option)}>
-							</button>
-						</li>
-					{/each}
-				</ul>
-			{/if}
-		</div>
+	<div class="container">
+		<h1>Hades 2 Build Creator</h1>
+		<div class="main-traits">
+			<div class="slot-menu">
+				<button on:click={toggleOpenAttack}>
+					<img src={genImagePath("attack", attackTrait)}>
+				</button>
+				<h5>{mainTraitName("attack", attackTrait)}</h5>
+				{#if isOpenAttack}
+					<ul transition:slide>
+						{#each mainGods as option}
+							<li>
+								<button on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
+									<img src={genImagePath("attack", option)}>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
 
-		<div class="slot-menu">
-			<button on:click={toggleOpenSpecial}>
-				<img src={genImagePath("special", specialTrait)}>
-			</button>
-			{#if isOpenSpecial}
-				<ul transition:slide>
-					{#each mainGods as option}
-						<li>
-							<button on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
-								<img src={genImagePath("special", option)}>
-							</button>
-						</li>
-					{/each}
-				</ul>
-			{/if}
+			<div class="slot-menu">
+				<button on:click={toggleOpenSpecial}>
+					<img src={genImagePath("special", specialTrait)}>
+				</button>
+				<h5>{mainTraitName("special", specialTrait)}</h5>
+				{#if isOpenSpecial}
+					<ul transition:slide>
+						{#each mainGods as option}
+							<li>
+								<button on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
+									<img src={genImagePath("special", option)}>
+								</button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
 		</div>
 	</div>
 </body>
 
 <style>
 	body{
-		background: rgb(31, 31, 45);
 		width: 100%;
 		height: 100vh;
 		margin: 0;
 		padding: 0;
 	}
 	h1{
+		font-family: "Helvetica";
+		font-weight: 750;
+		color: rgb(223, 239, 255);
+	}
+	h5{
 		font-family: Helvetica;
 		color: rgb(223, 239, 255);
+		margin: 0;
 	}
 	button{
 		background:transparent;
@@ -119,15 +139,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 100px;
+		width: 20%;
 	}
 	.main-traits {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		
-		justify-content: space-evenly;
-		height: 75px;
+		justify-content: space-between;
+		height: 90px;
 		width: 750px;
 		padding: 5px;
 		border: 2px;
@@ -136,5 +156,14 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
+	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		height: 1000px;
+		width: 100%;
+		background: rgb(31, 31, 45);
 	}
 </style>
