@@ -219,6 +219,7 @@
 									</button>
 									<img class="element" src={mainTraitElementImagePath("attack", option)}>
 								</div>
+								<h5>{mainTraitName("attack", option)}</h5>
 							</li>
 						{/each}
 					</ul>
@@ -242,6 +243,7 @@
 									</button>
 									<img class="element" src={mainTraitElementImagePath("special", option)}>
 								</div>
+								<h5>{mainTraitName("special", option)}</h5>
 							</li>
 						{/each}
 					</ul>
@@ -265,6 +267,7 @@
 									</button>
 									<img class="element" src={mainTraitElementImagePath("cast", option)}>
 								</div>
+								<h5>{mainTraitName("cast", option)}</h5>
 							</li>
 						{/each}
 					</ul>
@@ -288,6 +291,7 @@
 									</button>
 									<img class="element" src={mainTraitElementImagePath("sprint", option)}>
 								</div>
+								<h5>{mainTraitName("sprint", option)}</h5>
 							</li>
 						{/each}
 					</ul>
@@ -311,6 +315,7 @@
 									</button>
 									<img class="element" src={mainTraitElementImagePath("gain", option)}>
 								</div>
+								<h5>{mainTraitName("gain", option)}</h5>
 							</li>
 						{/each}
 					</ul>
