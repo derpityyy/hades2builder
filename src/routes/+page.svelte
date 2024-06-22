@@ -10,15 +10,12 @@
 		GAIN: 5,
 		KEEPSAKE: 6,
 		HEX: 7,
+		WEAPON: 8,
+		ASPECT: 9,
+		FAMILIAR: 10,
 	})
 	
 	let currentMenu = menus.NONE
-
-	let isOpenAttack = false
-	let isOpenSpecial = false
-	let isOpenCast = false
-	let isOpenSprint = false
-	let isOpenGain = false
 
 	const mainGods = ["None", "Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia"]
 
@@ -99,33 +96,8 @@
 		return "/" + type + "/" + value + ".webp"
 	}
 
-	function switchMenu(newMenu){
+	function openMenu(newMenu){
 		currentMenu = newMenu
-		$: console.log(currentMenu)
-	}
-
-	function openAttack(){
-		currentMenu = menus.ATTACK
-	}
-	function openSpecial(){
-		currentMenu = menus.SPECIAL
-	}
-	function openCast(){
-		currentMenu = menus.CAST
-	}
-	function openSprint(){
-		currentMenu = menus.SPRINT
-	}
-	function openGain(){
-		currentMenu = menus.GAIN
-	}
-
-	function openKeepsake(){
-		currentMenu = menus.KEEPSAKE
-	}
-
-	function openHex(){
-		currentMenu = menus.HEX
 	}
 
 	function closeMenu(){
@@ -200,19 +172,87 @@
 
 	let keepsake = "None"
 	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
-	let isOpenKeepsake = false
-
-
 
 	let hex = "None"
 	const hexes = ["None", "Twilight_Curse", "Lunar_Ray", "Wolf_Howl", "Moon_Water", "Night_Bloom", "Total_Eclipse", "Dark_Side"]
-	let isOpenHex = false
 
+	let weapon = "Witch's_Staff"
+	const weapons = ["Witch's_Staff", "Sister_Blades", "Umbral_Flames", "Moonstone_Axe", "Argent_Skull"]
 
+	let aspect = "Melinoë"
+	let aspects = ["Melinoë", "Circe", "Momus"]
+
+	function resetAspects(weapon){
+		aspect = "Melinoë"
+		
+		switch(weapon){
+			case "Witch's_Staff":
+				aspects = ["Melinoë", "Circe", "Momus"]
+				break
+			case "Sister_Blades":
+				aspects = ["Melinoë", "Artemis", "Pan"]
+				break
+			case "Umbral_Flames":
+				aspects = ["Melinoë", "Moros", "Eos"]
+				break
+			case "Moonstone_Axe":
+				aspects = ["Melinoë", "Charon", "Thanatos"]
+				break
+			case "Argent_Skull":
+				aspects = ["Melinoë", "Medea", "Persephone"]
+				break
+			default:
+				aspects = ["Melinoë", "Circe", "Momus"]
+		}
+	}
+
+	let familiar = "None"
+	const familiars = ["None", "Frinos", "Toula"]
 
 	function replaceUnderscore(str){
 		return str.replace("_", " ")
 	}
+
+	let chosenTraits = []
+
+	let otherTraits = {
+		Zeus: ["Zeus-Air_Quality"],
+		Hera: [],
+		Poseidon: [],
+		Hestia: [],
+		Hephaestus: [],
+		Apollo: [],
+		Aphrodite: [],
+		Demeter: [],
+		Hermes: [],
+		Hammer: [],
+		Chaos: []
+	}
+
+
+	let ArtemisTraits = []
+	let HadesTraits = []
+	let IcarusTraits = []
+	let MedeaTraits = []
+	let CirceTraits = []
+	
+	function addTrait(trait){
+		const source = trait.split("-")[0]
+		chosenTraits.push(trait)
+		chosenTraits = chosenTraits
+		otherTraits[source] = otherTraits[source].filter(function(e) { return e !== trait })
+	}
+
+	function removeTrait(trait){
+		const source = trait.split("-")[0]
+		chosenTraits = chosenTraits.filter(function(e) { return e !== trait })
+		otherTraits[source].push(trait)
+		otherTraits = otherTraits
+	}
+
+	let tabs = ["Zeus", "Hera", "Poseidon", "Hestia", "Hephaestus", "Apollo", "Aphrodite", "Demeter", "Hermes", "Chaos", "Hammer"]
+	let tab = "Zeus"
+
 </script>
 
 <svelte:head>         
@@ -226,10 +266,10 @@
 
 		<h1>Hades 2 Build Creator</h1>
 
-		<div class="main-traits" id="top-traits">
+		<div class="trait-box" id="top-traits">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openAttack}>
+					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)}>
 						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
@@ -253,7 +293,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openSpecial}>
+					<button class="trait-button" on:click={() => openMenu(menus.SPECIAL)}>
 						<img class="trait-image" src={genImagePath("special", specialTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
@@ -277,7 +317,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openCast}>
+					<button class="trait-button" on:click={() => openMenu(menus.CAST)}>
 						<img class="trait-image" src={genImagePath("cast", castTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
@@ -301,7 +341,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openSprint}>
+					<button class="trait-button" on:click={() => openMenu(menus.SPRINT)}>
 						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
@@ -325,7 +365,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openGain}>
+					<button class="trait-button" on:click={() => openMenu(menus.GAIN)}>
 						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
@@ -348,10 +388,54 @@
 				{/if}
 			</div>
 		</div>
-		<div class="main-traits">
+		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openKeepsake}>
+					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)}>
+						<img class="trait-image" src={genImagePath("weapon", weapon)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(weapon)}</h5>
+				{#if currentMenu == menus.WEAPON}
+				<ul transition:slide>
+					{#each weapons as option}
+						<li>
+							<div class="trait-container">
+								<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)}>
+									<img class="trait-image" src={genImagePath("weapon", option)}>
+								</button>
+							</div>
+							<h5>{replaceUnderscore(option)}</h5>
+						</li>
+					{/each}
+				</ul>
+				{/if}
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.ASPECT)}>
+						<img class="trait-image" src={genImagePath(weapon, aspect)}>
+					</button>
+				</div>
+				<h5>{"Aspect of " + aspect}</h5>
+				{#if currentMenu == menus.ASPECT}
+					<ul transition:slide>
+						{#each aspects as option}
+							<li>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option}>
+										<img class="trait-image" src={genImagePath(weapon, option)}>
+									</button>
+								</div>
+								<h5>{"Aspect of " + option}</h5>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.KEEPSAKE)}>
 						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
 					</button>
 				</div>
@@ -359,8 +443,29 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={openHex}>
-					
+					<button class="trait-button" on:click={() => openMenu(menus.FAMILIAR)}>
+						<img class="trait-image" src={genImagePath("familiar", familiar)}>
+					</button>
+				</div>
+				<h5>{familiar}</h5>
+				{#if currentMenu == menus.FAMILIAR}
+					<ul transition:slide>
+						{#each familiars as option}
+							<li>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option}>
+										<img class="trait-image" src={genImagePath("familiar", option)}>
+									</button>
+								</div>
+								<h5>{option}</h5>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.HEX)}>
 						<img class="trait-image" src={genImagePath("hex", hex)}>
 					</button>
 				</div>
@@ -396,6 +501,40 @@
 				{/each}
 			</div>
 		{/if}
+
+		<div class="trait-box">
+			{#each chosenTraits as trait}
+				<div class="slot">
+					<div class="trait-container">
+						<button class="trait-button" on:click={() => removeTrait(trait)}>
+							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
+						</button>
+						<img class="element" src="/element/Air.webp">
+					</div>
+					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
+				</div>
+			{/each}
+		</div>
+		<div class="tab-menu">
+			{#each tabs as option}
+				<button class="tab" class:selected-tab={option == tab} on:click={() => tab = option}>
+					{option}
+				</button>
+			{/each}
+		</div>
+		<div class="trait-menu">
+			{#each otherTraits[tab] as trait}
+				<div class="slot">
+					<div class="trait-container">
+						<button class="trait-button" on:click={() => addTrait(trait)}>
+							<img class="trait-image" src={genImagePath(tab, trait)}>
+						</button>
+						<img class="element" src="/element/Air.webp">
+					</div>
+					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
+				</div>
+			{/each}
+		</div>
 	</div>
 </body>
 
@@ -456,8 +595,7 @@
 	}
 	ul{
 		padding: 0;
-		padding-top: 10px;
-		padding-bottom: 15px;
+		padding-bottom: 25px;
 		border: 2px;
 		border-style: solid;
 		border-radius: 10px;
@@ -475,7 +613,7 @@
 		align-items: center;
 		width: 20%;
 	}
-	.main-traits {
+	.trait-box {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
@@ -491,6 +629,7 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
+		z-index: 1;
 	}
 	#top-traits {
 		z-index: 2;
@@ -523,5 +662,44 @@
 		height: 2000px;
 		width: 100%;
 		background: rgb(31, 31, 45);
+	}
+	.tab {
+		background: rgb(56, 56, 93);
+		width: auto;
+		padding-left: 5px;
+		padding-right: 5px;
+		height: 30px;
+		border: 1px solid rgb(120, 120, 197);
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		color: rgb(223, 239, 255);
+	}
+	.selected-tab{
+		border-color: rgb(189, 189, 255);
+		border-width: 2px;
+	}
+	.tab-menu {
+		width: 764px;
+		margin-top: 10px;
+	}
+	.trait-menu {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		margin-top: -1px;
+		height: max(auto, 200px);
+		transition: height 1s;
+		width: 750px;
+		padding: 5px;
+		padding-bottom: 10px;
+		border: 2px;
+		border-style: solid;
+		border-radius: 10px;
+		border-top-left-radius: 0;
+		border-color: rgb(120, 120, 197);
+		list-style-type: none;
+		background: rgb(56, 56, 93);	
 	}
 </style>
