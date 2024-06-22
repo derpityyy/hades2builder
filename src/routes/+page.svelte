@@ -166,6 +166,17 @@
 		let element = mainTraitElements[type][value]
 		return "/element/" + element + ".webp"
 	}
+
+	let keepsake = "None"
+	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
+	let isOpenKeepsake = false
+
+	function toggleOpenKeepsake(){
+		isOpenKeepsake = !isOpenKeepsake
+	}
+	function keepsakeToName(keepsake){
+		return keepsake.replace("_", " ")
+	}
 </script>
 
 <svelte:head>         
@@ -179,10 +190,10 @@
 
 		<h1>Hades 2 Build Creator</h1>
 
-		<div class="main-traits">
-			<div class="slot-menu">
-				<div class="trait-element">
-					<button class="trait-container" on:click={toggleOpenAttack}>
+		<div class="main-traits" id="top-traits">
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenAttack}>
 					
 						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
 					</button>
@@ -193,8 +204,8 @@
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<div class="trait-element">
-									<button class="trait-container" on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
 										<img class="trait-image" src={genImagePath("attack", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("attack", option)}>
@@ -204,9 +215,9 @@
 					</ul>
 				{/if}
 			</div>
-			<div class="slot-menu">
-				<div class="trait-element">
-					<button class="trait-container" on:click={toggleOpenSpecial}>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenSpecial}>
 						<img class="trait-image" src={genImagePath("special", specialTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
@@ -216,8 +227,8 @@
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<div class="trait-element">
-									<button class="trait-container" on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
 										<img class="trait-image" src={genImagePath("special", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("special", option)}>
@@ -227,9 +238,9 @@
 					</ul>
 				{/if}
 			</div>
-			<div class="slot-menu">
-				<div class="trait-element">
-					<button class="trait-container" on:click={toggleOpenCast}>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenCast}>
 						<img class="trait-image" src={genImagePath("cast", castTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
@@ -239,8 +250,8 @@
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<div class="trait-element">
-									<button class="trait-container" on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
 										<img class="trait-image" src={genImagePath("cast", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("cast", option)}>
@@ -250,9 +261,9 @@
 					</ul>
 				{/if}
 			</div>
-			<div class="slot-menu">
-				<div class="trait-element">
-					<button class="trait-container" on:click={toggleOpenSprint}>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenSprint}>
 						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
@@ -262,8 +273,8 @@
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<div class="trait-element">
-									<button class="trait-container" on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
 										<img class="trait-image" src={genImagePath("sprint", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("sprint", option)}>
@@ -273,9 +284,9 @@
 					</ul>
 				{/if}
 			</div>
-			<div class="slot-menu">
-				<div class="trait-element">
-					<button class="trait-container" on:click={toggleOpenGain}>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenGain}>
 						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
@@ -285,8 +296,8 @@
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
-								<div class="trait-element">
-									<button class="trait-container" on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
 										<img class="trait-image" src={genImagePath("gain", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("gain", option)}>
@@ -297,6 +308,31 @@
 				{/if}
 			</div>
 		</div>
+		<div class="main-traits">
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenKeepsake}>
+						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
+					</button>
+				</div>
+				<h5>{keepsakeToName(keepsake)}</h5>
+			</div>
+		</div>
+		{#if isOpenKeepsake}
+			<div class="keepsake-box">
+				{#each keepsakes as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {() => keepsake = option} on:click = {toggleOpenKeepsake}>
+								<img class="trait-image" src={genImagePath("keepsake", option)}>
+							</button>
+							
+						</div>
+						<h5>{keepsakeToName(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</div>
 </body>
 
@@ -324,7 +360,7 @@
 		height: 75px;
 		width: 75px;
 	}
-	.trait-element{
+	.trait-container{
 		position: relative;
 		height: 75px;
 		width: 125px;
@@ -334,9 +370,10 @@
 		height: 75px;
 		width: 75px;
 	}
-	.trait-container{
+	.trait-button{
 		position: absolute;
 		left: 25px;
+		z-index: 0;
 	}
 	.element {
 		height: 40px;
@@ -366,9 +403,9 @@
 		width: 125px;
 		align-items: center;
 		margin: 0;
-		margin-top: 20px;
+		margin-top: 17px;
 	}
-	.slot-menu {
+	.slot {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -378,8 +415,9 @@
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
-		
-		justify-content: space-between;
+		flex-wrap: wrap;
+
+		margin-top: 10px;
 		height: 100px;
 		width: 750px;
 		padding: 5px;
@@ -389,6 +427,27 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
+	}
+	#top-traits {
+		z-index: 1;
+	}
+	.keepsake-box {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		margin-top: 10px;
+		height: 610px;
+		width: 750px;
+		padding: 5px;
+		padding-bottom: 10px;
+		border: 2px;
+		border-style: solid;
+		border-radius: 10px;
+		border-color: rgb(120, 120, 197);
+		list-style-type: none;
+		background: rgb(56, 56, 93);	
 	}
 	.container {
 		display: flex;
