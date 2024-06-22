@@ -174,8 +174,17 @@
 	function toggleOpenKeepsake(){
 		isOpenKeepsake = !isOpenKeepsake
 	}
-	function keepsakeToName(keepsake){
-		return keepsake.replace("_", " ")
+
+	let hex = "None"
+	const hexes = ["None", "Twilight_Curse", "Lunar_Ray", "Wolf_Howl", "Moon_Water", "Night_Bloom", "Total_Eclipse", "Dark_Side"]
+	let isOpenHex = false
+
+	function toggleOpenHex(){
+		isOpenHex = !isOpenHex
+	}
+
+	function replaceUnderscore(str){
+		return str.replace("_", " ")
 	}
 </script>
 
@@ -315,11 +324,34 @@
 						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
 					</button>
 				</div>
-				<h5>{keepsakeToName(keepsake)}</h5>
+				<h5>{replaceUnderscore(keepsake)}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={toggleOpenHex}>
+					
+						<img class="trait-image" src={genImagePath("hex", hex)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(hex)}</h5>
+				{#if isOpenHex}
+					<ul transition:slide>
+						{#each hexes as option}
+							<li>
+								<div class="trait-container">
+									<button class="trait-button" on:click = {toggleOpenHex} on:click = {() => hex = option}>
+										<img class="trait-image" src={genImagePath("hex", option)}>
+									</button>
+								</div>
+								<h5>{replaceUnderscore(option)}</h5>
+							</li>
+						{/each}
+					</ul>
+				{/if}
 			</div>
 		</div>
 		{#if isOpenKeepsake}
-			<div class="keepsake-box">
+			<div class="keepsake-box" transition:slide>
 				{#each keepsakes as option}
 					<div class="slot">
 						<div class="trait-container">
@@ -328,7 +360,7 @@
 							</button>
 							
 						</div>
-						<h5>{keepsakeToName(option)}</h5>
+						<h5>{replaceUnderscore(option)}</h5>
 					</div>
 				{/each}
 			</div>
@@ -384,11 +416,12 @@
 		z-index: 1;
 	}
 	li {
-		height: 75px;
+		height: 90px;
 		width: 125px;	
 		padding-top: 5px;
 		padding-bottom: 5px;
 		align-self: center;
+		text-align: center;
 	}
 	ul{
 		padding: 0;
@@ -439,6 +472,7 @@
 
 		margin-top: 10px;
 		height: 610px;
+		transition: height 1s;
 		width: 750px;
 		padding: 5px;
 		padding-bottom: 10px;
@@ -448,6 +482,7 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);	
+		z-index: 1;
 	}
 	.container {
 		display: flex;
