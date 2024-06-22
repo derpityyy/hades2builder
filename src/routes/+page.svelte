@@ -1,5 +1,19 @@
 <script>
 	import {slide} from 'svelte/transition'
+
+	const menus = Object.freeze({
+		NONE: 0,
+		ATTACK: 1,
+		SPECIAL: 2,
+		CAST: 3,
+		SPRINT: 4,
+		GAIN: 5,
+		KEEPSAKE: 6,
+		HEX: 7,
+	})
+	
+	let currentMenu = menus.NONE
+
 	let isOpenAttack = false
 	let isOpenSpecial = false
 	let isOpenCast = false
@@ -85,20 +99,37 @@
 		return "/" + type + "/" + value + ".webp"
 	}
 
-	function toggleOpenAttack(){
-		isOpenAttack = !isOpenAttack
+	function switchMenu(newMenu){
+		currentMenu = newMenu
+		$: console.log(currentMenu)
 	}
-	function toggleOpenSpecial(){
-		isOpenSpecial = !isOpenSpecial
+
+	function openAttack(){
+		currentMenu = menus.ATTACK
 	}
-	function toggleOpenCast(){
-		isOpenCast = !isOpenCast
+	function openSpecial(){
+		currentMenu = menus.SPECIAL
 	}
-	function toggleOpenSprint(){
-		isOpenSprint = !isOpenSprint
+	function openCast(){
+		currentMenu = menus.CAST
 	}
-	function toggleOpenGain(){
-		isOpenGain = !isOpenGain
+	function openSprint(){
+		currentMenu = menus.SPRINT
+	}
+	function openGain(){
+		currentMenu = menus.GAIN
+	}
+
+	function openKeepsake(){
+		currentMenu = menus.KEEPSAKE
+	}
+
+	function openHex(){
+		currentMenu = menus.HEX
+	}
+
+	function closeMenu(){
+		currentMenu = menus.NONE
 	}
 
 	const mainTraitElements = {
@@ -171,17 +202,13 @@
 	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
 	let isOpenKeepsake = false
 
-	function toggleOpenKeepsake(){
-		isOpenKeepsake = !isOpenKeepsake
-	}
+
 
 	let hex = "None"
 	const hexes = ["None", "Twilight_Curse", "Lunar_Ray", "Wolf_Howl", "Moon_Water", "Night_Bloom", "Total_Eclipse", "Dark_Side"]
 	let isOpenHex = false
 
-	function toggleOpenHex(){
-		isOpenHex = !isOpenHex
-	}
+
 
 	function replaceUnderscore(str){
 		return str.replace("_", " ")
@@ -202,19 +229,18 @@
 		<div class="main-traits" id="top-traits">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenAttack}>
-					
+					<button class="trait-button" on:click={openAttack}>
 						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
 				</div>
 				<h5>{mainTraitName("attack", attackTrait)}</h5>
-				{#if isOpenAttack}
+				{#if currentMenu == menus.ATTACK}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenAttack} on:click = {() => attackTrait = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => attackTrait = option}>
 										<img class="trait-image" src={genImagePath("attack", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("attack", option)}>
@@ -227,18 +253,18 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenSpecial}>
+					<button class="trait-button" on:click={openSpecial}>
 						<img class="trait-image" src={genImagePath("special", specialTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
 				</div>
 				<h5>{mainTraitName("special", specialTrait)}</h5>
-				{#if isOpenSpecial}
+				{#if currentMenu == menus.SPECIAL}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => specialTrait = option}>
 										<img class="trait-image" src={genImagePath("special", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("special", option)}>
@@ -251,18 +277,18 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenCast}>
+					<button class="trait-button" on:click={openCast}>
 						<img class="trait-image" src={genImagePath("cast", castTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
 				</div>
 				<h5>{mainTraitName("cast", castTrait)}</h5>
-				{#if isOpenCast}
+				{#if currentMenu == menus.CAST}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => castTrait = option}>
 										<img class="trait-image" src={genImagePath("cast", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("cast", option)}>
@@ -275,18 +301,18 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenSprint}>
+					<button class="trait-button" on:click={openSprint}>
 						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
 				</div>
 				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
-				{#if isOpenSprint}
+				{#if currentMenu == menus.SPRINT}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => sprintTrait = option}>
 										<img class="trait-image" src={genImagePath("sprint", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("sprint", option)}>
@@ -299,18 +325,18 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenGain}>
+					<button class="trait-button" on:click={openGain}>
 						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
 				</div>
 				<h5>{mainTraitName("gain", gainTrait)}</h5>
-				{#if isOpenGain}
+				{#if currentMenu == menus.GAIN}
 					<ul transition:slide>
 						{#each mainGods as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => gainTrait = option}>
 										<img class="trait-image" src={genImagePath("gain", option)}>
 									</button>
 									<img class="element" src={mainTraitElementImagePath("gain", option)}>
@@ -325,7 +351,7 @@
 		<div class="main-traits">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenKeepsake}>
+					<button class="trait-button" on:click={openKeepsake}>
 						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
 					</button>
 				</div>
@@ -333,18 +359,18 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={toggleOpenHex}>
+					<button class="trait-button" on:click={openHex}>
 					
 						<img class="trait-image" src={genImagePath("hex", hex)}>
 					</button>
 				</div>
 				<h5>{replaceUnderscore(hex)}</h5>
-				{#if isOpenHex}
+				{#if currentMenu == menus.HEX}
 					<ul transition:slide>
 						{#each hexes as option}
 							<li>
 								<div class="trait-container">
-									<button class="trait-button" on:click = {toggleOpenHex} on:click = {() => hex = option}>
+									<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option}>
 										<img class="trait-image" src={genImagePath("hex", option)}>
 									</button>
 								</div>
@@ -355,12 +381,12 @@
 				{/if}
 			</div>
 		</div>
-		{#if isOpenKeepsake}
+		{#if currentMenu == menus.KEEPSAKE}
 			<div class="keepsake-box" transition:slide>
 				{#each keepsakes as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {() => keepsake = option} on:click = {toggleOpenKeepsake}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => keepsake = option}>
 								<img class="trait-image" src={genImagePath("keepsake", option)}>
 							</button>
 							
@@ -467,7 +493,7 @@
 		background: rgb(56, 56, 93);
 	}
 	#top-traits {
-		z-index: 1;
+		z-index: 2;
 	}
 	.keepsake-box {
 		display: flex;
