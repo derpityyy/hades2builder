@@ -388,7 +388,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="trait-box">
+		<div class="trait-box" id="second-traits">
 			<div class="slot">
 				<div class="trait-container">
 					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)}>
@@ -556,11 +556,13 @@
 		margin: 0;
 	}
 	button{
+		font-family: "Helvetica";
 		background:transparent;
 		border: 0;
 		padding: 0;
 		height: 75px;
 		width: 75px;
+		cursor: pointer;
 	}
 	.trait-container{
 		position: relative;
@@ -629,9 +631,11 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
-		z-index: 1;
 	}
 	#top-traits {
+		z-index: 3;
+	}
+	#second-traits {
 		z-index: 2;
 	}
 	.keepsake-box {
@@ -642,7 +646,7 @@
 
 		margin-top: 10px;
 		height: 610px;
-		transition: height 1s;
+		
 		width: 750px;
 		padding: 5px;
 		padding-bottom: 10px;
@@ -689,8 +693,7 @@
 		flex-wrap: wrap;
 
 		margin-top: -1px;
-		height: max(auto, 200px);
-		transition: height 1s;
+		height: auto;
 		width: 750px;
 		padding: 5px;
 		padding-bottom: 10px;
