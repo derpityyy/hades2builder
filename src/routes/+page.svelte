@@ -13,6 +13,59 @@
 	let castTrait = "None"
 	let sprintTrait = "None"
 	let gainTrait = "None"
+
+	const mainTraitNames = {
+		attack: {
+			Zeus: "Heaven Strike",
+			Hera: "Sworn Strike",
+			Poseidon: "Wave Strike",
+			Demeter: "Ice Strike",
+			Apollo: "Nova Strike",
+			Aphrodite: "Flutter Strike",
+			Hephaestus: "Volcanic Strike",
+			Hestia: "Flame Strike"
+		},
+		special: {
+			Zeus: "Heaven Flourish",
+			Hera: "Sworn Flourish",
+			Poseidon: "Wave Flourish",
+			Demeter: "Ice Flourish",
+			Apollo: "Nova Flourish",
+			Aphrodite: "Flutter Flourish",
+			Hephaestus: "Volcanic Flourish",
+			Hestia: "Flame Flourish"
+		},
+		cast: {
+			Zeus: "Storm Ring",
+			Hera: "Engagement Ring",
+			Poseidon: "Geyser Ring",
+			Demeter: "Arctic Ring",
+			Apollo: "Solar Ring",
+			Aphrodite: "Rapture Ring",
+			Hephaestus: "Anvil Ring",
+			Hestia: "Smolder Ring"
+		},
+		sprint: {
+			Zeus: "Thunder Sprint",
+			Hera: "Nexus Sprint",
+			Poseidon: "Breaker Sprint",
+			Demeter: "Frigid Sprint",
+			Apollo: "Blinding Sprint",
+			Aphrodite: "Passion Dash",
+			Hephaestus: "Smithy Sprint",
+			Hestia: "Soot Sprint"
+		},
+		gain: {
+			Zeus: "Ionic Gain",
+			Hera: "Born Gain",
+			Poseidon: "Fluid Gain",
+			Demeter: "Tranquil Gain",
+			Apollo: "Lucid Gain",
+			Aphrodite: "Glamour Gain",
+			Hephaestus: "Fixed Gain",
+			Hestia: "Hearth Gain"
+		}
+	}
 	/**
 	 * @param {string} type
 	 * @param {string} god
@@ -21,7 +74,8 @@
 		if (god == "None"){
 			return god
 		}
-		return "Filler Text"
+		let traitName = mainTraitNames[type][god]
+		return traitName
 	}
 	/**
 	 * @param {string} type
@@ -49,15 +103,54 @@
 
 	const mainTraitElements = {
 		attack: {
-			"None": "None",
-			"Apollo": "Air",
-			"Zeus": "Air",
-			"Aphrodite": "Water",
-			"Demeter": "Water",
-			"Poseidon": "Water",
-			"Hera": "Earth",
-			"Hephaestus": "Fire",
-			"Hestia": "Fire"
+			Apollo: "Air",
+			Zeus: "Air",
+			Aphrodite: "Water",
+			Demeter: "Water",
+			Poseidon: "Water",
+			Hera: "Earth",
+			Hephaestus: "Fire",
+			Hestia: "Fire"
+		},
+		special: {
+			Apollo: "Air",
+			Zeus: "Air",
+			Aphrodite: "Water",
+			Demeter: "Water",
+			Poseidon: "Water",
+			Hera: "Earth",
+			Hephaestus: "Fire",
+			Hestia: "Fire"
+		},
+		cast: {
+			Apollo: "Fire",
+			Zeus: "Air",
+			Aphrodite: "Water",
+			Demeter: "Earth",
+			Poseidon: "Water",
+			Hera: "Earth",
+			Hephaestus: "Earth",
+			Hestia: "Fire"
+		},
+		sprint: {
+			Apollo: "Fire",
+			Zeus: "Air",
+			Aphrodite: "Water",
+			Demeter: "Water",
+			Poseidon: "Water",
+			Hera: "Earth",
+			Hephaestus: "Fire",
+			Hestia: "Fire"
+		},
+		gain: {
+			Apollo: "Air",
+			Zeus: "Air",
+			Aphrodite: "Air",
+			Demeter: "Earth",
+			Poseidon: "Water",
+			Hera: "Earth",
+			Hephaestus: "Earth",
+			Hestia: "Fire"
 		}
 	}
 
@@ -67,12 +160,15 @@
 	 * @param {string} type
 	 */
 	function mainTraitElementImagePath(type, value){
+		if (value == "None") {
+			return "/element/None.webp"
+		}
 		let element = mainTraitElements[type][value]
 		return "/element/" + element + ".webp"
 	}
 </script>
 
-<svelte:head>
+<svelte:head>         
 	<title>Hades 2 Builder</title>
 	<meta name="description" content="Custom build creator for Hades 2" />
 </svelte:head>
@@ -113,7 +209,7 @@
 					<button class="trait-container" on:click={toggleOpenSpecial}>
 						<img class="trait-image" src={genImagePath("special", specialTrait)}>
 					</button>
-					<img class="element" src={genImagePath("special", specialTrait)}>
+					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
 				</div>
 				<h5>{mainTraitName("special", specialTrait)}</h5>
 				{#if isOpenSpecial}
@@ -124,7 +220,7 @@
 									<button class="trait-container" on:click = {toggleOpenSpecial} on:click = {() => specialTrait = option}>
 										<img class="trait-image" src={genImagePath("special", option)}>
 									</button>
-									<img class="element" src={genImagePath("special", option)}>
+									<img class="element" src={mainTraitElementImagePath("special", option)}>
 								</div>
 							</li>
 						{/each}
@@ -136,7 +232,7 @@
 					<button class="trait-container" on:click={toggleOpenCast}>
 						<img class="trait-image" src={genImagePath("cast", castTrait)}>
 					</button>
-					<img class="element" src={genImagePath("cast", castTrait)}>
+					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
 				</div>
 				<h5>{mainTraitName("cast", castTrait)}</h5>
 				{#if isOpenCast}
@@ -147,7 +243,7 @@
 									<button class="trait-container" on:click = {toggleOpenCast} on:click = {() => castTrait = option}>
 										<img class="trait-image" src={genImagePath("cast", option)}>
 									</button>
-									<img class="element" src={genImagePath("cast", option)}>
+									<img class="element" src={mainTraitElementImagePath("cast", option)}>
 								</div>
 							</li>
 						{/each}
@@ -159,7 +255,7 @@
 					<button class="trait-container" on:click={toggleOpenSprint}>
 						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
 					</button>
-					<img class="element" src={genImagePath("sprint", sprintTrait)}>
+					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
 				</div>
 				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
 				{#if isOpenSprint}
@@ -170,7 +266,7 @@
 									<button class="trait-container" on:click = {toggleOpenSprint} on:click = {() => sprintTrait = option}>
 										<img class="trait-image" src={genImagePath("sprint", option)}>
 									</button>
-									<img class="element" src={genImagePath("sprint", option)}>
+									<img class="element" src={mainTraitElementImagePath("sprint", option)}>
 								</div>
 							</li>
 						{/each}
@@ -182,7 +278,7 @@
 					<button class="trait-container" on:click={toggleOpenGain}>
 						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
 					</button>
-					<img class="element" src={genImagePath("gain", gainTrait)}>
+					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
 				</div>
 				<h5>{mainTraitName("gain", gainTrait)}</h5>
 				{#if isOpenGain}
@@ -193,7 +289,7 @@
 									<button class="trait-container" on:click = {toggleOpenGain} on:click = {() => gainTrait = option}>
 										<img class="trait-image" src={genImagePath("gain", option)}>
 									</button>
-									<img class="element" src={genImagePath("gain", option)}>
+									<img class="element" src={mainTraitElementImagePath("gain", option)}>
 								</div>
 							</li>
 						{/each}
@@ -244,7 +340,7 @@
 	}
 	.element {
 		height: 40px;
-		width: 40px;
+		width: auto;
 		position: absolute;
 		left: 75px;
 		top: -10px;
