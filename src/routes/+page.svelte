@@ -605,7 +605,7 @@
 	.trait-image{
 		height: 75px;
 		width: 75px;
-		border: 3px solid white;
+		border: 3px solid rgb(77, 77, 134);
 		border-radius: 25px;
 		box-sizing: border-box;
 	}
