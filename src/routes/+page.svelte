@@ -216,7 +216,7 @@
 	let chosenTraits = []
 
 	let otherTraits = {
-		Zeus: ["Zeus-Air_Quality"],
+		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
 		Hera: [],
 		Poseidon: [],
 		Hestia: [],
@@ -226,7 +226,8 @@
 		Demeter: [],
 		Hermes: [],
 		Hammer: [],
-		Chaos: []
+		Chaos: [],
+		Duo: []
 	}
 
 
@@ -250,8 +251,40 @@
 		otherTraits = otherTraits
 	}
 
-	let tabs = ["Zeus", "Hera", "Poseidon", "Hestia", "Hephaestus", "Apollo", "Aphrodite", "Demeter", "Hermes", "Chaos", "Hammer"]
+	function isLegendary(trait){
+		return ["Zeus-Shocking_Loss"].includes(trait)
+	}
+
+	function isDuo(trait){
+		return [].includes(trait)
+	}
+
+	function isInfusion(trait){
+		return ["Zeus-Air_Quality"].includes(trait)
+	}
+	let tabs = ["Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia", "Hermes", "Chaos", "Hammer", "Duo"]
 	let tab = "Zeus"
+
+	function otherTraitElementImagePath(trait){
+		return "/element/" + otherTraitToElement(trait) + ".webp"
+	}
+	function otherTraitToElement(trait){
+		if (isInfusion(trait)){
+			return "None"
+		}
+		if (isDuo(trait)){
+			return "Aether"
+		}
+		const source = trait.split("-")[0]
+		switch (source){
+			case "Zeus":
+				return "Air"
+			case "Hera":
+				return "Earth"
+			default:
+				return "None"
+		}
+	}
 
 </script>
 
@@ -266,7 +299,7 @@
 
 		<h1>Hades 2 Build Creator</h1>
 
-		<div class="trait-box" id="top-traits">
+		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
 					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)}>
@@ -275,21 +308,6 @@
 					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
 				</div>
 				<h5>{mainTraitName("attack", attackTrait)}</h5>
-				{#if currentMenu == menus.ATTACK}
-					<ul transition:slide>
-						{#each mainGods as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => attackTrait = option}>
-										<img class="trait-image" src={genImagePath("attack", option)}>
-									</button>
-									<img class="element" src={mainTraitElementImagePath("attack", option)}>
-								</div>
-								<h5>{mainTraitName("attack", option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -299,21 +317,6 @@
 					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
 				</div>
 				<h5>{mainTraitName("special", specialTrait)}</h5>
-				{#if currentMenu == menus.SPECIAL}
-					<ul transition:slide>
-						{#each mainGods as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => specialTrait = option}>
-										<img class="trait-image" src={genImagePath("special", option)}>
-									</button>
-									<img class="element" src={mainTraitElementImagePath("special", option)}>
-								</div>
-								<h5>{mainTraitName("special", option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -323,21 +326,6 @@
 					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
 				</div>
 				<h5>{mainTraitName("cast", castTrait)}</h5>
-				{#if currentMenu == menus.CAST}
-					<ul transition:slide>
-						{#each mainGods as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => castTrait = option}>
-										<img class="trait-image" src={genImagePath("cast", option)}>
-									</button>
-									<img class="element" src={mainTraitElementImagePath("cast", option)}>
-								</div>
-								<h5>{mainTraitName("cast", option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -347,21 +335,6 @@
 					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
 				</div>
 				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
-				{#if currentMenu == menus.SPRINT}
-					<ul transition:slide>
-						{#each mainGods as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => sprintTrait = option}>
-										<img class="trait-image" src={genImagePath("sprint", option)}>
-									</button>
-									<img class="element" src={mainTraitElementImagePath("sprint", option)}>
-								</div>
-								<h5>{mainTraitName("sprint", option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -371,24 +344,7 @@
 					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
 				</div>
 				<h5>{mainTraitName("gain", gainTrait)}</h5>
-				{#if currentMenu == menus.GAIN}
-					<ul transition:slide>
-						{#each mainGods as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => gainTrait = option}>
-										<img class="trait-image" src={genImagePath("gain", option)}>
-									</button>
-									<img class="element" src={mainTraitElementImagePath("gain", option)}>
-								</div>
-								<h5>{mainTraitName("gain", option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
-		</div>
-		<div class="trait-box" id="second-traits">
 			<div class="slot">
 				<div class="trait-container">
 					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)}>
@@ -396,20 +352,7 @@
 					</button>
 				</div>
 				<h5>{replaceUnderscore(weapon)}</h5>
-				{#if currentMenu == menus.WEAPON}
-				<ul transition:slide>
-					{#each weapons as option}
-						<li>
-							<div class="trait-container">
-								<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)}>
-									<img class="trait-image" src={genImagePath("weapon", option)}>
-								</button>
-							</div>
-							<h5>{replaceUnderscore(option)}</h5>
-						</li>
-					{/each}
-				</ul>
-				{/if}
+
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -418,20 +361,6 @@
 					</button>
 				</div>
 				<h5>{"Aspect of " + aspect}</h5>
-				{#if currentMenu == menus.ASPECT}
-					<ul transition:slide>
-						{#each aspects as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option}>
-										<img class="trait-image" src={genImagePath(weapon, option)}>
-									</button>
-								</div>
-								<h5>{"Aspect of " + option}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -448,20 +377,6 @@
 					</button>
 				</div>
 				<h5>{familiar}</h5>
-				{#if currentMenu == menus.FAMILIAR}
-					<ul transition:slide>
-						{#each familiars as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option}>
-										<img class="trait-image" src={genImagePath("familiar", option)}>
-									</button>
-								</div>
-								<h5>{option}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -470,24 +385,113 @@
 					</button>
 				</div>
 				<h5>{replaceUnderscore(hex)}</h5>
-				{#if currentMenu == menus.HEX}
-					<ul transition:slide>
-						{#each hexes as option}
-							<li>
-								<div class="trait-container">
-									<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option}>
-										<img class="trait-image" src={genImagePath("hex", option)}>
-									</button>
-								</div>
-								<h5>{replaceUnderscore(option)}</h5>
-							</li>
-						{/each}
-					</ul>
-				{/if}
 			</div>
 		</div>
+		{#if currentMenu == menus.ATTACK}
+			<div class="choice-box" transition:slide>
+				{#each mainGods as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => attackTrait = option}>
+								<img class="trait-image" src={genImagePath("attack", option)}>
+							</button>
+							<img class="element" src={mainTraitElementImagePath("attack", option)}>
+						</div>
+						<h5>{mainTraitName("attack", option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.SPECIAL}
+			<div class="choice-box" transition:slide>
+				{#each mainGods as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => specialTrait = option}>
+								<img class="trait-image" src={genImagePath("special", option)}>
+							</button>
+							<img class="element" src={mainTraitElementImagePath("special", option)}>
+						</div>
+						<h5>{mainTraitName("special", option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.CAST}
+			<div class="choice-box" transition:slide>
+				{#each mainGods as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => castTrait = option}>
+								<img class="trait-image" src={genImagePath("cast", option)}>
+							</button>
+							<img class="element" src={mainTraitElementImagePath("cast", option)}>
+						</div>
+						<h5>{mainTraitName("cast", option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.SPRINT}
+			<div class="choice-box" transition:slide>
+				{#each mainGods as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => sprintTrait = option}>
+								<img class="trait-image" src={genImagePath("sprint", option)}>
+							</button>
+							<img class="element" src={mainTraitElementImagePath("sprint", option)}>
+						</div>
+						<h5>{mainTraitName("sprint", option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.GAIN}
+			<div class="choice-box" transition:slide>
+				{#each mainGods as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => gainTrait = option}>
+								<img class="trait-image" src={genImagePath("gain", option)}>
+							</button>
+							<img class="element" src={mainTraitElementImagePath("gain", option)}>
+						</div>
+						<h5>{mainTraitName("gain", option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.WEAPON}
+			<div class="choice-box" transition:slide>
+				{#each weapons as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)}>
+								<img class="trait-image" src={genImagePath("weapon", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.ASPECT}
+			<div class="choice-box" transition:slide>
+				{#each aspects as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option}>
+								<img class="trait-image" src={genImagePath(weapon, option)}>
+							</button>
+						</div>
+						<h5>{"Aspect of " + option}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
 		{#if currentMenu == menus.KEEPSAKE}
-			<div class="keepsake-box" transition:slide>
+			<div class="choice-box" transition:slide>
 				{#each keepsakes as option}
 					<div class="slot">
 						<div class="trait-container">
@@ -501,15 +505,43 @@
 				{/each}
 			</div>
 		{/if}
+		{#if currentMenu == menus.FAMILIAR}
+			<div class="choice-box" transition:slide>
+				{#each familiars as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option}>
+								<img class="trait-image" src={genImagePath("familiar", option)}>
+							</button>
+						</div>
+						<h5>{option}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.HEX}
+			<div class="choice-box" transition:slide>
+				{#each hexes as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option}>
+								<img class="trait-image" src={genImagePath("hex", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
 
 		<div class="trait-box">
 			{#each chosenTraits as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" on:click={() => removeTrait(trait)}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} on:click={() => removeTrait(trait)}>
 							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
 						</button>
-						<img class="element" src="/element/Air.webp">
+						<img class="element" src={otherTraitElementImagePath(trait)}>
 					</div>
 					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
 				</div>
@@ -526,10 +558,10 @@
 			{#each otherTraits[tab] as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" on:click={() => addTrait(trait)}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} on:click={() => addTrait(trait)} >
 							<img class="trait-image" src={genImagePath(tab, trait)}>
 						</button>
-						<img class="element" src="/element/Air.webp">
+						<img class="element" src={otherTraitElementImagePath(trait)}>
 					</div>
 					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
 				</div>
@@ -573,6 +605,18 @@
 	.trait-image{
 		height: 75px;
 		width: 75px;
+		border: 3px solid white;
+		border-radius: 25px;
+		box-sizing: border-box;
+	}
+	.legendary .trait-image{
+		border-color: #ffd573;
+	}
+	.duo .trait-image{
+		border-color: #52ffc2;
+	}
+	.infusion .trait-image{
+		border-color: #ff0bbd;
 	}
 	.trait-button{
 		position: absolute;
@@ -587,28 +631,6 @@
 		top: -10px;
 		z-index: 1;
 	}
-	li {
-		height: 90px;
-		width: 125px;	
-		padding-top: 5px;
-		padding-bottom: 5px;
-		align-self: center;
-		text-align: center;
-	}
-	ul{
-		padding: 0;
-		padding-bottom: 25px;
-		border: 2px;
-		border-style: solid;
-		border-radius: 10px;
-		border-color: rgb(120, 120, 197);
-		list-style-type: none;
-		background: rgb(56, 56, 93);
-		width: 125px;
-		align-items: center;
-		margin: 0;
-		margin-top: 17px;
-	}
 	.slot {
 		display: flex;
 		flex-direction: column;
@@ -622,9 +644,10 @@
 		flex-wrap: wrap;
 
 		margin-top: 10px;
-		height: 100px;
+		height: auto;
 		width: 750px;
 		padding: 5px;
+		padding-bottom: 10px;
 		border: 2px;
 		border-style: solid;
 		border-radius: 10px;
@@ -638,14 +661,14 @@
 	#second-traits {
 		z-index: 2;
 	}
-	.keepsake-box {
+	.choice-box {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 		flex-wrap: wrap;
 
 		margin-top: 10px;
-		height: 610px;
+		height: auto;
 		
 		width: 750px;
 		padding: 5px;
@@ -653,7 +676,7 @@
 		border: 2px;
 		border-style: solid;
 		border-radius: 10px;
-		border-color: rgb(120, 120, 197);
+		border-color: rgb(189, 189, 255);
 		list-style-type: none;
 		background: rgb(56, 56, 93);	
 		z-index: 1;
@@ -701,7 +724,7 @@
 		border-style: solid;
 		border-radius: 10px;
 		border-top-left-radius: 0;
-		border-color: rgb(120, 120, 197);
+		border-color: rgb(189, 189, 255);
 		list-style-type: none;
 		background: rgb(56, 56, 93);	
 	}
