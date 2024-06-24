@@ -352,7 +352,8 @@
 	<div class="container">
 
 		<h1>Hades 2 Build Creator</h1>
-
+		<h5>Created by derpity</h5>
+		<h5>Please contact me on discord if you have ideas for additions or high resolution image files!</h5>
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
@@ -626,20 +627,23 @@
 
 <style>
 	body{
-		width: 100%;
-		height: 100vh;
+		width: auto;
+		height: auto;
 		margin: 0;
 		padding: 0;
+		background: rgb(31, 31, 45);
 	}
 	h1{
 		font-family: "Helvetica";
 		font-weight: 750;
 		color: rgb(223, 239, 255);
+		text-align: center;
 	}
 	h5{
 		font-family: Helvetica;
 		color: rgb(223, 239, 255);
 		margin: 0;
+		text-align: center;
 	}
 	button{
 		font-family: "Helvetica";
@@ -689,7 +693,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 20%;
+		width: max(20%, 100px);
 	}
 	.trait-box {
 		display: flex;
@@ -699,7 +703,7 @@
 
 		margin-top: 10px;
 		height: auto;
-		width: 750px;
+		width: min(750px, 100vw);
 		padding: 5px;
 		padding-bottom: 10px;
 		border: 2px;
@@ -718,7 +722,7 @@
 		margin-top: 10px;
 		height: auto;
 		
-		width: 750px;
+		width: min(750px, 100vw);
 		padding: 5px;
 		padding-bottom: 10px;
 		border: 2px;
@@ -734,9 +738,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
-		height: 2000px;
-		width: 100%;
-		background: rgb(31, 31, 45);
+		height: auto;
+		width: 105%;
+		
 	}
 	.tab {
 		background: rgb(56, 56, 93);
@@ -754,7 +758,7 @@
 		border-width: 2px;
 	}
 	.tab-menu {
-		width: 764px;
+		width: min(764px, 100vw);
 		margin-top: 10px;
 	}
 	.trait-menu {
@@ -765,7 +769,7 @@
 
 		margin-top: -1px;
 		height: auto;
-		width: 750px;
+		width: min(750px, 100vw);
 		padding: 5px;
 		padding-bottom: 10px;
 		border: 2px;
