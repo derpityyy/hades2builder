@@ -229,7 +229,7 @@
 	let chosenTraits = []
 
 	let otherTraits = {
-		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
+		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
 		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
@@ -403,7 +403,28 @@
 					'▸ Minimum Damage per Hit: <b>30</b>',
 					Divine_Vengeance: 'After you take damage, your foe is struck by lightning, and again <b>50%</b> of the time.<br>' +
 					'▸ Bolt Damage:<br>' + 
-					'<b>100</b> (up to: <b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b> times)'
+					'<b>100</b> (up to: <b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b> times)',
+					Lightning_Lance: 'Hold <b>Cast</b> to aim where the binding circle appears. Foes within are struck by lightning. <br>' +
+					'▸ Lightning Damage:<br>' +
+					'<b>50/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">110</span></b>',
+					Static_Shock: 'After you enter a <b>Location</b>, <b>Prime <span style="color: #26e6ff">50</span></b> <img class="icon" src="/Icons/Magick.webp"> to make your strikes emit chain-lightning.<br>' +
+					'▸ Lightning Damage:<br>' +
+					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
+					Spirit_Surge: 'While you have no more than <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp">, <b>all</b> foes are occasionally struck by lightning.<br>' +
+					'▸ Bolt Damage <i>(every 5 seconds)</i>:<br>' +
+					'<b>60/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">105</span></b>',
+					Second_Strike: 'Your lightning bolt effects may strike <b>1</b> more time.<br>' +
+					'▸ Bonus Strike Chance:<br>' +
+					'<b>+5%/<span style="color: #4d82ff">+10%</span>/<span style="color: #8b4dff">+15%</span>/<span style="color: #ff4d4d">+20%</span></b>',
+					Toasting_Fork: 'Your <b>Blitz</b> effects deal damage even if they expire without being activated.<br>' +
+					'▸ Blitz Expiration Damage:<br>' +
+					'<b>75%/<span style="color: #4d82ff">100%</span>/<span style="color: #8b4dff">125%</span>/<span style="color: #ff4d4d">150%</span></b>',
+					Electric_Overload: 'Whenever your <b>Blitz</b> effects activate, a bolt of chain-lightning fires from the foe.<br>' +
+					'▸ Lightning Damage:<br>' +
+					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
+					Shocking_Loss: 'Most foes may be instantly destroyed as soon as they enter the <b>Encounter</b>.<br>' +
+					'▸ Instant Destruction Chance:<br>' +
+					'<b>7%</b>'
 				}[trait]
 				break
 			default:
