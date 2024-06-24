@@ -13,6 +13,12 @@
 		WEAPON: 8,
 		ASPECT: 9,
 		FAMILIAR: 10,
+		ARTEMIS: 11,
+		ARACHNE: 12,
+		HADES: 13,
+		MEDEA: 14,
+		CIRCE: 15,
+		ICARUS: 16,
 	})
 	
 	let currentMenu = menus.NONE
@@ -216,7 +222,7 @@
 	const familiars = ["None", "Frinos", "Toula"]
 
 	function replaceUnderscore(str){
-		return str.replace("_", " ")
+		return str.replace(/_/g, " ")
 	}
 
 	let chosenTraits = []
@@ -243,12 +249,22 @@
 	}
 
 
-	let ArtemisTraits = []
-	let HadesTraits = []
-	let IcarusTraits = []
-	let MedeaTraits = []
-	let CirceTraits = []
-	let ArachneTraits = []
+	let Artemis = ["Artemis-None", "Artemis-Pressure_Points", "Artemis-Silver_Streak", "Artemis-First_Blood", "Artemis-Lethal_Snare", "Artemis-Easy_Shot", "Artemis-Support_Fire", "Artemis-Death_Warrant"]
+	let Arachne = ["None", "Scarlet_Dress", "Onyx_Dress", "Moonlight_Dress", "Azure_Dress", "Emerald_Dress"]
+	let Hades = ["None", "Howling_Soul", "Deep_Dissent", "Last_Grasp", "Unseen_Ire", "Life_Tax", "Old_Grudge"]
+
+	let ArtemisTrait = "Artemis-None"
+	let ArachneTrait = "None"
+	let HadesTrait = "None"
+
+	
+	let Medea = ["None", "Life_From_The_Dead", "Malice_In_Kind", "Wealth_From_The_Dead", "Suffering_on_Sight", "Corrosion_on_Sight", "Enfeeblement_of_Cowards", "Traces_of_Spirit"]
+	let Circe = ["None", "Lapis_Lazuli_Insight", "Word_of_Greater_Girth", "Word_of_Smaller_Stature", "Chants_to_the_Bewitched", "Old_Herbal_Remedy", "Red_Citrine_Divination", "Black_Night_Banishment"]
+	let Icarus = ["None", "Destructive_Coating", "Protective_Coating", "Hazard_Boom", "Ingenious_Strike", "Ingenious_Flourish", "Explosive_Intent", "Supply_Chain"]
+
+	let MedeaTrait = "None"
+	let CirceTrait = "None"
+	let IcarusTrait = "None"
 	
 	function addTrait(trait){
 		const source = trait.split("-")[0]
@@ -335,6 +351,14 @@
 					return "Earth"
 				}
 				return "Air"
+			case "Artemis":
+				if(trait == "Artemis-None"){
+					return "None"
+				}
+				if(["Artemis-Silver_Streak", "Artemis-Easy_Shot", "Artemis-Support_Fire"].includes(trait)){
+					return "Air"
+				}
+				return "Earth"
 			default:
 				return "None"
 		}
@@ -354,6 +378,8 @@
 		<h1>Hades 2 Build Creator</h1>
 		<h5>Created by derpity</h5>
 		<h5>Please contact me on discord if you have ideas for additions or high resolution image files!</h5>
+
+		//main traits, weapon, aspect, keepsake, familiar, hex
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
@@ -440,6 +466,59 @@
 					</button>
 				</div>
 				<h5>{replaceUnderscore(hex)}</h5>
+			</div>
+		</div>
+
+		//unique encounter traits
+		<div class="trait-box">
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)}>
+						<img class="trait-image" src={genImagePath("Artemis", ArtemisTrait)}>
+					</button>
+					<img class="element" src={otherTraitElementImagePath(ArtemisTrait)}>
+				</div>
+				<h5>{replaceUnderscore(ArtemisTrait.split("-")[1])}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.ARACHNE)}>
+						<img class="trait-image" src={genImagePath("Arachne", ArachneTrait)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(ArachneTrait)}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.HADES)}>
+						<img class="trait-image" src={genImagePath("Hades", HadesTrait)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(HadesTrait)}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.MEDEA)}>
+						<img class="trait-image" src={genImagePath("Medea", MedeaTrait)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(MedeaTrait)}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.CIRCE)}>
+						<img class="trait-image" src={genImagePath("Circe", CirceTrait)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(CirceTrait)}</h5>
+			</div>
+			<div class="slot">
+				<div class="trait-container">
+					<button class="trait-button" on:click={() => openMenu(menus.ICARUS)}>
+						<img class="trait-image" src={genImagePath("Icarus", IcarusTrait)}>
+					</button>
+				</div>
+				<h5>{replaceUnderscore(IcarusTrait)}</h5>
 			</div>
 		</div>
 		{#if currentMenu == menus.ATTACK}
@@ -588,7 +667,91 @@
 				{/each}
 			</div>
 		{/if}
-
+		{#if currentMenu == menus.ARTEMIS}
+			<div class="choice-box" transition:slide>
+				{#each Artemis as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArtemisTrait = option}>
+								<img class="trait-image" src={genImagePath("Artemis", option)}>
+							</button>
+							<img class="element" src={otherTraitElementImagePath(option)}>
+						</div>
+						<h5>{replaceUnderscore(option.split("-")[1])}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.ARACHNE}
+			<div class="choice-box" transition:slide>
+				{#each Arachne as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArachneTrait = option}>
+								<img class="trait-image" src={genImagePath("Arachne", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.HADES}
+			<div class="choice-box" transition:slide>
+				{#each Hades as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => HadesTrait = option}>
+								<img class="trait-image" src={genImagePath("Hades", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.MEDEA}
+			<div class="choice-box" transition:slide>
+				{#each Medea as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => MedeaTrait = option}>
+								<img class="trait-image" src={genImagePath("Medea", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.CIRCE}
+			<div class="choice-box" transition:slide>
+				{#each Circe as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => CirceTrait = option}>
+								<img class="trait-image" src={genImagePath("Circe", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
+		{#if currentMenu == menus.ICARUS}
+			<div class="choice-box" transition:slide>
+				{#each Icarus as option}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => IcarusTrait = option}>
+								<img class="trait-image" src={genImagePath("Icarus", option)}>
+							</button>
+						</div>
+						<h5>{replaceUnderscore(option)}</h5>
+					</div>
+				{/each}
+			</div>
+		{/if}
 		<div class="trait-box">
 			{#each chosenTraits as trait}
 				<div class="slot">
