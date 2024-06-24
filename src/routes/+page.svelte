@@ -184,22 +184,28 @@
 
 	function resetAspects(weapon){
 		aspect = "Melinoë"
-		
+		chosenTraits = chosenTraits.filter(function(a) { return a.split("-")[0] != "Hammer" })
+
 		switch(weapon){
 			case "Witch's_Staff":
 				aspects = ["Melinoë", "Circe", "Momus"]
+				otherTraits["Hammer"] = ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"]
 				break
 			case "Sister_Blades":
 				aspects = ["Melinoë", "Artemis", "Pan"]
+				otherTraits["Hammer"] = ["Hammer-Final_Slice", "Hammer-Skulking_Slice", "Hammer-Explosive_Ambush", "Hammer-Sudden_Flurry", "Hammer-Flick_Knives", "Hammer-Escalating_Ambush", "Hammer-Rapid_Onslaught", "Hammer-Melting_Dart", "Hammer-Spiral_Knives", "Hammer-Dancing_Knives", "Hammer-Sureshot_Flurry", "Hammer-Hook_Knives"]
 				break
 			case "Umbral_Flames":
 				aspects = ["Melinoë", "Moros", "Eos"]
+				otherTraits["Hammer"] = ["Hammer-Sustained_Spark", "Hammer-Clean_Candle", "Hammer-Inverted_Spark", "Hammer-Triple_Helix", "Hammer-Rising_Coil", "Hammer-Mega_Spark", "Hammer-Origin_Coil", "Hammer-Crushing_Comet", "Hammer-Melting_Coil", "Hammer-Clean_Helix", "Hammer-Leaden_Spark", "Hammer-Split_Spark"]
 				break
 			case "Moonstone_Axe":
 				aspects = ["Melinoë", "Charon", "Thanatos"]
+				otherTraits["Hammer"] = ["Hammer-Melting_Shredder", "Hammer-Rapid_Slash", "Hammer-Empowering_Guard", "Hammer-Sudden_Cleaver", "Hammer-Dashing_Heave", "Hammer-Psychic_Whirlwind", "Hammer-Executioner's_Chop", "Hammer-Advancing_Whirlwind", "Hammer-Giga_Cleaver", "Hammer-Furious_Whirlwind", "Hammer-Unyielding_Slash", "Hammer-Hell_Splitter"]
 				break
 			case "Argent_Skull":
 				aspects = ["Melinoë", "Medea", "Persephone"]
+				otherTraits["Hammer"] = ["Hammer-Fetching_Array", "Hammer-Bolstered_Array", "Hammer-Looming_Ignition", "Hammer-Twisting_Crash", "Hammer-Mega_Driver", "Hammer-Possessed_Array", "Hammer-Destructive_Array", "Hammer-Melting_Tackle", "Hammer-Sudden_Driver", "Hammer-Full_Salvo", "Hammer-Rocket_Bombard", "Hammer-Colossus_Driver"]
 				break
 			default:
 				aspects = ["Melinoë", "Circe", "Momus"]
@@ -217,17 +223,23 @@
 
 	let otherTraits = {
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
-		Hera: [],
-		Poseidon: [],
-		Hestia: [],
-		Hephaestus: [],
-		Apollo: [],
-		Aphrodite: [],
-		Demeter: [],
-		Hermes: [],
-		Hammer: [],
-		Chaos: [],
-		Duo: []
+		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
+		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
+		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
+		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
+		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Critical_Miss", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
+		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Ecstatic_Obsession"],
+		Demeter: ["Demeter-Coarse_Grit", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
+		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
+		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
+		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
+		Duo: ["Duo-Glorious_Disaster", "Duo-Apocalyptic_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
+		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
+		"Duo-Soft_Caress", "Duo-Burning_Desire",
+		"Duo-Chain_Reaction"]
 	}
 
 
@@ -236,32 +248,40 @@
 	let IcarusTraits = []
 	let MedeaTraits = []
 	let CirceTraits = []
+	let ArachneTraits = []
 	
 	function addTrait(trait){
 		const source = trait.split("-")[0]
 		chosenTraits.push(trait)
 		chosenTraits = chosenTraits
-		otherTraits[source] = otherTraits[source].filter(function(e) { return e !== trait })
+		otherTraits[source] = otherTraits[source].filter(function(a) { return a != trait })
 	}
 
 	function removeTrait(trait){
 		const source = trait.split("-")[0]
-		chosenTraits = chosenTraits.filter(function(e) { return e !== trait })
+		chosenTraits = chosenTraits.filter(function(a) { return a != trait })
 		otherTraits[source].push(trait)
 		otherTraits = otherTraits
 	}
 
+	function isInfusion(trait){
+		return ["Zeus-Air_Quality", "Hera-Proper_Upbringing", "Poseidon-Water_Fitness", "Demeter-Coarse_Grit", "Apollo-Self_Healing", "Aphrodite-Wispy_Wiles", "Hephaestus-Martial_Art", "Hestia-Slow_Cooker", "Hermes-Tall_Order"].includes(trait)
+	}
+
 	function isLegendary(trait){
-		return ["Zeus-Shocking_Loss"].includes(trait)
+		return ["Zeus-Shocking_Loss", "Hera-Brave_Face", "Poseidon-King_Tide", "Demeter-Winter_Harvest", "Apollo-Exceptional_Talent", "Aphrodite-Ecstatic_Obsession", "Hephaestus-Fine_Tuning", "Hestia-Pyro_Technique", "Hermes-Close_Call", "Chaos-Defiance"].includes(trait)
 	}
 
 	function isDuo(trait){
-		return [].includes(trait)
+		return ["Duo-Glorious_Disaster", "Duo-Apocalyptic_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
+		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
+		"Duo-Soft_Caress", "Duo-Burning_Desire",
+		"Duo-Chain_Reaction"].includes(trait)
 	}
 
-	function isInfusion(trait){
-		return ["Zeus-Air_Quality"].includes(trait)
-	}
 	let tabs = ["Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia", "Hermes", "Chaos", "Hammer", "Duo"]
 	let tab = "Zeus"
 
@@ -269,18 +289,52 @@
 		return "/element/" + otherTraitToElement(trait) + ".webp"
 	}
 	function otherTraitToElement(trait){
-		if (isInfusion(trait)){
+		const source = trait.split("-")[0]
+
+		if (isInfusion(trait) || source == "Chaos" || source == "Hammer"){
 			return "None"
 		}
 		if (isDuo(trait)){
 			return "Aether"
 		}
-		const source = trait.split("-")[0]
+
 		switch (source){
 			case "Zeus":
 				return "Air"
 			case "Hera":
 				return "Earth"
+			case "Poseidon":
+				return "Water"
+			case "Demeter":
+				if (["Demeter-Gale_Force", "Demeter-Cold_Storage"].includes(trait)){
+					return "Water"
+				}
+				return "Earth"
+			case "Apollo":
+				if(["Apollo-Super_Nova", "Apollo-Perfect_Image", "Apollo-Critical_Miss", "Apollo-Exceptional_Talent"]){
+					return "Air"
+				}
+				return "Fire"
+			case "Aphrodite":
+				if(["Aphrodite-Healthy_Rebound", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Ecstatic_Obsession"].includes(trait)){
+					return "Air"
+				}
+				return "Water"
+			case "Hephaestus":
+				if(["Hephaestus-Molten_Touch", "Hephaestus-Tough_Trade", "Hephaestus-Furnace_Blast"].includes(trait)){
+					return "Fire"
+				}
+				return "Earth"
+			case "Hestia":
+				return "Fire"
+			case "Hermes":
+				if(trait == "Hermes-Nitro_Boost"){
+					return "Fire"
+				}
+				if(["Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Witty_Retort"].includes(trait)){
+					return "Earth"
+				}
+				return "Air"
 			default:
 				return "None"
 		}
@@ -538,7 +592,7 @@
 			{#each chosenTraits as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} on:click={() => removeTrait(trait)}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeTrait(trait)}>
 							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -558,7 +612,7 @@
 			{#each otherTraits[tab] as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} on:click={() => addTrait(trait)} >
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addTrait(trait)} >
 							<img class="trait-image" src={genImagePath(tab, trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -654,12 +708,6 @@
 		border-color: rgb(120, 120, 197);
 		list-style-type: none;
 		background: rgb(56, 56, 93);
-	}
-	#top-traits {
-		z-index: 3;
-	}
-	#second-traits {
-		z-index: 2;
 	}
 	.choice-box {
 		display: flex;
