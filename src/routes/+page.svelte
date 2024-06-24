@@ -739,7 +739,8 @@
 		align-items: center;
 		justify-content: flex-start;
 		height: auto;
-		width: 105%;
+		width: 100%;
+		padding: 7px;
 		
 	}
 	.tab {
@@ -758,8 +759,9 @@
 		border-width: 2px;
 	}
 	.tab-menu {
-		width: min(764px, 100vw);
+		width: min(750px, 100vw);
 		margin-top: 10px;
+		margin-left: -14px;
 	}
 	.trait-menu {
 		display: flex;
