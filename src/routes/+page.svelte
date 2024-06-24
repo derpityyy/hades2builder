@@ -441,7 +441,7 @@
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)} on:mouseover={() => showDescription(attackTrait + "-Attack")} on:mouseout={hideDescription} on:mousedown={() => showDescription(attackTrait + "-Attack")} on:mouseup={hideDescription}>
+					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)} on:mouseover={() => showDescription(attackTrait + "-Attack")}>
 						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
 					</button>
 					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
