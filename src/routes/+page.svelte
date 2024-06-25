@@ -230,7 +230,7 @@
 
 	let otherTraits = {
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
-		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
+		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
@@ -425,6 +425,52 @@
 					Shocking_Loss: 'Most foes may be instantly destroyed as soon as they enter the <b>Encounter</b>.<br>' +
 					'▸ Instant Destruction Chance:<br>' +
 					'<b>7%</b>'
+				}[trait]
+				break
+			case "Hera":
+				description = {
+					Attack: 'Your <b>Attacks</b> deal more damage and inflict <b>Hitch</b>.<br>' +
+					'▸ Attack Damage:<br>' + 
+					'<b>+50%/<span style="color: #4d82ff">+60%</span>/<span style="color: #8b4dff">+70%</span>/<span style="color: #ff4d4d">+80%</span></b>',
+					Special: 'Your <b>Specials</b> deal more damage and inflict <b>Hitch</b>.<br>' +
+					'▸ Special Damage:<br>' +
+					'<b>+50%/<span style="color: #4d82ff">+60%</span>/<span style="color: #8b4dff">+70%</span>/<span style="color: #ff4d4d">+80%</span></b>',
+					Cast: 'Your <b>Casts</b> last <b>200%</b> longer and deal damage to every foe that joins the <b>Encounter</b>.<br>' +
+					'▸ On-Spawn Damage:<br>' +
+					'<b>70/<span style="color: #4d82ff">100</span>/<span style="color: #8b4dff">130</span>/<span style="color: #ff4d4d">145</span></b>',
+					Sprint: 'Your <b>Sprint</b> inflicts <b>Hitch</b> on nearby foes, which spreads to other foes near them.<br>' +
+					'▸ Additional Foes Hitched:<br>' +
+					'<b>+1/<span style="color: #4d82ff">+2</span>/<span style="color: #8b4dff">+3</span>/<span style="color: #ff4d4d">+4</span></b>',
+					Gain: '<s>you win</s> Whenever you run out of <img class="icon" src="/Icons/Magick.webp">, <b>Prime</b> to restore all <img class="icon" src="/Icons/Magick.webp"> up to the reduced limit.<br>' +
+					'▸ Magick Primed:<br>' +
+					'<b>10/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">6</span>/<span style="color: #ff4d4d">4</span></b>',
+					Proper_Upbringing: 'While you have at least <b>3</b> <img class="icon" src="/Icons/Earth.webp">, all your <b>Common Boons</b> gain <b>Rarity</b>.<br>' +
+					'▸ Improved Rarity:<br>' +
+					'<span style="color: #4d82ff"><b>Rare</b></span>',
+					Bridal_Glow: 'Your <b>Boons</b> become <b>Heroic</b>, then lose <b>Rarity</b> every <b>5 Encounters</b>.<br>' +
+					'▸ Random Boons Affected:<br>' +
+					'<b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
+					Uncommon_Grace: 'While none of your other <b>Boons</b> are <b>Common</b>, deal more damage.<br>' +
+					'▸ Common-Less Bonus Damage:<br>' +
+					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					Nasty_Comeback: 'After you take damage, inflict your foe with <b>Hitch</b> and deal damage in greater measure.<br>' +
+					'▸ Damage Reflected:<br>' +
+					'<b>500%/<span style="color: #4d82ff">700%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
+					Keen_Intuition: 'Whenever you use <b>Ω Moves</b> while you have <span style="color: #26e6ff"><b>100%</b></span> <img class="icon" src="/Icons/Magick.webp">, they deal more damage.<br>' +
+					'▸ Omega Damage:<br>' +
+					'<b>+30%/<span style="color: #4d82ff">+45%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+75%</span></b>',
+					Family_Trade: 'Any <b>Sacrifice Boons</b> you choose are stronger. One will be offered as soon as possible.<br>' +
+					'▸ Bonus Levels: <br>' +
+					'<b>+2/<span style="color: #4d82ff">+3</span>/<span style="color: #8b4dff">+4</span>/<span style="color: #ff4d4d">+5</span></b>',
+					Hereditary_Bane: 'Your <b>Hitch</b> effects deal more damage and last <b>+5 seconds</b>.<br>' +
+					'▸ Hitch Damage:<br>' +
+					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					Dying_Wish: 'Whenever <b>Hitch</b>-afflicted foes are slain, damage all other <b>Hitch</b>-afflicted foes.<br>' +
+					'▸ Hitch Death Damage:<br>' +
+					'<b>40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span></b>',
+					Brave_Face: 'Automatically use <img class="icon" src="/Icons/Magick.webp"> to resist up to <b>50%</b>. of any damage.<br>' +
+					'▸ Magick Cost per Damage Point:<br>' +
+					'<span style="color: #26e6ff"><b>5</b></span> <img class="icon" src="/Icons/Magick.webp">'
 				}[trait]
 				break
 			default:
