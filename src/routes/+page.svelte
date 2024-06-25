@@ -454,7 +454,7 @@
 <!-- svelte-ignore a11y-missing-attribute -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <body>
-	<div class="container" on:mousemove={trackMousePosition}>
+	<div class="container" on:mousemove={trackMousePosition} on:mouseup={hideDescription}>
 
 		<h1>Hades 2 Build Creator</h1>
 		<h5>Created by derpity</h5>
