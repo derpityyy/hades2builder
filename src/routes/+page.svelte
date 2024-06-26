@@ -767,7 +767,12 @@
 		mouseX = event.clientX
 		mouseY = event.clientY
 	}
+	
+	let scrollX
+	let scrollY
 </script>
+
+<svelte:window bind:scrollX={scrollX} bind:scrollY={scrollY}/>
 
 <svelte:head>         
 	<title>Hades 2 Builder</title>
@@ -1189,11 +1194,11 @@
 		{#if descriptionActive}
 			{#if description != ""}
 				{#if mouseX <= 215}
-					<div class="description-box" style="left: calc({mouseX}px + 15px); top: {mouseY}px;">
+					<div class="description-box" style="left: calc({mouseX}px + 15px); top: calc({mouseY}px + {scrollY}px);">
 						<h5 class="description-text">{@html description}</h5>
 					</div>
 				{:else}
-					<div class="description-box" style="left: calc({mouseX}px - 210px); top: {mouseY}px;">
+					<div class="description-box" style="left: calc({mouseX}px - 210px); top: calc({mouseY}px + {scrollY}px);">
 						<h5 class="description-text">{@html description}</h5>
 					</div>
 				{/if}
@@ -1319,7 +1324,6 @@
 		justify-content: flex-start;
 		height: auto;
 		width: 100%;
-		padding: 7px;
 		
 	}
 	.tab {
