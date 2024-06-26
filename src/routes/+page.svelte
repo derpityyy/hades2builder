@@ -750,6 +750,63 @@
 					'<span style="color: #60fa57"><b>+100%</b></span>'
 				}[trait]
 				break
+			case "Hermes": 
+				description = {
+					Tall_Order: 'While you have at least <b>2</b> of each <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <b>Elements</b>, you deal more damage.<br>' +
+					'▸ Infused Damage:<br>' +
+					'<span style="color: #60fa57"><b>+20%</b></span>',
+					Greater_Evasion: 'Whenever you are struck, you may <b>Dodge</b> any damage.<br>' +
+					'▸ Dodge Chance:<br>' +
+					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					Saved_Breath: 'Your <b>Ω Cast</b> uses less <img class="icon" src="/Icons/Magick.webp">.<br>' +
+					'▸ Omega Cast Cost:<br>' +
+					'<b>-50%/<span style="color: #4d82ff">-60%</span>/<span style="color: #8b4dff">-70%</span>/<span style="color: #ff4d4d">-80%</span></b>',
+					Swift_Flourish: 'Your <b>Specials</b> are faster.<br>' +
+					'▸ Special Speed:<br>' +
+					'<b>+15%/<span style="color: #4d82ff">+20%</span>/<span style="color: #8b4dff">+24%</span>/<span style="color: #ff4d4d">+29%</span></b>',
+					Swift_Strike: 'Your <b>Attacks</b> are faster.<br>' +
+					'▸ Attack Speed:<br>' +
+					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					Midnight_Oil: 'While your <b>Hex</b> is ready, you move and strike faster.<br>' +
+					'▸ Bonus Move & Weapon Speed:<br>' +
+					'<b>+15%/<span style="color: #4d82ff">+20%</span>/<span style="color: #8b4dff">+25%</span>/<span style="color: #ff4d4d">+30%</span></b>',
+					Quick_Buck: 'You find <img class="icon" src="/Icons/Gold.webp"> in greater quantities. Receive <span style="color: #fff933"><b>100</b></span> <img class="icon" src="/Icons/Gold.webp"> now, plus the bonus!<br>' +
+					'▸ Bonus Gold:<br>' +
+					'<b>+20%/<span style="color: #4d82ff">+30%</span>/<span style="color: #8b4dff">+40%</span>/<span style="color: #ff4d4d">+50%</span></b>',
+					Hard_Target: "Most foes' ranged shots are slower.<br>" +
+					'▸ Foe Projectile Speed:<br>' +
+					'<b>-30%/<span style="color: #4d82ff">-40%</span>/<span style="color: #8b4dff">-50%</span>/<span style="color: #ff4d4d">-60%</span></b>',
+					Witty_Retort: 'Your <b>Hex</b> requires using less <img class="icon" src="/Icons/Magick.webp"> before it is ready.<br>' +
+					'▸ Reduced Magick Cost:<br>' +
+					'<b>-15%/<span style="color: #4d82ff">-20%</span>/<span style="color: #8b4dff">-25%</span>/<span style="color: #ff4d4d">-30%</span></b>',
+					Nitro_Boost: 'Your <b>Sprint</b> is <b>15%</b> faster and gives you a barrier that ignores instances of damage.<br>' +
+					'▸ Hits Blocked per Encounter:<br>' +
+					'<b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b>',
+					Mean_Streak: 'Each time you slay a foe, deal more damage for the next <b>30 Sec.</b><br>' +
+					'▸ Bonus Damage per Slain Foe:<br>' +
+					'<b>+1%/<span style="color: #4d82ff">+1.5%</span>/<span style="color: #8b4dff">+2%</span>/<span style="color: #ff4d4d">+2.5%</span></b>',
+					Close_Call: 'Gain <b>+1</b> use of <b>Death Defiance</b> that makes everything else move <b>90%</b> slower.<br>' +
+					'▸ Slow Duration:<br>' +
+					'<span style="color: #60fa57"><b>8 Sec.</b></span>'
+				}[trait]
+				break
+			case "Chaos":
+				description = {
+					Strike: 'Your <b>Attacks</b> deal <br><b>+20%–50%/<span style="color: #4d82ff">30%–75%</span>/<span style="color: #8b4dff">40%–100%</span>/<span style="color: #ff4d4d">50%–125%</span></b> damage.',
+					Flourish: 'Your <b>Specials</b> deal <br><b>+30%–60%/<span style="color: #4d82ff">45%–90%</span>/<span style="color: #8b4dff">60%–120%</span>/<span style="color: #ff4d4d">75%–150%</span></b> damage.',
+					Chasm: 'Your <b>Casts</b> deal <br><b>+20%–50%/<span style="color: #4d82ff">30%–75%</span>/<span style="color: #8b4dff">40%–100%</span>/<span style="color: #ff4d4d">50%–125%</span></b> damage.',
+					Soul: 'Gain <br><b>26–35/<span style="color: #4d82ff">52–70</span>/<span style="color: #8b4dff">78–105</span>/<span style="color: #ff4d4d">104–140</span></b> <img class="icon" src="/Icons/MaxHealth.webp">.',
+					Mind: 'Gain <br><b>30–40/<span style="color: #4d82ff">45–60</span>/<span style="color: #8b4dff">60–80</span>/<span style="color: #ff4d4d">75–100</span></b> <img class="icon" src="/Icons/Magick.webp">.',
+					Will: 'Restore <br><b>4–6/<span style="color: #4d82ff">8–12</span>/<span style="color: #8b4dff">12–18</span>/<span style="color: #ff4d4d">16–24</span></b> <img class="icon" src="/Icons/Magick.webp"> every 1 second.',
+					Prowess: 'Your <b>Attacks</b> deal <br><b>+10–14/<span style="color: #4d82ff">15–21</span>/<span style="color: #8b4dff">20–28</span>/<span style="color: #ff4d4d">25–35</span></b> damage.',
+					Finesse: 'Your <b>Specials</b> deal <br><b>+15–20/<span style="color: #4d82ff">22–30</span>/<span style="color: #8b4dff">30–40</span>/<span style="color: #ff4d4d">37–50</span></b> damage.',
+					Revelation: 'Channel your <b>Ω</b> moves <br><b>10%–15%/<span style="color: #4d82ff">15%–22%</span>/<span style="color: #8b4dff">20%–30%</span>/<span style="color: #ff4d4d">25%–37%</span></b> faster.',
+					Favor: 'Boons have a <br><b>+40%–50%/<span style="color: #4d82ff">54%–67%</span>/<span style="color: #8b4dff">67%–84%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to be <span style="color: #4d82ff"><b>Rare</b></span> or better.',
+					Affluence: 'Any <img class="icon" src="/Icons/Gold.webp"> you find is worth <b>+40%–60%/<span style="color: #4d82ff">80%–120%</span>/<span style="color: #8b4dff">120%–180%</span>/<span style="color: #ff4d4d">160%–240%</span></b> more.',
+					Creation: 'Gain <b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b> <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <img class="icon" src="/Icons/Aether.webp">',
+					Discovery: 'You have a <b>+56%–70%/<span style="color: #4d82ff">64%–80%</span>/<span style="color: #8b4dff">72%–90%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.'
+				}[trait]
+				break
 			default:
 				description = 'default'
 		}
@@ -1325,6 +1382,7 @@
 		height: auto;
 		width: 100%;
 		padding-left: 7px;
+		padding-bottom: 50px;;
 		
 	}
 	.tab {
