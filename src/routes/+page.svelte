@@ -1324,6 +1324,7 @@
 		justify-content: flex-start;
 		height: auto;
 		width: 100%;
+		padding-left: 7px;
 		
 	}
 	.tab {
