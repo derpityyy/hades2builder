@@ -805,12 +805,11 @@
 					Affluence: 'Any <img class="icon" src="/Icons/Gold.webp"> you find is worth <b>+40%–60%/<span style="color: #4d82ff">80%–120%</span>/<span style="color: #8b4dff">120%–180%</span>/<span style="color: #ff4d4d">160%–240%</span></b> more.',
 					Creation: 'Gain <b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b> <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <img class="icon" src="/Icons/Aether.webp">',
 					Talent: 'You use <b>20%–30%/<span style="color: #4d82ff">30%–45%</span>/<span style="color: #8b4dff">40%–60%</span>/<span style="color: #ff4d4d">50%–75%</span></b> less <img class="icon" src="/Icons/Magick.webp">.',
-					Celerity: '',
-
-
-
-
+					Celerity: 'You move and sprint <b>30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b> faster',
+					Blood: 'Whenever you exit a location, restore <b>3–4/<span style="color: #4d82ff">9–12</span>/<span style="color: #8b4dff">15–20</span>/<span style="color: #ff4d4d">21–28</span></b> <img class="icon" src="/Icons/Health.webp">.',
 					Discovery: 'You have a <b>+56%–70%/<span style="color: #4d82ff">64%–80%</span>/<span style="color: #8b4dff">72%–90%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.',
+					Chant: 'Your <b>Ω Moves</b> deal additional damage for each <img class="icon" src="/Icons/Aether.webp"> you have.',
+					Defiance: 'Gain <b>+1</b> use of <b>Death Defiance</b> this night.'
 
 				}[trait]
 				break
