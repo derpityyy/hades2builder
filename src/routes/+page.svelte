@@ -234,7 +234,7 @@
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
-		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Critical_Miss", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
+		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
 		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Ecstatic_Obsession"],
 		Demeter: ["Demeter-Coarse_Grit", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
 		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
@@ -243,8 +243,8 @@
 		Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
 		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
-		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
-		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
+		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
 		"Duo-Soft_Caress", "Duo-Burning_Desire",
 		"Duo-Chain_Reaction"]
 	}
@@ -293,8 +293,8 @@
 		return ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
 		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
-		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
-		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
+		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
 		"Duo-Soft_Caress", "Duo-Burning_Desire",
 		"Duo-Chain_Reaction"].includes(trait)
 	}
@@ -328,7 +328,7 @@
 				}
 				return "Earth"
 			case "Apollo":
-				if(["Apollo-Super_Nova", "Apollo-Perfect_Image", "Apollo-Critical_Miss", "Apollo-Exceptional_Talent"]){
+				if(["Apollo-Super_Nova", "Apollo-Perfect_Image", "Apollo-Exceptional_Talent"]){
 					return "Air"
 				}
 				return "Fire"
@@ -570,19 +570,19 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage in a larger area.<br>' +
 					'▸ Attack Damage:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">+50%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+70%</span></b>',
+					'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
 					Special: 'Your <b>Specials</b> deal more damage in a larger area.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+60%/<span style="color: #4d82ff">+80%</span>/<span style="color: #8b4dff">+100%</span>/<span style="color: #ff4d4d">+120%</span></b>',
-					Cast: 'After your <b>Ω Cast</b> expires, rapidly deal damage in the area for <b>2 Sec.</b><br>' +
-					'▸ Omega Cast Damage <i>(every 0.13 Sec.)</i>:<br>' +
-					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
+					'<b>+60%/<span style="color: #4d82ff">80%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">120%</span></b>',
+					Cast: 'Your <b>Casts</b> inflict <b>Daze</b>, and deal a burst of damage before they expire.<br>' +
+					'▸ Cast Damage:<br>' +
+					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
 					Sprint: 'Your <b>Sprint</b> is faster and inflicts <b>Daze</b> on nearby foes.<br>' +
 					'▸ Sprint Speed:<br>' +
-					'<b>+30%/<span style="color: #4d82ff">+40%</span>/<span style="color: #8b4dff">+50%</span>/<span style="color: #ff4d4d">+60%</span></b>',
-					Gain: 'While standing in your <b>Casts</b>, gradually restore <img class="icon" src="/Icons/Magick.webp">.<br>' +
-					'▸ Magick Restoration <i>(every 1 Sec.)</i>:<br>' +
-					'<b>+12/<span style="color: #4d82ff">+18</span>/<span style="color: #8b4dff">+24</span>/<span style="color: #ff4d4d">+30</span></b>',
+					'<b>+30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b>',
+					Gain: 'If you stand in your <b>Casts</b> when they expire, immediately restore <img class="icon" src="/Icons/Magick.webp">.<br>' +
+					'▸ Magick Restored:<br>' +
+					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Self_Healing: 'While you have at least <b>3</b> <img class="icon" src="/Icons/Fire.webp">, whenever you take damage, restore some <img class="icon" src="/Icons/Health.webp">.<br>' +
 					'▸ Damage Recovered <i>(over 5 Sec.)</i>:<br>' +
 					'<span style="color: #60fa57"><b>30%</b></span>',
@@ -594,19 +594,19 @@
 					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Extra_Dose: 'Your <b>Attack</b> has a chance to hit <b>2</b> times.<br>' +
 					'▸ Double Strike Chance:<br>' +
-					'<b>+5%/<span style="color: #4d82ff">+8%</span>/<span style="color: #8b4dff">+10%</span>/<span style="color: #ff4d4d">+13%</span></b>',
-					Perfect_Image: 'In each <b>Encounter</b>, you deal more damage until you take damage.<br>' +
+					'<b>+5%/<span style="color: #4d82ff">8%</span>/<span style="color: #8b4dff">10%</span>/<span style="color: #ff4d4d">13%</span></b>',
+					Perfect_Image: 'In each <b>Encounter</b>, you deal more damage until you take damage. If you take no more for <b>15 Sec.</b>, regain this.<br>' +
 					'▸ No-Hit Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Back_Burner: 'Foes with <b>Daze</b> take more damage if struck from behind.<br>' +
 					'▸ Backstab Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">+75%</span>/<span style="color: #8b4dff">+100%</span>/<span style="color: #ff4d4d">+125%</span></b>',
-					Critical_Miss: 'Foes take damage whenever <b>Daze</b> causes them to miss.<br>' +
-					'▸ Miss Damage:<br>' +
-					'<b>100/<span style="color: #4d82ff">150</span>/<span style="color: #8b4dff">200</span>/<span style="color: #ff4d4d">250</span></b>',
+					'<b>+50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>',
+					Prominence_Flare: 'After your <b>Ω Cast</b> expires, rapidly deal damage in the area for <b>2 Sec.</b><br>' +
+					'▸ Omega Cast Damage <i>(every .13 Sec.)</i>:<br>' +
+					'<b>10/<span style="color: #4d82ff">12</span>/<span style="color: #8b4dff">14</span>/<span style="color: #ff4d4d">16</span></b>',
 					Dazzling_Display: 'Your attacks may inflict <b>Daze</b>.<br>' +
 					'▸ Daze Chance:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Exceptional_Talent: 'Your <b>Ω Attack</b> and <b>Ω Special</b> fire <b>2</b> times, but use more <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Move Cost:<br>' +
 					'<span style="color: #ba0202"><b>+20</b></span> <img class="icon" src="/Icons/Magick.webp">'
