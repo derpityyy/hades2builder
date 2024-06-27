@@ -453,7 +453,7 @@
 					'<b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
 					Uncommon_Grace: 'While none of your other <b>Boons</b> are <b>Common</b>, deal more damage.<br>' +
 					'▸ Common-Less Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Nasty_Comeback: 'After you take damage, inflict your foe with <b>Hitch</b> and deal damage in greater measure.<br>' +
 					'▸ Damage Reflected:<br>' +
 					'<b>500%/<span style="color: #4d82ff">700%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
@@ -462,10 +462,10 @@
 					'<b>100/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">140</span>/<span style="color: #ff4d4d">160</span></b>',
 					Family_Trade: 'Any <b>Sacrifice Boons</b> you choose are stronger. One will be offered as soon as possible.<br>' +
 					'▸ Bonus Levels: <br>' +
-					'<b>+2/<span style="color: #4d82ff">+3</span>/<span style="color: #8b4dff">+4</span>/<span style="color: #ff4d4d">+5</span></b>',
+					'<b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
 					Hereditary_Bane: 'Your <b>Hitch</b> effects deal more damage and last <b>+5 Sec.</b><br>' +
 					'▸ Hitch Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Dying_Wish: 'Whenever <b>Hitch</b>-afflicted foes are slain, damage <b>all</b> other <b>Hitch</b>-afflicted foes.<br>' +
 					'▸ Hitch Death Damage:<br>' +
 					'<b>40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span></b>',
