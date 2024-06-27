@@ -229,7 +229,7 @@
 	let chosenTraits = []
 
 	let otherTraits = {
-		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Second_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
+		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
 		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
@@ -240,7 +240,7 @@
 		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
 		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
 		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
-		Duo: ["Duo-Glorious_Disaster", "Duo-Apocalyptic_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+		Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
 		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
@@ -290,7 +290,7 @@
 	}
 
 	function isDuo(trait){
-		return ["Duo-Glorious_Disaster", "Duo-Apocalyptic_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+		return ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
 		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
@@ -390,15 +390,15 @@
 					Special: 'Your <b>Specials</b> inflict <b>Blitz</b>.<br>' + 
 					'▸ Blitz Damage:<br>' +
 					'<b>100/<span style="color: #4d82ff">140</span>/<span style="color: #8b4dff">220</span>/<span style="color: #ff4d4d">200</span></b>',
-					Cast: 'Your <b>Ω Cast</b> also causes lightning bolts to repeatedly strike <b>1</b> foe at a time.<br>' + 
+					Cast: 'Your <b>Casts</b> also causes lightning bolts to repeatedly strike <b>1</b> foe at a time.<br>' + 
 					'▸ Blitz Damage <i>(every 0.25 Sec.)</i>:<br>' +
-					'<b>30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span></b>',
+					'<b>20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span></b>',
 					Sprint: 'Your <b>Sprint</b> causes nearby foes to be struck by lightning bolts, which use <span style="color: #26e6ff"><b>3</b> <img class="icon" src="/Icons/Magick.webp"></span> each.<br>' + 
 					'▸ Blitz Damage <i>(every 0.15 Sec.)</i>:<br>' +
 					'<b>20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span></b>',
-					Gain: 'Gradually restore <img class="icon" src="/Icons/Magick.webp"> but your total amount is reduced by <span style="color: #26e6ff"><b>70%</b></span>. <br>' +
-					'▸ Magick Restoration <i>(every 1 Sec.)</i>: <br>' +
-					'<b>4/<span style="color: #4d82ff">6</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">10</span></b>',
+					Gain: 'In each <b>Encounter</b>, an <b>Aether Font</b> appears in the area and restores all <img class="icon" src="/Icons/Magick.webp"> when used.<br>' +
+					'▸ Reappearance Time: <br>' +
+					'<b>10/<span style="color: #4d82ff">9</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">7</span> Sec.</b>',
 					Air_Quality: 'While you have at least <b>5</b> <img class="icon" src="/Icons/Air.webp">, you can never deal less damage than the limit. <br>' +
 					'▸ Minimum Damage per Hit:<br>'+
 					'<span style="color: #60fa57"><b>30</b></span>',
@@ -414,18 +414,18 @@
 					Spirit_Surge: 'While you have no more than <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp">, <b>all</b> foes are occasionally struck by lightning.<br>' +
 					'▸ Bolt Damage <i>(every 5 Sec.)</i>:<br>' +
 					'<b>60/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">105</span></b>',
-					Second_Strike: 'Your lightning bolt effects may strike <b>1</b> more time.<br>' +
+					Double_Strike: 'Your lightning bolt effects may strike <b>1</b> more time.<br>' +
 					'▸ Bonus Strike Chance:<br>' +
-					'<b>+5%/<span style="color: #4d82ff">+10%</span>/<span style="color: #8b4dff">+15%</span>/<span style="color: #ff4d4d">+20%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Toasting_Fork: 'Your <b>Blitz</b> effects deal damage even if they expire without being activated.<br>' +
 					'▸ Blitz Expiration Damage:<br>' +
 					'<b>75%/<span style="color: #4d82ff">100%</span>/<span style="color: #8b4dff">125%</span>/<span style="color: #ff4d4d">150%</span></b>',
 					Electric_Overload: 'Whenever your <b>Blitz</b> effects activate, a bolt of chain-lightning fires from the foe.<br>' +
 					'▸ Lightning Damage:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
-					Shocking_Loss: 'Most foes may be instantly destroyed as soon as they enter the <b>Encounter</b>.<br>' +
+					Shocking_Loss: 'Whenever you first deal damage to susceptible foes, you may destroy them outright.</b>.<br>' +
 					'▸ Instant Destruction Chance:<br>' +
-					'<span style="color: #60fa57"><b>7%</b></span>'
+					'<span style="color: #60fa57"><b>20%</b></span>'
 				}[trait]
 				break
 			case "Hera":
@@ -804,7 +804,14 @@
 					Favor: 'Boons have a <br><b>+40%–50%/<span style="color: #4d82ff">54%–67%</span>/<span style="color: #8b4dff">67%–84%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to be <span style="color: #4d82ff"><b>Rare</b></span> or better.',
 					Affluence: 'Any <img class="icon" src="/Icons/Gold.webp"> you find is worth <b>+40%–60%/<span style="color: #4d82ff">80%–120%</span>/<span style="color: #8b4dff">120%–180%</span>/<span style="color: #ff4d4d">160%–240%</span></b> more.',
 					Creation: 'Gain <b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b> <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <img class="icon" src="/Icons/Aether.webp">',
-					Discovery: 'You have a <b>+56%–70%/<span style="color: #4d82ff">64%–80%</span>/<span style="color: #8b4dff">72%–90%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.'
+					Talent: 'You use <b>20%–30%/<span style="color: #4d82ff">30%–45%</span>/<span style="color: #8b4dff">40%–60%</span>/<span style="color: #ff4d4d">50%–75%</span></b> less <img class="icon" src="/Icons/Magick.webp">.',
+					Celerity: '',
+
+
+
+
+					Discovery: 'You have a <b>+56%–70%/<span style="color: #4d82ff">64%–80%</span>/<span style="color: #8b4dff">72%–90%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.',
+
 				}[trait]
 				break
 			default:
