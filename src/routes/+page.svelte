@@ -237,7 +237,7 @@
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
 		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
 		Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
-		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
+		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Nimble_Mind", "Hermes-Nimble_Limbs", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
 		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
 		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
 		Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
@@ -348,7 +348,7 @@
 				if(trait == "Hermes-Nitro_Boost"){
 					return "Fire"
 				}
-				if(["Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Witty_Retort"].includes(trait)){
+				if(["Hermes-Saved_Breath", "Hermes-Nimble_Mind", "Hermes-Nimble_Limbs", "Hermes-Witty_Retort"].includes(trait)){
 					return "Earth"
 				}
 				return "Air"
@@ -757,34 +757,34 @@
 					'<span style="color: #60fa57"><b>+20%</b></span>',
 					Greater_Evasion: 'Whenever you are struck, you may <b>Dodge</b> any damage.<br>' +
 					'▸ Dodge Chance:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Saved_Breath: 'Your <b>Ω Cast</b> uses less <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Cast Cost:<br>' +
-					'<b>-50%/<span style="color: #4d82ff">-60%</span>/<span style="color: #8b4dff">-70%</span>/<span style="color: #ff4d4d">-80%</span></b>',
-					Swift_Flourish: 'Your <b>Specials</b> are faster.<br>' +
-					'▸ Special Speed:<br>' +
-					'<b>+15%/<span style="color: #4d82ff">+20%</span>/<span style="color: #8b4dff">+24%</span>/<span style="color: #ff4d4d">+29%</span></b>',
-					Swift_Strike: 'Your <b>Attacks</b> are faster.<br>' +
-					'▸ Attack Speed:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>-50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
+					Nimble_Mind: 'Your <b>Ω Moves</b> are faster.<br>' +
+					'▸ Omega Move Speed:<br>' +
+					'<b>+15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
+					Nimble_Limbs: 'Your <b>Attack</b>, <b>Special</b>, and <b>Cast</b> are faster.<br>' +
+					'▸ Strike Speed:<br>' +
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Midnight_Oil: 'While your <b>Hex</b> is ready, you move and strike faster.<br>' +
 					'▸ Bonus Move & Weapon Speed:<br>' +
-					'<b>+15%/<span style="color: #4d82ff">+20%</span>/<span style="color: #8b4dff">+25%</span>/<span style="color: #ff4d4d">+30%</span></b>',
+					'<b>+15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
 					Quick_Buck: 'You find <img class="icon" src="/Icons/Gold.webp"> in greater quantities. Receive <span style="color: #fff933"><b>100</b></span> <img class="icon" src="/Icons/Gold.webp"> now, plus the bonus!<br>' +
 					'▸ Bonus Gold:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">+30%</span>/<span style="color: #8b4dff">+40%</span>/<span style="color: #ff4d4d">+50%</span></b>',
+					'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span></b>',
 					Hard_Target: "Most foes' ranged shots are slower.<br>" +
 					'▸ Foe Projectile Speed:<br>' +
-					'<b>-30%/<span style="color: #4d82ff">-40%</span>/<span style="color: #8b4dff">-50%</span>/<span style="color: #ff4d4d">-60%</span></b>',
+					'<b>-30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b>',
 					Witty_Retort: 'Your <b>Hex</b> requires using less <img class="icon" src="/Icons/Magick.webp"> before it is ready.<br>' +
 					'▸ Reduced Magick Cost:<br>' +
-					'<b>-15%/<span style="color: #4d82ff">-20%</span>/<span style="color: #8b4dff">-25%</span>/<span style="color: #ff4d4d">-30%</span></b>',
+					'<b>-15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
 					Nitro_Boost: 'Your <b>Sprint</b> is <b>15%</b> faster and gives you a barrier that ignores instances of damage.<br>' +
 					'▸ Hits Blocked per Encounter:<br>' +
 					'<b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b>',
 					Mean_Streak: 'Each time you slay a foe, deal more damage for the next <b>30 Sec.</b><br>' +
 					'▸ Bonus Damage per Slain Foe:<br>' +
-					'<b>+1%/<span style="color: #4d82ff">+1.5%</span>/<span style="color: #8b4dff">+2%</span>/<span style="color: #ff4d4d">+2.5%</span></b>',
+					'<b>+1%/<span style="color: #4d82ff">1.5%</span>/<span style="color: #8b4dff">2%</span>/<span style="color: #ff4d4d">2.5%</span></b>',
 					Close_Call: 'Gain <b>+1</b> use of <b>Death Defiance</b> that makes everything else move <b>90%</b> slower.<br>' +
 					'▸ Slow Duration:<br>' +
 					'<span style="color: #60fa57"><b>8 Sec.</b></span>'
