@@ -232,7 +232,7 @@
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
 		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
-		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
+		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Crispy_Coating", "Hestia-Natural_Gas", "Hestia-Pyro_Technique", "Hestia-Highly_Flammable", "Hestia-Fire_Walk"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Grand_Caldera", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
 		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
@@ -286,7 +286,7 @@
 	}
 
 	function isLegendary(trait){
-		return ["Zeus-Shocking_Loss", "Hera-Brave_Face", "Poseidon-King_Tide", "Demeter-Winter_Harvest", "Apollo-Exceptional_Talent", "Aphrodite-Nervous_Wreck", "Hephaestus-Fine_Tuning", "Hestia-Pyro_Technique", "Hermes-Close_Call", "Chaos-Defiance"].includes(trait)
+		return ["Zeus-Shocking_Loss", "Hera-Brave_Face", "Poseidon-King_Tide", "Demeter-Winter_Harvest", "Apollo-Exceptional_Talent", "Aphrodite-Nervous_Wreck", "Hephaestus-Fine_Tuning", "Hestia-Fire_Walk", "Hermes-Close_Call", "Chaos-Defiance"].includes(trait)
 	}
 
 	function isDuo(trait){
@@ -708,46 +708,46 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> inflict <b>Scorch</b>.<br>' +
 					'▸ Scorch Damage:<br>' +
-					'<b>20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span></b>',
+					'<b>30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span></b>',
 					Special: 'Your <b>Specials</b> inflict <b>Scorch</b>.<br>' +
 					'▸ Scorch Damage:<br>' +
-					'<b>15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span></b>',
+					'<b>20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span></b>',
 					Cast: 'Your <b>Casts</b> repeatedly inflict <b>Scorch</b> on foes.<br>' +
 					'▸ Scorch Damage <i>(every 1 Sec.)</i>:<br>' +
-					'<b>30/<span style="color: #4d82ff">45</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">75</span></b>',
+					'<b>40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span></b>',
 					Sprint: 'Your <b>Sprint</b> destroys most ranged shots near you, and inflicts <b>Scorch</b> on foes that fired.<br>' +
 					'▸ Scorch Damage per Projectile:<br>' +
 					'<b>2/<span style="color: #4d82ff">4</span>/<span style="color: #8b4dff">6</span>/<span style="color: #ff4d4d">8</span></b>',
-					Gain: 'Rapidly restore <img class="icon" src="/Icons/Magick.webp">, but you have <span style="color: #ba0202"><b>-20%</b></span> <img class="icon" src="/Icons/MaxHealth.webp">.<br>' +
-					'▸ Magick Restoration <i>(every 1 Sec.)</i>:<br>' +
-					'<b>+7/<span style="color: #4d82ff">+10</span>/<span style="color: #8b4dff">+13</span>/<span style="color: #ff4d4d">+16</span></b>',
+					Gain: 'Whenever your <b>Attack</b> or <b>Special</b> deal damage, restore <img class="icon" src="/Icons/Magick.webp">.<br>' +
+					'▸ Magick Restoration per Strike:<br>' +
+					'<b>4/<span style="color: #4d82ff">6</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">10</span></b>',
 					Slow_Cooker: 'Your <b>Attacks</b> and <b>Specials</b> gain <b>Power</b> for each <img class="icon" src="/Icons/Fire.webp"> you have.<br>' +
 					'▸ Power per Fire Boon:<br>' +
 					'<span style="color: #60fa57"><b>+2</b></span>',
 					Glowing_Coal: 'Hold <b>Cast</b> to aim a fiery projectile that explodes on impact. The binding circle forms there.<br>' +
 					'▸ Blast Damage:<br>' +
-					'<b>50/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">110</span></b>',
+					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
 					Controlled_Burn: 'Your <b>Ω Special</b> also launches a fiery projectile, but uses <span style="color: #26e6ff"><b>+10</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Blast Damage:<br>' +
-					'<b>80/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">160</span>/<span style="color: #ff4d4d">200</span></b>',
+					'<b>100/<span style="color: #4d82ff">150</span>/<span style="color: #8b4dff">200</span>/<span style="color: #ff4d4d">250</span></b>',
 					Burnt_Offering: 'Gain <img class="icon" src="/Icons/MaxHealth.webp"> and <img class="icon" src="/Icons/Magick.webp">, but give up <b>1 Boon</b> selected by <b>Hestia</b>.<br>' +
 					'▸ Max Life & Magick:<br>' +
-					'<b>+50/<span style="color: #4d82ff">+60</span>/<span style="color: #8b4dff">+70</span>/<span style="color: #ff4d4d">+80</span></b>',
-					Flammable_Coating: 'Your <b>Scorch</b> effects deal bonus damage to <b>Armor</b>.<br>' +
+					'<b>+50/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">70</span>/<span style="color: #ff4d4d">80</span></b>',
+					Crispy_Coating: 'Your <b>Scorch</b> effects deal bonus damage to <b>Armor</b>.<br>' +
 					'▸ Scorch Damage vs. Armor:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">+150%</span>/<span style="color: #8b4dff">+200%</span>/<span style="color: #ff4d4d">+250%</span></b>',
-					Fire_Extinguisher: 'Foes with at least <b>300 Scorch</b> take a burst of damage that consumes the effect.<br>' +
-					'▸ Damage from Scorch:<br>' +
-					'<b>50%/<span style="color: #4d82ff">62%</span>/<span style="color: #8b4dff">75%</span>/<span style="color: #ff4d4d">87%</span></b>',
+					'<b>+100%/<span style="color: #4d82ff">150%</span>/<span style="color: #8b4dff">200%</span>/<span style="color: #ff4d4d">250%</span></b>',
+					Highly_Flammable: 'Whenever you inflict <b>Scorch</b> on a foe for the first time, inflict more.<br>' +
+					'▸ First-Time Scorch Damage:<br>' +
+					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Natural_Gas: 'Whenever <b>Scorch</b>-afflicted foes are slain, they damage nearby foes.<br>' +
 					'▸ Blast Damage:<br>' +
 					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
-					Spontaneous_Combustion: 'Your <b>Ω Special</b> inflicts bonus <b>Scorch</b> if foes are unafflicted.<br>' +
-					'▸ Scorch Damage:<br>' +
-					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
+					Fire_Walk: 'You take no more than <b>1</b> damage at a time from fire, and leave flames where you <b>Sprint</b>.<br>' +
+					'▸ Flame Trail Damage <i>(every 0.25 Sec.)</i>:<br>' +
+					'<span style="color: #60fa57"><b>20</b></span>',
 					Pyro_Technique: 'Your <b>Scorch</b> effects deal damage faster.<br>' +
 					'▸ Scorch Damage Rate:<br>' +
-					'<span style="color: #60fa57"><b>+100%</b></span>'
+					'<b>50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>'
 				}[trait]
 				break
 			case "Hermes": 
