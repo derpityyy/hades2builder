@@ -230,7 +230,7 @@
 
 	let otherTraits = {
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
-		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Keen_Intuition", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
+		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
@@ -241,7 +241,7 @@
 		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
 		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
 		Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
-		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
 		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
@@ -291,7 +291,7 @@
 
 	function isDuo(trait){
 		return ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
-		"Duo-Funeral_Pyre", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Soul_Mate", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Torrential_Downpour", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
 		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Stellar_Slam",
@@ -432,19 +432,19 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage and inflict <b>Hitch</b>.<br>' +
 					'▸ Attack Damage:<br>' + 
-					'<b>+50%/<span style="color: #4d82ff">+60%</span>/<span style="color: #8b4dff">+70%</span>/<span style="color: #ff4d4d">+80%</span></b>',
+					'<b>+50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
 					Special: 'Your <b>Specials</b> deal more damage and inflict <b>Hitch</b>.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">+60%</span>/<span style="color: #8b4dff">+70%</span>/<span style="color: #ff4d4d">+80%</span></b>',
-					Cast: 'Your <b>Casts</b> last <b>200%</b> longer and deal damage to every foe that joins the <b>Encounter</b>.<br>' +
+					'<b>+50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
+					Cast: 'Your <b>Casts</b> deal damage and inflict <b>Hitch</b> whenever foes join the <b>Encounter</b>, anywhere!<br>' +
 					'▸ On-Spawn Damage:<br>' +
-					'<b>70/<span style="color: #4d82ff">100</span>/<span style="color: #8b4dff">130</span>/<span style="color: #ff4d4d">145</span></b>',
-					Sprint: 'Your <b>Sprint</b> inflicts <b>Hitch</b> on nearby foes, which spreads to other foes near them.<br>' +
-					'▸ Additional Foes Hitched:<br>' +
-					'<b>+1/<span style="color: #4d82ff">+2</span>/<span style="color: #8b4dff">+3</span>/<span style="color: #ff4d4d">+4</span></b>',
+					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
+					Sprint: 'Your <b>Sprint</b> inflicts <b>Hitch</b> on contact with foes, and deals damage when it does.<br>' +
+					'▸ Damage with Hitch:<br>' +
+					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
 					Gain: '<s>you win</s> Whenever you run out of <img class="icon" src="/Icons/Magick.webp">, <b>Prime</b> to restore <b>all</b> <img class="icon" src="/Icons/Magick.webp"> up to the reduced limit.<br>' +
 					'▸ Magick Primed:<br>' +
-					'<b>10/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">6</span>/<span style="color: #ff4d4d">4</span></b>',
+					'<b>20/<span style="color: #4d82ff">18</span>/<span style="color: #8b4dff">16</span>/<span style="color: #ff4d4d">14</span></b>',
 					Proper_Upbringing: 'While you have at least <b>3</b> <img class="icon" src="/Icons/Earth.webp">, <b>all</b> your <b>Common Boons</b> gain <b>Rarity</b>.<br>' +
 					'▸ Improved Rarity:<br>' +
 					'<span style="color: #4d82ff"><b>Rare</b></span>',
@@ -457,9 +457,9 @@
 					Nasty_Comeback: 'After you take damage, inflict your foe with <b>Hitch</b> and deal damage in greater measure.<br>' +
 					'▸ Damage Reflected:<br>' +
 					'<b>500%/<span style="color: #4d82ff">700%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
-					Keen_Intuition: 'Whenever you use <b>Ω Moves</b> while you have <span style="color: #26e6ff"><b>100%</b></span> <img class="icon" src="/Icons/Magick.webp">, they deal more damage.<br>' +
-					'▸ Omega Damage:<br>' +
-					'<b>+30%/<span style="color: #4d82ff">+45%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+75%</span></b>',
+					Blood_Line: 'Your <b>Ω Moves</b> create a rift that strikes foes in front of and behind you, but use <span style="color: #26e6ff"><b>+15</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
+					'▸ Rift Damage:<br>' +
+					'<b>100/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">140</span>/<span style="color: #ff4d4d">160</span></b>',
 					Family_Trade: 'Any <b>Sacrifice Boons</b> you choose are stronger. One will be offered as soon as possible.<br>' +
 					'▸ Bonus Levels: <br>' +
 					'<b>+2/<span style="color: #4d82ff">+3</span>/<span style="color: #8b4dff">+4</span>/<span style="color: #ff4d4d">+5</span></b>',
