@@ -252,14 +252,14 @@
 
 	let Artemis = ["Artemis-None", "Artemis-Pressure_Points", "Artemis-Silver_Streak", "Artemis-First_Blood", "Artemis-Lethal_Snare", "Artemis-Easy_Shot", "Artemis-Support_Fire", "Artemis-Death_Warrant"]
 	let Arachne = ["None", "Scarlet_Dress", "Onyx_Dress", "Moonlight_Dress", "Azure_Dress", "Emerald_Dress"]
-	let Hades = ["None", "Howling_Soul", "Deep_Dissent", "Last_Grasp", "Unseen_Ire", "Life_Tax", "Old_Grudge"]
+	let Hades = ["None", "Howling_Soul", "Deep_Dissent", "Last_Gasp", "Unseen_Ire", "Life_Tax", "Old_Grudge"]
 
 	let ArtemisTrait = "Artemis-None"
 	let ArachneTrait = "None"
 	let HadesTrait = "None"
 
 	
-	let Medea = ["None", "Life_From_The_Dead", "Malice_In_Kind", "Wealth_From_The_Dead", "Suffering_on_Sight", "Corrosion_on_Sight", "Enfeeblement_of_Cowards", "Traces_of_Spirit"]
+	let Medea = ["None", "Life_from_the_Dead", "Malice_in_Kind", "Wealth_from_the_Dead", "Suffering_on_Sight", "Corrosion_on_Sight", "Enfeeblement_of_Cowards", "Traces_of_Spirit"]
 	let Circe = ["None", "Lapis_Lazuli_Insight", "Word_of_Greater_Girth", "Word_of_Smaller_Stature", "Chants_to_the_Bewitched", "Old_Herbal_Remedy", "Red_Citrine_Divination", "Black_Night_Banishment"]
 	let Icarus = ["None", "Destructive_Coating", "Protective_Coating", "Hazard_Boom", "Ingenious_Strike", "Ingenious_Flourish", "Explosive_Intent", "Supply_Chain"]
 
