@@ -236,7 +236,7 @@
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
 		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Ecstatic_Obsession"],
-		Demeter: ["Demeter-Coarse_Grit", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
+		Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
 		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
 		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
 		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
@@ -282,7 +282,7 @@
 	}
 
 	function isInfusion(trait){
-		return ["Zeus-Air_Quality", "Hera-Proper_Upbringing", "Poseidon-Water_Fitness", "Demeter-Coarse_Grit", "Apollo-Self_Healing", "Aphrodite-Wispy_Wiles", "Hephaestus-Martial_Art", "Hestia-Slow_Cooker", "Hermes-Tall_Order"].includes(trait)
+		return ["Zeus-Air_Quality", "Hera-Proper_Upbringing", "Poseidon-Water_Fitness", "Demeter-Frosty_Veneer", "Apollo-Self_Healing", "Aphrodite-Wispy_Wiles", "Hephaestus-Martial_Art", "Hestia-Slow_Cooker", "Hermes-Tall_Order"].includes(trait)
 	}
 
 	function isLegendary(trait){
@@ -524,10 +524,10 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage and inflict <b>Freeze</b>.<br>' +
 					'▸ Attack Damage:<br>' +
-					'<b>+30%/<span style="color: #4d82ff">+45%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+75%</span></b>',
+					'<b>+30%/<span style="color: #4d82ff">45%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">75%</span></b>',
 					Special: 'Your <b>Specials</b> now deal more damage and inflict <b>Freeze</b>.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">+60%</span>/<span style="color: #8b4dff">+80%</span>/<span style="color: #ff4d4d">+100%</span></b>',
+					'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
 					Cast: 'Your <b>Casts</b> repeatedly deal damage in the area and inflict <b>Freeze</b>.<br>' +
 					'▸ Special Damage <i>(every 0.5 Sec.)</i>:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
@@ -536,8 +536,8 @@
 					'<b>4/<span style="color: #4d82ff">6</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">10</span></b>',
 					Gain: 'After remaining inactive for <b>1 Sec.</b>, rapidly restore <img class="icon" src="/Icons/Magick.webp"> until you act.<br>' +
 					'▸ Magick Restoration <i>(every 1 Sec.)</i>:<br>' +
-					'<b>+25/<span style="color: #4d82ff">+35</span>/<span style="color: #8b4dff">+45</span>/<span style="color: #ff4d4d">+55</span></b>',
-					Coarse_Grit: 'While you have at least <b>6</b> <img class="icon" src="/Icons/Earth.webp">, you cannot take more damage per hit than the limit.<br>' +
+					'<b>40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
+					Frosty_Veneer: 'While you have at least <b>6</b> <img class="icon" src="/Icons/Water.webp">, you cannot take more damage per hit than the limit.<br>' +
 					'▸ Max Damage per Hit:<br>' +
 					'<span style="color: #60fa57"><b>15</b></span>',
 					Rare_Crop: 'Your <b>Boons</b> become <b>Common</b>, then gain <b>Rarity</b> every <b>3 Encounters</b>.<br>' +
@@ -545,22 +545,22 @@
 					'<b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b>',
 					Local_Climate: 'Your <b>Ω Cast</b> deals bonus damage and follows you, even as you start to <b>Channel</b> it.<br>' +
 					'▸ Cast Damage:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">+30%</span>/<span style="color: #8b4dff">+40%</span>/<span style="color: #ff4d4d">+50%</span></b>',
+					'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span></b>',
 					Gale_Force: 'Your <b>Casts</b> also create a <b>Cyclone</b> at the binding circle.<br>' +
 					'▸ Cyclone Damage <i>(every 0.25 Sec.)</i>:<br>' +
 					'<b>4/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">12</span>/<span style="color: #ff4d4d">16</span></b>',
 					Plentiful_Forage: 'Whenever you gather plants, seeds, or mushrooms, gain <img class="icon" src="/Icons/MaxHealth.webp">. Receive 1 <img class="icon" src="/Icons/MysterySeed.webp"> now.<br>' +
 					'▸ Max Life from Gathering:<br>' +
-					'<b>+5/<span style="color: #4d82ff">+8</span>/<span style="color: #8b4dff">+10</span>/<span style="color: #ff4d4d">+13</span></b>',
+					'<b>+5/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">13</span></b>',
 					Winter_Coat: 'After you enter a <b>Location</b>, <b>Prime</b> a barrier that absorbs <b>1</b> instance of damage.<br>' +
 					'▸ Magick Primed:<br>' +
 					'<b>20/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">5</span></b>',
 					Weed_Killer: 'Your <b>Ω Attack</b> deals more damage, but uses <span style="color: #26e6ff"><b>+10</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Attack Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">+75%</span>/<span style="color: #8b4dff">+100%</span>/<span style="color: #ff4d4d">+125%</span></b>',
+					'<b>+50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>',
 					Cold_Storage: 'Your <b>Freeze</b> effects last longer.<br>' +
-					'▸ Freeze Duration:' +
-					'<b>+2 Sec./<span style="color: #4d82ff">+3 Sec.</span>/<span style="color: #8b4dff">+4 Sec.</span>/<span style="color: #ff4d4d">+5 Sec.</span></b>',
+					'▸ Freeze Duration:<br>' +
+					'<b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span> Sec.</b>',
 					Winter_Harvest: '<b>Freeze</b>-afflicted foes shatter at <b>10%</b> <img class="icon" src="/Icons/Health.webp">, dealing damage in the area.<br>' +
 					'▸ Shatter Area Damage:<br>' +
 					'<span style="color: #60fa57"><b>100</b></span>'
