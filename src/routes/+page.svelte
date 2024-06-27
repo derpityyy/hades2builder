@@ -56,7 +56,7 @@
 		cast: {
 			Zeus: "Storm Ring",
 			Hera: "Engagement Ring",
-			Poseidon: "Geyser Ring",
+			Poseidon: "Tidal Ring",
 			Demeter: "Arctic Ring",
 			Apollo: "Solar Ring",
 			Aphrodite: "Rapture Ring",
@@ -231,7 +231,7 @@
 	let otherTraits = {
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
 		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
-		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Sunken_Treasure", "Poseidon-Ocean's_Bounty", "Poseidon-Slippery_Slope", "Poseidon-Crashing_Wave", "Poseidon-King_Tide"],
+		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Critical_Miss", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
@@ -482,42 +482,42 @@
 					Special: 'Your <b>Specials</b> hit foes with a splash that knocks other foes away.<br>' +
 					'▸ Splash Damage:<br>' +
 					'<b>20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span></b>',
-					Cast: 'Your <b>Ω Cast</b> immediately detonates, dealing damage and knocking foes away.<br>' +
-					'▸ Omega Cast Damage:<br>' +
-					'<b>100/<span style="color: #4d82ff">150</span>/<span style="color: #8b4dff">200</span>/<span style="color: #ff4d4d">250</span></b>',
+					Cast: 'Your <b>Casts</b> also immediately hit foes in front of you with a powerful splash.<br>' +
+					'▸ Splash Damage:<br>' +
+					'<b>90/<span style="color: #4d82ff">135</span>/<span style="color: #8b4dff">180</span>/<span style="color: #ff4d4d">225</span></b>',
 					Sprint: 'Your <b>Sprint</b> deals damage on impact and knocks foes away, but uses <span style="color: #26e6ff"><b>5</b></span> <img class="icon" src="/Icons/Magick.webp"> per hit.<br>' +
 					'▸ Impact Damage:<br>' +
 					'<b>80/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">160</span>/<span style="color: #ff4d4d">200</span></b>',
 					Gain: 'After you strike foes with your <b>Weapon</b>, a <b>Spirit Bubble</b> may appear.<br>' +
 					'▸ Spirit Bubble Chance:<br>' +
 					'<b>10%/<span style="color: #4d82ff">12%</span>/<span style="color: #8b4dff">14%</span>/<span style="color: #ff4d4d">16%</span></b>',
-					Water_Fitness: 'While you have at least <b>4</b> <img class="icon" src="/Icons/Water.webp">, gain <img class="icon" src="/Icons/MaxHealth.webp">.<br>' +
-					'▸ Max Life:<br>' +
-					'<span style="color: #60fa57"><b>+100</b></span>',
+					Water_Fitness: 'Gain <img class="icon" src="/Icons/MaxHealth.webp"> for each <img class="icon" src="/Icons/Water.webp"> you have.<br>' +
+					'▸ Max Life per Watyer Boon:<br>' +
+					'<span style="color: #60fa57"><b>+15</b></span>',
 					Double_Up: 'Whenever you claim rewards other than <b>Boons</b>, <img class="icon" src="/Icons/Hammer.webp">, or rare resources, a copy may appear.<br>' +
 					'▸ Double Reward Chance:<br>' +
 					'<b>20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">35%</span></b>',
 					Hydraulic_Might: 'At the start of each <b>Encounter</b>, your <b>Attacks</b> and <b>Specials</b> are stronger for <b>10 Sec.</b><br>' +
 					'▸ Initial Damage Bonus:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">+133%</span>/<span style="color: #8b4dff">+166%</span>/<span style="color: #ff4d4d">+200%</span></b>',
+					'<b>+100%/<span style="color: #4d82ff">133%</span>/<span style="color: #8b4dff">166%</span>/<span style="color: #ff4d4d">200%</span></b>',
 					Flood_Control: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp"> to reduce any damage you would take.<br>' +
 					'▸ Damage Reduction per Hit:<br>' +
-					'<b>-2/<span style="color: #4d82ff">-3</span>/<span style="color: #8b4dff">-4</span>/<span style="color: #ff4d4d">-5</span></b>',
-					Sunken_Treasure: 'Gain <img class="icon" src="/Icons/Gold.webp">, <img class="icon" src="/Icons/HealHealth.webp">, and sometimes <img class="icon" src="/Icons/Ashes.webp"> and <img class="icon" src="/Icons/Psyche.webp">.<br>' +
-					'▸ Gold Received:<br>' +
-					'<b>+90/<span style="color: #4d82ff">+117</span>/<span style="color: #8b4dff">+144</span>/<span style="color: #ff4d4d">+171</span></b>',
-					"Ocean's_Bounty": 'Any <b>Minor Finds</b> and <img class="icon" src="/Icons/Gold.webp"> are worth more.<br>' +
+					'<b>-2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
+					Splash_Fount: 'Whenever you use <b>Ω Moves</b>, create a watery blast near the first foe you damage.<br>' +
+					'▸ Delayed Blast Damage:<br>' +
+					'<b>50/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">110</span></b>',
+					"Ocean's_Bounty": 'Any <b>Minor Finds</b> and <img class="icon" src="/Icons/Gold.webp"> are worth more. Receive <img class="icon" src="/Icons/Gold.webp">, <img class="icon" src="/Icons/MaxHealth.webp">, and sometimes <img class="icon" src="/Icons/Ashes.webp"> and <img class="icon" src="/Icons/Psyche.webp">, now.<br>' +
 					'▸ Reward Value:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">+55%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+65%</span></b>',
+					'<b>+50%/<span style="color: #4d82ff">55%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">65%</span></b>',
+					Geyser_Spout: 'Your <b>Ω Cast</b> immediately detonates, dealing damage and knocking foes away.<br>' +
+					'▸ Omega Cast Damage:<br>' +
+					'<b>200/<span style="color: #4d82ff">240</span>/<span style="color: #8b4dff">280</span>/<span style="color: #ff4d4d">320</span></b>',
 					Slippery_Slope: 'Your splash effects from <b>Poseidon</b> also inflict <b>Slip</b> on foes.<br>' +
 					'▸ Slip Bonus Damage:<br>' +
-					'<b>+5%/<span style="color: #4d82ff">+10%</span>/<span style="color: #8b4dff">+15%</span>/<span style="color: #ff4d4d">+20%</span></b>',
-					Crashing_Wave: 'Whenever your knock-away effects slam foes into barrier, create a blast in the area.<br>' +
-					'▸ Blast Damage:<br>' +
-					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
+					'<b>+5%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">15%</span>/<span style="color: #ff4d4d">20%</span></b>',
 					King_Tide: 'Your splash effects from <b>Poseidon</b> are larger and deal bonus damage to <b>Guardians</b>.<br>' +
 					'▸ Splash Damage vs. Guardians:<br>' +
-					'<span style="color: #60fa57"><b>+150%</b></span>'
+					'<span style="color: #60fa57"><b>+200%</b></span>'
 				}[trait]
 				break
 			case "Demeter":
