@@ -233,7 +233,7 @@
 		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
-		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
+		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Grand_Caldera", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
 		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
 		Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
@@ -338,7 +338,7 @@
 				}
 				return "Water"
 			case "Hephaestus":
-				if(["Hephaestus-Molten_Touch", "Hephaestus-Tough_Trade", "Hephaestus-Furnace_Blast"].includes(trait)){
+				if(["Hephaestus-Molten_Touch", "Hephaestus-Grand_Caldera", "Hephaestus-Furnace_Blast"].includes(trait)){
 					return "Fire"
 				}
 				return "Earth"
@@ -662,11 +662,11 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> occasionally create a blast that deals <b>200</b> damage in the area.<br>' +
 					'▸ Blast Recharge Time:<br>' +
-					'<b>12 Sec./<span style="color: #4d82ff">10 Sec.</span>/<span style="color: #8b4dff">8 Sec.</span>/<span style="color: #ff4d4d">6 Sec.</span></b>',
+					'<b>12/<span style="color: #4d82ff">10</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">6</span> Sec.</b>',
 					Special: 'Your <b>Specials</b> occasionally create a blast that deals <b>400</b> damage in the area.<br>' +
 					'▸ Blast Recharge Time:<br>' +
-					'<b>20 Sec./<span style="color: #4d82ff">18 Sec.</span>/<span style="color: #8b4dff">16 Sec.</span>/<span style="color: #ff4d4d">14 Sec.</span></b>',
-					Cast: 'Your <b>Casts</b> deal damage <b>3</b> times in succession, but in a smaller area.<br>' +
+					'<b>16/<span style="color: #4d82ff">14</span>/<span style="color: #8b4dff">12</span>/<span style="color: #ff4d4d">10</span> Sec.</b>',
+					Cast: 'Your <b>Casts</b> deal damage <b>3</b> times in succession.<br>' +
 					'▸ Cast Damage <i>(every 1 Sec.)</i>:<br>' +
 					'<b>50/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">90</span></b>',
 					Sprint: 'After you <b>Sprint</b> for <b>1 Sec.</b>, use <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp"> to create a blast that deals damage to nearby foes.<br>' +
@@ -684,9 +684,9 @@
 					Trusty_Shield: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp"> to gain <b>Armor</b> until the next <b>Location</b>.<br>' +
 					'▸ Starting Armor:<br>' +
 					'<b>+10 <img class="icon" src="/Icons/Armor.webp">/<span style="color: #4d82ff">+15 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #8b4dff">+20 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #ff4d4d">+25 <img class="icon" src="/Icons/Armor.webp"></span></b>',
-					Tough_Trade: 'If you take damage during your <b>Attacks</b> or <b>Specials</b>, they are stronger if they hit.<br>' +
-					'▸ Bonus Weapon Damage:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">+125%</span>/<span style="color: #8b4dff">+150%</span>/<span style="color: #ff4d4d">+175%</span></b>',
+					Grand_Caldera: 'Your blast effects from <b>Hephaestus</b> deal more damage and are <b>50%</b> larger.<br>' +
+					'▸ Bonus Blast Damage:<br>' +
+					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Mint_Condition: 'At the start of each <b>Encounter</b>, you are briefly <b>Impervious</b>.<br>' +
 					'▸ Impervious Duration:<br>' +
 					'<b>8 Sec./<span style="color: #4d82ff">10 Sec.</span>/<span style="color: #8b4dff">12 Sec.</span>/<span style="color: #ff4d4d">14 Sec.</span></b>',
