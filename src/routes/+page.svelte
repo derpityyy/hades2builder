@@ -69,7 +69,7 @@
 			Poseidon: "Breaker Sprint",
 			Demeter: "Frigid Sprint",
 			Apollo: "Blinding Sprint",
-			Aphrodite: "Passion Dash",
+			Aphrodite: "Passion Rush",
 			Hephaestus: "Smithy Sprint",
 			Hestia: "Soot Sprint"
 		},
@@ -235,7 +235,7 @@
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Flammable_Coating", "Hestia-Fire_Extinguisher", "Hestia-Natural_Gas", "Hestia-Spontaneous_Combustion", "Hestia-Pyro_Technique"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Tough_Trade", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
 		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
-		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Ecstatic_Obsession"],
+		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
 		Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
 		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Swift_Flourish", "Hermes-Swift_Strike", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
 		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
@@ -245,7 +245,7 @@
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
 		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
-		"Duo-Soft_Caress", "Duo-Burning_Desire",
+		"Duo-Love_Handles", "Duo-Hot_Flash",
 		"Duo-Chain_Reaction"]
 	}
 
@@ -286,7 +286,7 @@
 	}
 
 	function isLegendary(trait){
-		return ["Zeus-Shocking_Loss", "Hera-Brave_Face", "Poseidon-King_Tide", "Demeter-Winter_Harvest", "Apollo-Exceptional_Talent", "Aphrodite-Ecstatic_Obsession", "Hephaestus-Fine_Tuning", "Hestia-Pyro_Technique", "Hermes-Close_Call", "Chaos-Defiance"].includes(trait)
+		return ["Zeus-Shocking_Loss", "Hera-Brave_Face", "Poseidon-King_Tide", "Demeter-Winter_Harvest", "Apollo-Exceptional_Talent", "Aphrodite-Nervous_Wreck", "Hephaestus-Fine_Tuning", "Hestia-Pyro_Technique", "Hermes-Close_Call", "Chaos-Defiance"].includes(trait)
 	}
 
 	function isDuo(trait){
@@ -295,7 +295,7 @@
 		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
 		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
 		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
-		"Duo-Soft_Caress", "Duo-Burning_Desire",
+		"Duo-Love_Handles", "Duo-Hot_Flash",
 		"Duo-Chain_Reaction"].includes(trait)
 	}
 
@@ -333,7 +333,7 @@
 				}
 				return "Fire"
 			case "Aphrodite":
-				if(["Aphrodite-Healthy_Rebound", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Ecstatic_Obsession"].includes(trait)){
+				if(["Aphrodite-Healthy_Rebound", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Nervous_Wreck"].includes(trait)){
 					return "Air"
 				}
 				return "Water"
@@ -616,46 +616,46 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage to nearby foes.<br>' +
 					'▸ Close-Up Damage:<br>' +
-					'<b>+80%/<span style="color: #4d82ff">+100%</span>/<span style="color: #8b4dff">+120%</span>/<span style="color: #ff4d4d">+140%</span></b>',
+					'<b>+80%/<span style="color: #4d82ff">100%</span>/<span style="color: #8b4dff">120%</span>/<span style="color: #ff4d4d">140%</span></b>',
 					Special:'Your <b>Specials</b> deal more damage to nearby foes.<br>' +
 					'▸ Close-Up Damage:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">+150%</span>/<span style="color: #8b4dff">+200%</span>/<span style="color: #ff4d4d">+250%</span></b>',
-					Cast: 'Your <b>Casts</b> drag foes in and inflicts <b>Weak</b>.<br>' +
+					'<b>+100%/<span style="color: #4d82ff">150%</span>/<span style="color: #8b4dff">200%</span>/<span style="color: #ff4d4d">250%</span></b>',
+					Cast: 'Your <b>Casts</b> inflict <b>Weak</b>, and damage foes while dragging them toward the center.<br>' +
 					'▸ Weak Damage Reduction:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
-					Sprint: 'Your <b>Dash</b> blasts foes near where you start and end, and inflicts <b>Weak</b>.<br>' +
-					'▸ Blast Damage:<br>' +
+					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
+					Sprint: '<b>Dashing</b> damages surrounding foes and inflict <b>Weak</b>, and again once you stop.<br>' +
+					'▸ Area Damage:<br>' +
 					'<b>20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span></b>',
-					Gain: 'In each <b>Encounter</b>, <b>1</b> foe is always <b>Weak</b>. You gradually restore <img class="icon" src="/Icons/Magick.webp"> near <b>Weak</b> foes.<br>' +
+					Gain: 'You inflict <b>Weak</b> on nearby foes, and gradually restore <img class="icon" src="/Icons/Magick.webp"> while any nearby foe is <b>Weak</b>.<br>' +
 					'▸ Magick Restoration <i>(every 1 Sec.)</i>:<br>' +
 					'<b>6/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">12</span></b>',
-					Wispy_Wiles: 'While you have at least <b>4</b> <img class="icon" src="/Icons/Air.webp">, you may <b>Dodge</b> any damage.<br>' +
-					'▸ Dodge Chance:<br>' +
-					'<span style="color: #60fa57"><b>+15%</b></span>',
+					Wispy_Wiles: 'Gain a chance to <b>Dodge</b> for each <img class="icon" src="/Icons/Air.webp"> you have.<br>' +
+					'▸ Dodge Chance per Air Boon:<br>' +
+					'<span style="color: #60fa57"><b>+3%</b></span>',
 					Healthy_Rebound: 'Whenever you exit a <b>Location</b>, restore <b>100%</b> <img class="icon" src="/Icons/Health.webp"> if you have not lost too much.<br>' +
 					'▸ Min Life Required:<br>' +
 					'<b>80%/<span style="color: #4d82ff">70%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">50%</span></b>',
 					Secret_Crush: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp"> to add <b>Power</b> to your <b>Attack</b>.<br>' +
 					'▸ Attack Power:<br>' +
-					'<b>+5/<span style="color: #4d82ff">+7</span>/<span style="color: #8b4dff">+9</span>/<span style="color: #ff4d4d">+11</span></b>',
+					'<b>+5/<span style="color: #4d82ff">7</span>/<span style="color: #8b4dff">9</span>/<span style="color: #ff4d4d">11</span></b>',
 					Life_Affirmation: 'Any <img class="icon" src="/Icons/MaxHealth.webp"> rewards you find have greater effect.<br>' +
 					'▸ Bonus Life Gain:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">+50%</span>/<span style="color: #8b4dff">+60%</span>/<span style="color: #ff4d4d">+70%</span></b>',
-					Shameless_Attitude: 'While you have at least <b>80%</b> <img class="icon" src="/Icons/Health.webp">, you deal more damage.<br>' +
+					'<b>+40%/<span style="color: #4d82ff">50%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">70%</span></b>',
+					Shameless_Attitude: 'You deal more damage. While you have at least <b>80%</b> <img class="icon" src="/Icons/Health.webp">, the bonus is doubled.<br>' +
 					'▸ High-Life Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Heart_Breaker: 'Whenever you use <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp">, create a <b>Heartthrob</b>.<br>' +
 					'▸ Heartthrob Damage:<br>' +
 					'<b>120/<span style="color: #4d82ff">180</span>/<span style="color: #8b4dff">240</span>/<span style="color: #ff4d4d">300</span></b>',
 					Broken_Resolve: 'Your <b>Weak</b> effects are more potent.<br>' +
 					'▸ Weak Damage Reduction:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+12%</span>/<span style="color: #8b4dff">+14%</span>/<span style="color: #ff4d4d">+16%</span></b>',
+					'<b>+10%/<span style="color: #4d82ff">12%</span>/<span style="color: #8b4dff">14%</span>/<span style="color: #ff4d4d">16%</span></b>',
 					Sweet_Surrender: '<b>Weak</b>-afflicted foes take more damage.<br>' +
 					'▸ Damage vs. Weak:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">+15%</span>/<span style="color: #8b4dff">+20%</span>/<span style="color: #ff4d4d">+25%</span></b>',
-					Ecstatic_Obsession: 'During <b>Encounters</b> with multiple foes, <b>1</b> foe is always afflicted with <b>Charm</b>.<br>' +
-					'▸ Foes Required:<br>' +
-					'<span style="color: #60fa57"><b>3</b></span> <i>(or more)</i>'
+					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					Nervous_Wreck: "Whenever you inflict <b>Weak</b>, also randomly inflict other gods' <b>Curses</b>.<br>" +
+					'▸ Bonus Random Curses:<br>' +
+					'<span style="color: #60fa57"><b>3</b></span>'
 				}[trait]
 				break
 			case "Hephaestus":
