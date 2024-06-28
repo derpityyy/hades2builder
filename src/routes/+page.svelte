@@ -896,6 +896,29 @@
 	
 	let scrollX
 	let scrollY
+
+	const traitsWithRequirements = ["Zeus-Air_Quality", "Zeus-Lightning_Lance", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"]
+	let currentTraitsWithRequirements = ['']
+	const traitRequirements = {
+		'Zeus-Air_Quality': [['<b>3</b> <img class="icon" src="/Icons/Air.webp">']],
+		'Zeus-Lightning_Lance': [['Any <b>Ring</b> Boon']],
+		'Zeus-Double_Strike': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Spirit Surge', 'Divine Vengeance', 'Lightning Lance']],
+		'Zeus-Toasting_Fork': [['Heaven Strike', 'Heaven_Flourish']],
+		'Zeus-Electric_Overload': [['Heaven Strike', 'Heaven Flourish']],
+		'Zeus-Shocking_Loss': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Ionic Gain'], ['Static Shock', 'Spirit Surge', 'Lightning Lance', 'Divine Vengeance'], ['Double Strike', 'Toasting Fork', 'Electric Overload']]
+	}
+	let hasRequirements = false
+
+	function updateRequirements(){
+		currentTraitsWithRequirements = traitsWithRequirements.filter(trait => chosenTraits.includes(trait))
+		currentTraitsWithRequirements = currentTraitsWithRequirements
+		if (currentTraitsWithRequirements.length == 0){
+			hasRequirements = false
+		}else{
+			hasRequirements = true
+		}
+		$: console.log(currentTraitsWithRequirements)
+	}
 </script>
 
 <svelte:window bind:scrollX={scrollX} bind:scrollY={scrollY}/>
@@ -1288,7 +1311,7 @@
 			{#each chosenTraits as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeTrait(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeTrait(trait)} on:click={() => updateRequirements()} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
 							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -1308,7 +1331,7 @@
 			{#each otherTraits[tab] as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addTrait(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addTrait(trait)} on:click={() => updateRequirements()} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
 							<img class="trait-image" src={genImagePath(tab, trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -1330,6 +1353,21 @@
 				{/if}
 			{/if}
 		{/if}
+		{#if hasRequirements}
+			<div class="requirement-box">
+				{#each currentTraitsWithRequirements as trait}
+					<div class="requirement-slot">
+						<h2 class="requirement">{replaceUnderscore(trait.split('-')[1])}</h2>
+						{#each traitRequirements[trait] as section}
+							<h4 class="requirement">One of the following:</h4>
+							{#each section as requirement}
+								<h5>▸ {@html requirement}</h5>
+							{/each}
+						{/each}
+					</div>
+				{/each}
+			</div>
+		{/if}
 	</div>
 
 </body>
@@ -1346,6 +1384,20 @@
 		font-family: "Helvetica";
 		font-weight: 750;
 		color: rgb(223, 239, 255);
+		text-align: center;
+	}
+	h2{
+		font-family: "Helvetica";
+		color: rgb(223, 239, 255);
+	}
+	h4{
+		font-family: "Helvetica";
+		color: rgb(223, 239, 255);
+	}
+	.requirement {
+		margin: 0;
+		margin-top: 5px;
+		margin-bottom: 5px;
 		text-align: center;
 	}
 	h5{
@@ -1517,5 +1569,35 @@
 		height: 20px;
 		margin: 0;
 		margin-bottom: -5px;
+	}
+	.requirement-box{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		margin-top: 10px;
+		height: auto;
+		width: min(750px, 100vw);
+		padding: 5px;
+		padding-bottom: 10px;
+		border: 2px;
+		border-style: solid;
+		border-radius: 10px;
+		border-color: rgb(120, 120, 197);
+		list-style-type: none;
+		background: rgb(56, 56, 93);
+	}
+	.requirement-slot{
+		border: 2px;
+		border-style: solid;
+		border-radius: 10px;
+		border-color: rgb(120, 120, 197);
+		padding: 5px;
+		margin: 2px;
+		width: auto;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
 	}
 </style>
