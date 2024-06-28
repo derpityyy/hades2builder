@@ -368,11 +368,6 @@
 	let descriptionActive = false
 	let description = ''
 
-// <b>0/<span style="color: #4d82ff">0</span>/<span style="color: #8b4dff">0</span>/<span style="color: #ff4d4d">0</span></b>
-// <img class="icon" src="">
-// <span style="color: #26e6ff"></span> Magick color
-// ▸ Ω 
-
 	function showDescription(fullTrait){
 		const source = fullTrait.split("-")[0]
 		const trait = fullTrait.split("-")[1]
@@ -811,6 +806,75 @@
 					Chant: 'Your <b>Ω Moves</b> deal additional damage for each <img class="icon" src="/Icons/Aether.webp"> you have.',
 					Defiance: 'Gain <b>+1</b> use of <b>Death Defiance</b> this night.'
 
+				}[trait]
+				break
+			case "Hammer":
+
+				description = {
+					Rapid_Thrasher: 'Your <b>Attacks</b> are <span style="color: #60fa57"><b>50%</b></span> faster.',
+					Melting_Swipe: 'Your <b>Dash-Strike</b> hits a larger area and destroys <span style="color: #60fa57"><b>60%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
+					Wicked_Thrasher: 'Your <b>Attacks</b> have <span style="color: #60fa57"><b>+30</b></span> <b>Power</b>.',
+					Cross_Cataclysm: 'Your <b>Ω Attack</b> deals <span style="color: #60fa57"><b>+50%</b></span> damage and also strikes sideways.',
+					Vampiric_Cataclysm: 'After you slay a foe with your <b>Ω Attack</b>, restore <b>5</b> <img class="icon" src="/Icons/Health.webp">.',
+					Rapid_Moonshot: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>+25%</b></span> faster.',
+					Shimmering_Moonshot: 'Your <b>Specials</b> bounce toward up to <b>2</b> more foes, dealing <span style="color: #60fa57"><b>+10%</b></span> for each hit.',
+					Extending_Wallop: 'Your <b>Attack</b> has more range and deals <span style="color: #60fa57"><b>+100%</b></span> damage to distant foes.',
+					Mirrored_Thrasher: 'Your <b>Attacks</b> hit <b>2</b> times, but you take <span style="color: #ba0202"><b>+30%</b></span> damage.',
+					Aetheric_Moonburst: 'Your <b>Ω Special</b> gains a power shot that deals <span style="color: #60fa57"><b>+50%</b></span> damage and restores <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp">.',
+					Giga_Moonburst: 'You can <b>Channel</b> <span style="color: #26e6ff"><b>+30</b></span> <img class="icon" src="/Icons/Magick.webp"> into your <b>Ω Special</b> to deal <span style="color: #60fa57"><b>+300%</b></span> damage in a larger area.',
+					Dual_Moonshot: 'Your Specials fire <b>2</b> projectiles, but have <span style="color: #ba0202"><b>-40%</b></span> range.',
+
+					Final_Slice: 'The last strike in your <b>Attack</b> sequence deals <span style="color: #60fa57"><b>+300%</b></span> damage in a larger area.',
+					Skulking_Slice: 'Your <b>Attacks</b> deal <span style="color: #60fa57"><b>+200%</b></span> damage striking foes from behind.',
+					Explosive_Ambush: 'Your <b>Ω Attack</b> hits a wide area and deals <span style="color: #60fa57"><b>+400%</b></span> damage, but uses <span style="color: #26e6ff"><b>+20</b></span> <img class="icon" src="/Icons/Magick.webp">.',
+					Sudden_Flurry: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>+40%</b></span> faster. ',
+					Flick_Knives: 'Your <b>Dash-Strike</b> also fires your <b>Special</b> <span style="color: #60fa57"><b>3</b></span> times at once in a fan pattern.',
+					Escalating_Ambush: 'In each <b>Encounter</b>, your <b>Ω Attack</b> gains <span style="color: #60fa57"><b>+15</b></span> <b>Power</b> for each foe you slay with it.',
+					Rapid_Onslaught: 'Your <b>Attacks</b> are <span style="color: #60fa57"><b>+25%</b></span> faster.',
+					Melting_Dart: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>50%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
+					Spiral_Knives: 'Your <b>Specials</b> deal <span style="color: #60fa57"><b>+20%</b></span> damage and your <b>Ω Special</b> fires up to <b>16</b> shots around you.',
+					Dancing_Knives: 'Your <b>Specials</b> deal <span style="color: #60fa57"><b>+15%</b></span> damage and each hit bounces toward up to <b>2</b> more foes.',
+					Sureshot_Flurry: 'Your <b>Ω Special</b> fires each shot straight ahead and your <b>Specials</b> have <span style="color: #60fa57"><b>+30%</b></span> range.',
+					Hook_Knives: 'Your <b>Specials</b> pierce through foes and return to you at the end of their path.',
+
+					Sustained_Spark: 'While you <b>Channel</b> your <b>Attacks</b>, you move and fire <span style="color: #60fa57"><b>20%</b></span> faster.',
+					Clean_Candle: 'You <b>Channel</b> your <b>Ω Attack</b> <span style="color: #60fa57"><b>50%</b></span> faster, and it uses <span style="color: #26e6ff"><b>-1</b></span> <img class="icon" src="/Icons/Magick.webp">.',
+					Inverted_Spark: 'Whenever you <b>Dash</b>, shots from your <b>Attacks</b> reverse direction and can strike again.',
+					Triple_Helix: 'Your <b>Ω Special</b> creates <span style="color: #60fa57"><b>+1</b></span> flame.',
+					Rising_Coil: 'Your <b>Specials</b> grow in size and deal up to <span style="color: #60fa57"><b>+25%</b></span> damage the longer they are active.',
+					Mega_Spark: 'Your <b>Attacks</b> fire <span style="color: #60fa57"><b>20%</b></span> farther and deal <span style="color: #60fa57"><b>+30%</b></span> damage.',
+					Origin_Coil: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>60%</b></span> faster and orbit where you fire them.',
+					Crushing_Comet: 'Your Special has <span style="color: #60fa57"><b>+75%</b></span> Power, but dissipates after striking foes. ',
+					Melting_Coil: 'Your Specials destroy <span style="color: #60fa57"><b>20%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
+					Clean_Helix: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>+20%</b></span> faster, and it uses <span style="color: #26e6ff"><b>-10</b></span> <img class="icon" src="/Icons/Magick.webp">. ',
+					Leaden_Spark: 'Your <b>Attacks</b> knock foes away and have <span style="color: #60fa57"><b>+10</b></span> <b>Power</b>. ',
+					Split_Spark: 'Your <b>Attacks</b> split in <span style="color: #60fa57"><b>2</b></span> the first time they strike foes.',
+
+					Melting_Shredder: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>20%</b></span> of any <b>Armor</b> <i>(based on the total)</i>. ',
+					Rapid_Slash: 'Your <b>Attack</b> is <span style="color: #60fa57"><b>30%</b></span> faster.',
+					Empowering_Guard: 'After blocking a foe with your <b>Special</b>, deal <span style="color: #60fa57"><b>+50%</b></span> damage for <b>15 Sec.</b>',
+					Sudden_Cleaver: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>25%</b></span> faster.',
+					Dashing_Heave: 'Your <b>Dash-Strike</b> hits <span style="color: #60fa57"><b>2</b></span> times in an area around you.',
+					Psychic_Whirlwind: 'During your <b>Ω Attack</b>, you are free to use your <b>Attacks</b> and <b>Specials</b>.',
+					"Executioner's_Chop": 'The final move in your <b>Attack</b> sequence hits <span style="color: #60fa57"><b>2</b></span> times, but uses <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp">.',
+					Advancing_Whirlwind: 'Your <b>Ω Attack</b> fires ahead of you and deals <span style="color: #60fa57"><b>+80%</b></span> damage.',
+					Giga_Cleaver: 'Your <b>Ω Special</b> fires <span style="color: #60fa57"><b>2</b></span> times in succession but costs <span style="color: #26e6ff"><b>+15</b></span> <img class="icon" src="/Icons/Magick.webp">. ',
+					Furious_Whirlwind: 'You <b>Channel</b> your <b>Ω Attack</b> faster, and move <span style="color: #60fa57"><b>50%</b></span> faster while it is active.',
+					Unyielding_Slash: 'Your <b>Attacks</b> have <span style="color: #60fa57"><b>+10</b></span> <b>Power</b> and you take <span style="color: #60fa57"><b>-20%</b></span> damage while using them. ',
+					Hell_Splitter: 'Your <b>Attack</b> becomes a big chop with <span style="color: #60fa57"><b>300</b></span> <b>Power</b>. ',
+
+					Fetching_Array: 'Your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> return to you automatically, but you have <span style="color: #ba0202"><b>-1</b></span> <img class="icon" src="/Icons/Shell.webp">. ',
+					Bolstered_Array: 'Gain <span style="color: #60fa57"><b>+2</b></span> <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b>.',
+					Looming_Ignition: 'Your <b>Attack</b> grows up to <span style="color: #60fa57"><b>50%</b></span> bigger and stronger over <b>2 Sec.</b>, or until it explodes. ',
+					Twisting_Crash: 'After your <b>Ω Special</b> projectiles fire, they fire again towards you. ',
+					Mega_Driver: 'Your <b>Specials</b> travel farther and deal <span style="color: #60fa57"><b>+50%</b></span> damage. ',
+					Possessed_Array: 'Your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> fire your <b>Ω Attack</b> for <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp"> whenever retrieved. ',
+					Destructive_Array: 'Every <b>2.5 Sec.</b>, your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> deal damage around them based on <span style="color: #60fa57"><b>50%</b></span> of your <b>Attack</b>. ',
+					Melting_Tackle: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>50%</b></span> of any <b>Armor</b> <i>(based on the total)</i>. ',
+					Sudden_Driver: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>+35%</b></span> faster. ',
+					Full_Salvo: 'Your <b>Attacks</b> fire your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> all at once in a spread pattern. ',
+					Rocket_Bombard: 'Your <b>Ω Attack</b> fires straight ahead and has <span style="color: #60fa57"><b>+20</b></span> <b>Power</b>. ',
+					Colossus_Driver: 'Your <b>Specials</b> have <span style="color: #60fa57"><b>+30</b></span> <b>Power</b> and you take <span style="color: #60fa57"><b>-30%</b></span> damage while using them. '
 				}[trait]
 				break
 			default:
