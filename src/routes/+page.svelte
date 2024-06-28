@@ -897,27 +897,72 @@
 	let scrollX
 	let scrollY
 
-	const traitsWithRequirements = ["Zeus-Air_Quality", "Zeus-Lightning_Lance", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"]
+	const traitsWithRequirements = ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
+		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
+		"Duo-Love_Handles", "Duo-Hot_Flash",
+		"Duo-Chain_Reaction",
+		"Zeus-Air_Quality", "Zeus-Lightning_Lance", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss",
+		"Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face",
+		"Poseidon-Water_Fitness", "Poseidon-Water_Spout", "Poseidon-Slippery_Slope", "Poseidon-King_Tide"
+	]
 	let currentTraitsWithRequirements = ['']
 	const traitRequirements = {
+		'Duo-Glorious_Disaster': [['Prominence Flare'], ['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint']],
+		'Duo-Thermal_Dynamics': [['Heaven Strike', 'Heaven Flourish'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring']],
+		'Duo-Killer_Current': [['Heaven Strike', 'Heaven Flourish','Storm Ring', 'Thunder Sprint', 'Divine Vengeance', 'Lightning Lance'], ['Slippery Slope']],
+		'Duo-Master_Conductor': [['Static Shock', 'Electric Overload'], ['Volcanic Strike', 'Volcanic Flourish', 'Anvil Ring', 'Smithy Sprint', 'Fixed Gain']],
+		'Duo-Hail_Storm': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Ionic Gain'], ['Ice Strike', 'Ice Flourish', 'Arctic Ring']],
+		'Duo-Romantic_Spark': [['Heaven Strike', 'Heaven Flourish'], ['Flutter Strike', 'Flutter Flourish', 'Rapture Ring', 'Passion Rush', 'Glamour Gain']],
+		"Duo-King's_Ransom": [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Ionic Gain'], ['Engagement Ring', 'Nexus Sprint', 'Born Gain']],
+
+		'Duo-Elementary_Particles': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Soot Sprint', 'Hearth Gain']],
+		'Duo-Ecstatic_Obsession': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Nasty Comeback'], ['Rapture Ring', 'Passion Rush', 'Glamour Gain']],
+		'Duo-Spiteful_Strength': [['Nasty Comeback', 'Family Trade', 'Hereditary Bane', 'Dying Wish', 'Blood Line'], ['Grand Caldera', 'Molten Touch', 'Heavy Metal', 'Trusty Shield', 'Mint Condition', 'Uncanny Fortitude', 'Furnace Blast']],
+		'Duo-Cherished_Heirloom': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Ice Strike', 'Ice Flourish', 'Arctic Ring', 'Frigid Sprint', 'Tranquil Gain']],
+		'Duo-Golden_Rule': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Born Gain'], ["Ocean's Bounty", 'Double Up']],
+		'Duo-Sun_Worshipper': [['Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Solar Ring', 'Blinding Sprint', 'Lucid Gain']],
+		"Duo-Queen's_Ransom": [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Storm Ring', 'Thunder Sprint', 'Ionic Gain']],
+
+/* 		"Duo-Island_Getaway", 
+		"Duo-Natural_Selection", 
+		"Duo-Seismic_Hammer", 
+		"Duo-Beach_Ball", 
+		"Duo-Scalding_Vapor", */
+
 		'Zeus-Air_Quality': [['<b>3</b> <img class="icon" src="/Icons/Air.webp">']],
 		'Zeus-Lightning_Lance': [['Any <b>Ring</b> Boon']],
 		'Zeus-Double_Strike': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Spirit Surge', 'Divine Vengeance', 'Lightning Lance']],
-		'Zeus-Toasting_Fork': [['Heaven Strike', 'Heaven_Flourish']],
+		'Zeus-Toasting_Fork': [['Heaven Strike', 'Heaven Flourish']],
 		'Zeus-Electric_Overload': [['Heaven Strike', 'Heaven Flourish']],
-		'Zeus-Shocking_Loss': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Ionic Gain'], ['Static Shock', 'Spirit Surge', 'Lightning Lance', 'Divine Vengeance'], ['Double Strike', 'Toasting Fork', 'Electric Overload']]
+		'Zeus-Shocking_Loss': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Ionic Gain'], ['Static Shock', 'Spirit Surge', 'Lightning Lance', 'Divine Vengeance'], ['Double Strike', 'Toasting Fork', 'Electric Overload']],
+
+		'Hera-Hereditary_Bane': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Nasty Comeback']],
+		'Hera-Dying_Wish': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Nasty Comeback']],
+		'Hera-Brave_Face': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint'], ['Bridal Glow', 'Family Trade', 'Uncommon Grace', 'Blood Line'], ['Hereditary Bane', 'Dying Wish']],
+
+/* 		'Poseidon-_Water_Fitness' */
 	}
 	let hasRequirements = false
 
 	function updateRequirements(){
-		currentTraitsWithRequirements = traitsWithRequirements.filter(trait => chosenTraits.includes(trait))
-		currentTraitsWithRequirements = currentTraitsWithRequirements
+		currentTraitsWithRequirements = chosenTraits.filter(trait => traitsWithRequirements.includes(trait))
 		if (currentTraitsWithRequirements.length == 0){
 			hasRequirements = false
 		}else{
 			hasRequirements = true
 		}
-		$: console.log(currentTraitsWithRequirements)
+	}
+	function addAndUpdate(trait){
+		addTrait(trait)
+		updateRequirements()
+	}
+
+	function removeAndUpdate(trait){
+		removeTrait(trait)
+		updateRequirements()
 	}
 </script>
 
@@ -1311,7 +1356,7 @@
 			{#each chosenTraits as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeTrait(trait)} on:click={() => updateRequirements()} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
 							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -1331,7 +1376,7 @@
 			{#each otherTraits[tab] as trait}
 				<div class="slot">
 					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addTrait(trait)} on:click={() => updateRequirements()} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
 							<img class="trait-image" src={genImagePath(tab, trait)}>
 						</button>
 						<img class="element" src={otherTraitElementImagePath(trait)}>
@@ -1357,13 +1402,17 @@
 			<div class="requirement-box">
 				{#each currentTraitsWithRequirements as trait}
 					<div class="requirement-slot">
-						<h2 class="requirement">{replaceUnderscore(trait.split('-')[1])}</h2>
-						{#each traitRequirements[trait] as section}
-							<h4 class="requirement">One of the following:</h4>
-							{#each section as requirement}
-								<h5>▸ {@html requirement}</h5>
+						<h2 class="requirement-text">{replaceUnderscore(trait.split('-')[1])}</h2>
+						<div class="requirement-horizontal">
+							{#each traitRequirements[trait] as section}
+								<div class="requirement-section">
+									<h4 class="requirement-text">One of the following:</h4>
+									{#each section as requirement}
+										<h5 class="requirement-text">▸ {@html requirement}</h5>
+									{/each}
+								</div>
 							{/each}
-						{/each}
+						</div>
 					</div>
 				{/each}
 			</div>
@@ -1394,7 +1443,7 @@
 		font-family: "Helvetica";
 		color: rgb(223, 239, 255);
 	}
-	.requirement {
+	.requirement-text {
 		margin: 0;
 		margin-top: 5px;
 		margin-bottom: 5px;
@@ -1599,5 +1648,19 @@
 		height: auto;
 		display: inline-block;
 		vertical-align: top;
+	}
+	.requirement-horizontal{
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;
+	}
+	.requirement-section{
+		margin: 0px;
+		margin-left: 5px;
+		margin-right: 5px;
+		width: auto;
+		vertical-align: middle;
 	}
 </style>
