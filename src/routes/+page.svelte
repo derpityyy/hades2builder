@@ -910,7 +910,10 @@
 		"Demeter-Frosty_Veneer", "Demeter-Local_Climate", "Demeter-Cold_Storage", "Demeter-Weed_Killer", "Demeter-Winter_Harvest",
 		"Apollo-Self_Healing", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Extra_Dose", "Apollo-Exceptional_Talent",
 		"Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck",
-
+		"Hephaestus-Martial_Art", "Hephaestus-Grand_Caldera", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning",
+		"Hestia-Slow_Cooker", "Hestia-Burnt_Offering", "Hestia-Crispy_Coating", "Hestia-Natural_Gas", "Hestia-Pyro_Technique", "Hestia-Highly_Flammable", "Hestia-Fire_Walk",
+		"Hermes-Tall_Order", "Hermes-Close_Call",
+		"Chaos-Chant", "Chaos-Defiance",
 	]
 	let currentTraitsWithRequirements = ['']
 	const traitRequirements = {
@@ -948,6 +951,8 @@
 		"Duo-Love_Handles": [['Flutter Strike', 'Flutter Flourish', 'Rapture Ring', 'Passion Rush', 'Glamour Gain'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
 		"Duo-Hot_Flash": [['Rapture Ring', "Passion Rush", 'Glamour Gain'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring']],
 
+		"Duo-Chain_Reaction": [['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Hearth Gain', 'Soot Sprint']],
+
 		'Zeus-Air_Quality': [['<b>3</b> <img class="icon" src="/Icons/Air.webp">']],
 		'Zeus-Lightning_Lance': [['Any <b>Ring</b> Boon']],
 		'Zeus-Double_Strike': [['Heaven Strike', 'Heaven Flourish', 'Storm Ring', 'Thunder Sprint', 'Spirit Surge', 'Divine Vengeance', 'Lightning Lance']],
@@ -983,6 +988,24 @@
 		"Aphrodite-Sweet_Surrender": [['Rapture Ring', 'Passion Rush', 'Glamour Gain']], 
 		"Aphrodite-Nervous_Wreck": [['Broken Resolve', 'Sweet Surrender', 'Shameless Attitude', 'Secret Crush'], ['Rapture Ring', 'Passion Rush', 'Glamour Gain'], ['Flutter Strike', 'Flutter Flourish']],
 
+		"Hephaestus-Martial_Art": [['<b>2</b> <img class="icon" src="/Icons/Earth.webp">']], 
+		"Hephaestus-Grand_Caldera": [['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
+		"Hephaestus-Furnace_Blast": [['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
+		"Hephaestus-Fine_Tuning": [['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint'], ['Heavy Metal', 'Trusty Shield', 'Mint Condition'], ['Grand Caldera', 'Molten Touch', 'Furnace Blast']],
+	
+		"Hestia-Slow_Cooker": [['<b>2</b> <img class="icon" src="/Icons/Fire.webp">']], 
+		"Hestia-Burnt_Offering": [['Have at least one Boon']], 
+		"Hestia-Crispy_Coating": [['Flame Strike', 'Flame Flourish', 'Smolder Ring']], 
+		"Hestia-Natural_Gas": [['Flame Strike', 'Flame Flourish', 'Smolder Ring']], 
+		"Hestia-Pyro_Technique": [['Flame Strike', 'Flame Flourish', 'Smolder Ring']], 
+		"Hestia-Highly_Flammable": [['Flame Strike', 'Flame Flourish', 'Smolder Ring']], 
+		"Hestia-Fire_Walk": [['Flame Strike', 'Flame Flourish', 'Smolder Ring'], ['Natural Gas', 'Crispy Coating', 'Pyro Technique', 'Highly Flammable'],['Glowing Coal', 'Controlled Burn']],
+	
+		"Hermes-Tall_Order": [['One of each <img class="icon" src="/Icons/Fire.webp"> <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Water.webp">']], 
+		"Hermes-Close_Call": [['At least one Hermes Boon']],
+
+		"Chaos-Chant": [['<b>1</b> <img class="icon" src="/Icons/Aether.webp">']],
+		"Chaos-Defiance": [['Any other Chaos Boon']],
 	}
 	let hasRequirements = false
 
