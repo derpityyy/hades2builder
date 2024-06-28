@@ -906,7 +906,11 @@
 		"Duo-Chain_Reaction",
 		"Zeus-Air_Quality", "Zeus-Lightning_Lance", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss",
 		"Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face",
-		"Poseidon-Water_Fitness", "Poseidon-Water_Spout", "Poseidon-Slippery_Slope", "Poseidon-King_Tide"
+		"Poseidon-Water_Fitness", "Poseidon-Water_Spout", "Poseidon-Slippery_Slope", "Poseidon-King_Tide",
+		"Demeter-Frosty_Veneer", "Demeter-Local_Climate", "Demeter-Cold_Storage", "Demeter-Weed_Killer", "Demeter-Winter_Harvest",
+		"Apollo-Self_Healing", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Extra_Dose", "Apollo-Exceptional_Talent",
+		"Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck",
+
 	]
 	let currentTraitsWithRequirements = ['']
 	const traitRequirements = {
@@ -926,11 +930,23 @@
 		'Duo-Sun_Worshipper': [['Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Solar Ring', 'Blinding Sprint', 'Lucid Gain']],
 		"Duo-Queen's_Ransom": [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Born Gain'], ['Storm Ring', 'Thunder Sprint', 'Ionic Gain']],
 
-/* 		"Duo-Island_Getaway", 
-		"Duo-Natural_Selection", 
-		"Duo-Seismic_Hammer", 
-		"Duo-Beach_Ball", 
-		"Duo-Scalding_Vapor", */
+		"Duo-Island_Getaway": [['Wave Strike', 'Wave Flourish', 'Tidal Ring', 'Breaker Sprint', 'Fluid Gain'], ["Flutter Strike", 'Flutter Flourish']], 
+		"Duo-Natural_Selection": [['Tidal Ring', 'Breaker Sprint', 'Fluid Gain', "Ocean's Bounty", 'Double Up'], ['Arctic Ring', 'Tranquil Gain', 'Frigid Sprint', 'Snow Queen', 'Cold Storage', 'Rare Crop']], 
+		"Duo-Seismic_Hammer": [['Tidal Ring', 'Geyser Spout'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
+		"Duo-Beach_Ball": [['Breaker Sprint', 'Blinding Sprint'], ['Wave Strike', 'Wave Flourish', 'Tidal Ring', 'Fluid Gain'], ['Nova Strike', 'Nova Flourish', 'Solar Ring', 'Lucid Gain']], 
+		"Duo-Scalding_Vapor": [['Slippery Slope'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Highly Flammable', 'Controlled Burn', 'Glowing Coal']],
+
+		"Duo-Boreal_Gust": [['Frigid Sprint', 'Gale Force'], ['Nova Strike', 'Nova Flourish', 'Solar Ring', 'Blinding Sprint', 'Lucid Gain']], 
+		"Duo-Room_Temperature": [['Ice Strike', 'Ice Flourish', 'Arctic Ring'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
+		"Duo-Freezer_Burn": [['Ice Strike', 'Ice Flourish', 'Arctic Ring'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring']], 
+		"Duo-Hearty_Appetite": [['Ice Strike', 'Ice Flourish', 'Tranquil Gain', 'Frigid Sprint', 'Plentiful Forage']],
+
+		"Duo-Phoenix_Skin": [['Nova Strike', 'Nova Flourish', 'Solar Ring', 'Lucid Gain', 'Blinding Sprint'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Hearth Gain', 'Soot Sprint'], ['Burnt Offering']], 
+		"Duo-Sunny_Disposition": [['Nova Strike', 'Nova Flourish', 'Solar Ring', 'Blinding Sprint', 'Lucid Gain'], ['Heart Breaker']], 
+		"Duo-Rude_Awakening": [['Solar Ring', 'Blinding Sprint', 'Light Smite', 'Dazzling Display'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']],
+
+		"Duo-Love_Handles": [['Flutter Strike', 'Flutter Flourish', 'Rapture Ring', 'Passion Rush', 'Glamour Gain'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
+		"Duo-Hot_Flash": [['Rapture Ring', "Passion Rush", 'Glamour Gain'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring']],
 
 		'Zeus-Air_Quality': [['<b>3</b> <img class="icon" src="/Icons/Air.webp">']],
 		'Zeus-Lightning_Lance': [['Any <b>Ring</b> Boon']],
@@ -943,7 +959,30 @@
 		'Hera-Dying_Wish': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint', 'Nasty Comeback']],
 		'Hera-Brave_Face': [['Sworn Strike', 'Sworn Flourish', 'Engagement Ring', 'Nexus Sprint'], ['Bridal Glow', 'Family Trade', 'Uncommon Grace', 'Blood Line'], ['Hereditary Bane', 'Dying Wish']],
 
-/* 		'Poseidon-_Water_Fitness' */
+		'Poseidon-Water_Fitness': [['<b>2</b> <img class="icon" src="/Icons/Water.webp">']],
+		'Poseidon-Geyser_Spout': [['Any <b>Ring</b> Boon']],
+		'Poseidon-Slippery_Slope': [['Wave Strike', 'Wave Flourish', 'Tidal Ring']],
+		'Poseidon-King_Tide': [['Wave Strike', 'Wave Flourish', 'Tidal Ring'], ['Breaker Sprint', 'Fluid Gain', 'Geyser Spout'], ['Hydraulic Might', 'Splash Fount', 'Slippery Slope',  'Flood Control']],
+
+		'Demeter-Frosty_Veneer': [['<b>4</b> <img class="icon" src="/Icons/Water.webp">']],
+		'Demeter-Local_Climate': [['Any <b>Ring</b> Boon']],
+		'Demeter-Cold_Storage': [['Ice Strike', 'Ice Flourish', 'Arctic Ring']],
+		'Demeter-Weed_Killer': [['Any <b>Strike</b> Boon']],
+		'Demeter-Winter_Harvest': [['Ice Strike', 'Ice Flourish', 'Arctic Ring'], ['Plentiful Forage', 'Snow Queen', 'Rare Crop'], ['Weed Killer', 'Cold Storage', 'Local Climate']],
+
+		"Apollo-Self_Healing": [['<b>2</b> <img class="icon" src="/Icons/Fire.webp">']], 
+		"Apollo-Back_Burner": [['Solar Ring', 'Blinding Sprint', 'Dazzling Display', 'Light Smite']], 
+		"Apollo-Prominence_Flare": [['Any <b>Ring</b> Boon']], 
+		"Apollo-Dazzling_Display": [['Nova Strike']], 
+		"Apollo-Extra_Dose": [['Any <b>Strike</b> Boon']], 
+		"Apollo-Exceptional_Talent": [['Nova Strike', 'Nova Flourish'], ['Solar Ring', 'Blinding Sprint', 'Lucid Gain'], ['Extra Dose', 'Super Nova', 'Prominence Flare', 'Back Burner']],
+
+		"Aphrodite-Wispy_Wiles": [['<b>2</b> <img class="icon" src="/Icons/Air.webp">']], 
+		"Aphrodite-Healthy_Rebound": [['Shameless Attitude']], 
+		"Aphrodite-Broken_Resolve": [['Rapture Ring', 'Passion Rush', 'Glamour Gain']], 
+		"Aphrodite-Sweet_Surrender": [['Rapture Ring', 'Passion Rush', 'Glamour Gain']], 
+		"Aphrodite-Nervous_Wreck": [['Broken Resolve', 'Sweet Surrender', 'Shameless Attitude', 'Secret Crush'], ['Rapture Ring', 'Passion Rush', 'Glamour Gain'], ['Flutter Strike', 'Flutter Flourish']],
+
 	}
 	let hasRequirements = false
 
