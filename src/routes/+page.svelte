@@ -876,6 +876,70 @@
 					Colossus_Driver: 'Your <b>Specials</b> have <span style="color: #60fa57"><b>+30</b></span> <b>Power</b> and you take <span style="color: #60fa57"><b>-30%</b></span> damage while using them. '
 				}[trait]
 				break
+			case "Duo":
+				description = {
+					Glorious_Disaster: 'You can <b>Channel</b> <span style="color: #26e6ff"><b>+30</b></span> <img class="icon" src="/Icons/Magick.webp"> into your <b>Ω Cast</b> to repeatedly strike foes with lightning bolts.<br>' +
+					'▸ Bolt Damage <i>(every 0.13 Sec.)</i>:<br>' +
+					'<span style="color: #60fa57"><b>50</b></span>',
+					Thermal_Dynamics: 'Your <b>Blitz</b> effects also inflict <b>Scorch</b> whenever they deal damage.<br>' +
+					'▸ Scorch Damage:<br>' +
+					'<span style="color: #60fa57"><b>80</b></span>',
+					Killer_Current: 'Your lightning deals more damage to <b>Slip</b>-afflicted foes.<br>' +
+					'▸ Bonus Lightning Damage:<br>' +
+					'<span style="color: #60fa57"><b>+30%</b></span>',
+					Master_Conductor: 'Your chain-lightning deals more damage per bounce and can bounce to you.<br>' +
+					'▸ Damage per Bounce:<br>' +
+					'<span style="color: #60fa57"><b>+20%</b></span>',
+					Hail_Storm: 'Your <b>Freeze</b> effects also cause lightning bolts to repeatedly strike afflicted foes.<br>' +
+					'▸ Lightning Damage <i>(every 0.3 Sec.)</i>:<br>' +
+					'<span style="color: #60fa57"><b>30</b></span>',
+					Romantic_Spark: 'If you <b>Sprint</b> into <b>Blitz</b>-afflicted foes, the effect activated immediately and is stronger.<br>' +
+					'▸ Bonus Blitz Damage:<br>' +
+					'<span style="color: #60fa57"><b>+200%</b></span>',
+					"King's_Ransom": 'Give up <b>all</b> your <b>Boons</b> of <b>Hera</b>. For each, raise <b>Lv.</b> for <b>all</b> your <b>Boons</b> of <b>Zeus</b>.' +
+					'▸ Bonus Lv. per Hera Boon:<br>' +
+					'<span style="color: #60fa57"><b>+4</b></span>',
+					Elementary_Particles: 'Gain <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <b>Elements</b>, and <b>1 <span style="color: #f351f4"><b>Infusion</b></span> Boon</b> for each.<br>' +
+					'▸ Essences Gained per Element:<br>' +
+					'<span style="color: #60fa57"><b>+1</b></span>',
+					Ecstatic_Obsession: 'During <b>Encounters</b> with multiple foes, <b>1</b> foe is always afflicted with <b>Charm</b>.<br>' +
+					'▸ Foes Required:<br>' +
+					'<span style="color: #60fa57"><b>+2</b></span> <i>(or more)</i>',
+					Spiteful_Strength: 'Your <b>Attacks</b> and <b>Specials</b> deal more damage while not empowered by <b>Boons</b>.<br>' +
+					'▸ Boon-less Bonus Damage:<br>' +
+					'<span style="color: #60fa57"><b>+200%</b></span>',
+					Cherished_Heirloom: 'Most other <b>Keepsakes</b> you equip are stronger this night <i>(if possible)</i>.<br>' +
+					'▸ Bonus Keepsake Ranks:<br>' +
+					'<span style="color: #60fa57"><b>+1</b></span>',
+					Golden_Rule: 'You deal more damage the more gold you have.<br>' +
+					'▸ Bonus Damage per 100 Gold:<br>' +
+					'<span style="color: #60fa57"><b>+10%</b></span>',
+					Sun_Worshipper: 'In each <b>Encounter</b>, the first foe you slay returns to fight for you.<br>' +
+					'▸ Servant Damage:<br>' +
+					'<span style="color: #60fa57"><b>+200%</b></span>',
+					"Queen's_Ransom": 'Give up <b>all</b> your <b>Boons</b> of <b>Zeus</b>. For each, raise <b>Lv.</b> for <b>all</b> your <b>Boons</b> of <b>Hera</b>.' +
+					'▸ Bonus Lv. per Zeus Boon:<br>' +
+					'<span style="color: #60fa57"><b>+4</b></span>',
+					Island_Getaway: 'You take less damage from nearby foes. <b>Boons</b> of <b>Aphrodite</b> treats all foes as nearby.<br>' +
+					'▸ Damage Resistance:<br>' +
+					'<span style="color: #60fa57"><b>+15%</b></span>',
+					Natural_Selection: '<b>Locations Rewards</b> exclude <img class="icon" src="/Icons/MaxHealth.webp">, <img class="icon" src="/Icons/MaxMagick.webp">, and <img class="icon" src="/Icons/Gold.webp">. <b>Boons</b> are more likely to be <b>Rare</b> or better.<br>' +
+					'▸ Rarity Chance:<br>' +
+					'<span style="color: #60fa57"><b>+45%</b></span>',
+					Seismic_Hammer: 'Your <b>Ω Cast</b> occasionally creates a blast that deals <b>500</b> damage in the area.<br>' +
+					'▸ Blast Recharge Time:<br>' +
+					'<span style="color: #60fa57"><b>6 Sec.</b></span>',
+					Beach_Ball: 'Your <b>Sprint</b> creates a watery sphere behind you, which surges ahead once you stop.<br>' +
+					'▸ Blast Damage:<br>' +
+					'<span style="color: #60fa57"><b>300</b></span>',
+					Scalding_Vapor: 'If foes with <b>Slip</b> are struck by fire from <b>Hestia</b>, they are engulfed in <b>Steam</b>.<br>' +
+					'▸ Steam Damage <i>(every 0.2 Sec.)</i>:' +
+					'<span style="color: #60fa57"><b>30</b></span>',				
+				
+				
+				
+				}[trait]
+				break
 			default:
 				description = 'default'
 		}
