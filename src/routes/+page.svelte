@@ -809,7 +809,6 @@
 				}[trait]
 				break
 			case "Hammer":
-
 				description = {
 					Rapid_Thrasher: 'Your <b>Attacks</b> are <span style="color: #60fa57"><b>50%</b></span> faster.',
 					Melting_Swipe: 'Your <b>Dash-Strike</b> hits a larger area and destroys <span style="color: #60fa57"><b>60%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
