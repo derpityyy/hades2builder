@@ -178,7 +178,7 @@
 	}
 
 	let keepsake = "None"
-	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
+	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Crystal_Figurine","Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
 
 	let hex = "None"
 	const hexes = ["None", "Phase_Shift", "Twilight_Curse", "Lunar_Ray", "Wolf_Howl", "Moon_Water", "Night_Bloom", "Total_Eclipse", "Dark_Side"]
@@ -1063,6 +1063,15 @@
 					Supply_Chain: 'Each time you clear <b>5 Encounters</b>, receive <span style="color: #60fa57"><b>+10</b></span> <img class="icon" src="/Icons/MaxHealth.webp"> and <span style="color: #60fa57"><b>3</b></span> <img class="icon" src="/Icons/PomSlice.webp">.'
 				}[trait]
 				break
+			case "Weapon":
+				description = {
+					"Witch's_Staff": 'Strike with a quick close-range <b>Attack</b>, or long-range <b>Specials</b> and <b>Ω Moves</b>.',
+					Sister_Blades: 'Slash with furious <b>Attacks</b>, or strike afar with a flurry of <b>Specials</b>.',
+					Umbral_Flames: 'Launch damaging ranged <b>Attacks</b> as you move, or <b>Specials</b> that orbit around you.',
+					Moonstone_Axe: 'Deliver slow but devastating <b>Attacks</b>, or defend and retaliate with your <b>Specials</b>.',
+					Argent_Skull: 'Blast foes with explosive <b>Attacks</b>, and retreive the <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> with lunging <b>Specials</b>.'
+				}[trait]
+				break
 			case "Aspect":
 				if(trait == "Melinoë"){
 					description = {
@@ -1117,6 +1126,75 @@
 					}[trait]
 				}
 				break
+			case "Keepsake": 
+				description = {
+					None: '',
+					Silver_Wheel: 'After you use <img class="icon" src="/Icons/Magick.webp">, restore it over <b>3 Sec.</b>, up to a total of <b>1000/<span style="color: #4d82ff">1500</span>/<span style="color: #8b4dff">2000</span>/<span style="color: #ff4d4d">3000</span></b> <img class="icon" src="/Icons/Magick.webp"> this night.',
+					Knuckle_Bones: 'The next <b>Guardian</b> loses <b>-5%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">15%</span>/<span style="color: #ff4d4d">25%</span></b> <img class="icon" src="/Icons/Health.webp">. You take <b>-15%</b> damage from <b>Guardians</b>.',
+					Luckier_Tooth: 'After you fall to <span style="color: #ba0202"><b>0</b></span> <img class="icon" src="/Icons/Health.webp">, automatically restore <b>51/<span style="color: #4d82ff">76</span>/<span style="color: #8b4dff">101</span>/<span style="color: #ff4d4d">121</span></b> <img class="icon" src="/Icons/Health.webp"> once this night. ',
+					Ghost_Onion: 'Whenever you exit a <b>Location</b>, fully restore your <img class="icon" src="/Icons/Health.webp">, up to a total of <b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">150</span></b> <img class="icon" src="/Icons/HealHealth.webp"> this night. ',
+					Evil_Eye: 'Deal <b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">40%</span></b> to the last foe that vanquished you.',
+					Engraved_Pin: 'After you fall to <span style="color: #ba0202"><b>0</b></span> <img class="icon" src="/Icons/Health.webp">, become <b>Impervious</b> for <b>10 Sec.</b> If no foes remain, restore <b>30/<span style="color: #4d82ff">45</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">90</span></b> <img class="icon" src="/Icons/Health.webp">. ',
+					Discordant_Bell: 'After each <b>Encounter</b>, you deal <b>+0.5%/<span style="color: #4d82ff">1%</span>/<span style="color: #8b4dff">1.5%</span></b> damage, but also take that much more.', 
+					Gold_Purse: 'Gain <b>+100/<span style="color: #4d82ff">125</span>/<span style="color: #8b4dff">150</span>/<span style="color: #ff4d4d">200</span></b> <img class="icon" src="/Icons/Gold.webp"> once this night.',
+					Metallic_Droplet: 'You move, strike, and <b>Channel 20%</b> faster for the next <b>200/<span style="color: #4d82ff">250</span>/<span style="color: #8b4dff">300</span>/<span style="color: #ff4d4d">400</span> Sec.</b>',
+					White_Antler: 'For the next <b>Region</b>, gain <b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">50%</span></b> chance to deal Critical damage, but you have <span style="color: #ba0202"><b>30</b></span> <img class="icon" src="/Icons/MaxHealth.webp">',
+					Moon_Beam: 'A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+3/<span style="color: #4d82ff">4</span>/<span style="color: #8b4dff">5</span>/<span style="color: #ff4d4d">7</span></b> upgrades. ',
+					Lion_Fang: 'Deal <b>+30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">70%</span></b> bonus damage, but lose <b>5%</b> of this after each <b>Encounter</b>. ',
+					Blackened_Fleece: 'After you take <b>250</b> damage, your <b>Ω Moves</b> deal <b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">60%</span></b> damage.',
+					Crystal_Figurine: 'After the next <b>Guardian</b>, activate a random level <b><img class="icon" src="/Icons/ArcanaCommon.webp">/<img class="icon" src="/Icons/ArcanaRare.webp">/<img class="icon" src="/Icons/ArcanaEpic.webp">/<img class="icon" src="/Icons/ArcanaHeroic.webp"> Arcana Card</b>.',
+					Silken_Sash: 'Gain <b>+20</b> <img class="icon" src="/Icons/Armor.webp">. While you have at least <b>1</b> <img class="icon" src="/Icons/Armor.webp">, gain <b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">6</span></b> <img class="icon" src="/Icons/Armor.webp"> after each <b>Location</b>.',
+					Aromatic_Phial: 'Fountains restore <b>+20%</b> <img class="icon" src="/Icons/Health.webp">. The next makes <b>1</b> random <b>Common Boon</b> of yours <b><span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span>/<span style="color: #ff4d4d">Heroic</span></b>.',
+					Concave_Stone: 'After choosing a <b>Boon</b>, <b>25%/<span style="color: #4d82ff">50%</span>/<span style="color: #8b4dff">75%</span>/<span style="color: #ff4d4d">100%</span></b> of the time randomly take <b>1</b> more, once this night. ',
+					Experimental_Hammer: 'Gain <b>1</b> random <img class="icon" src="/Icons/Hammer.webp"> that lasts for <b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">30</span></b> <b>Encounters</b>.',
+					Transcendent_Embryo: 'Gain a random <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span>/<span style="color: #ff4d4d">Heroic</span></b> <b>Chaos</b> blessing once this night. Every <b>8 Encounters</b>, replace it. ',
+					Cloud_Bangle: 'A Boon of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Iridescent_Fan: 'A Boon of <b>Hera</b> is likely. You can <b>Rarify</b> her <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Vivid_Sea: 'A Boon of <b>Poseidon</b> is likely. You can <b>Rarify</b> his <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Barley_Sheaf: 'A Boon of <b>Demeter</b> is likely. You can <b>Rarify</b> her <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Purest_Hope: 'A Boon of <b>Apollo</b> is likely. You can <b>Rarify</b> his <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Beautiful_Mirror: 'A Boon of <b>Aphrodite</b> is likely. You can <b>Rarify</b> her <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Adamant_Shard: 'A Boon of <b>Hephaestus</b> is likely. You can <b>Rarify</b> his <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+					Everlasting_Ember: 'A Boon of <b>Hestia</b> is likely. You can <b>Rarify</b> her <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
+				}[trait]
+				break
+			case "Familiar": 
+				description = {
+					None: '',
+					Frinos: 'While together, gain an additional <b>+10/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">30</span></b> <img class="icon" src="/Icons/MaxHealth.webp">. Pet the froge :)',
+					Toula: '<img class="icon" src="/Icons/DeathDefiance.webp"> effects from Toula restore an additional <b>+10/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">30</span></b> <img class="icon" src="/Icons/Health.webp">. '
+				}[trait]
+				break
+			case "Hex": {
+				description = {
+					None: '',
+					Phase_Shift: 'Your <b>Hex</b> makes everything else move <b>80%</b> slower for <b>4 Sec.</b><br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>100</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Twilight_Curse: 'Your <b>Hex</b> launches a seeking projectile that inflicts <b>Morph</b> on up to <b>5</b> susceptible foes.<br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>50</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Lunar_Ray: 'Your <b>Hex</b> fires a beam that deals up to <span style="color: #60fa57"><b>900</b></span> damage over <b>3 Sec.</b><br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Wolf_Howl: 'Your <b>Hex</b> makes you rise up then crash down in the target area for <span style="color: #60fa57"><b>200</b></span> damage.<br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>40</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Moon_Water: 'Your <b>Hex</b> restores <span style="color: #60fa57"><b>15</b></span> <img class="icon" src="/Icons/Health.webp"> up to <b>3</b> times, which reset whenever you use <b>Fountains</b>.<br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>70</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Night_Bloom: 'Your <b>Hex</b> raises <b>1</b> random slain foe from this <b>Encounter</b> to fight for you for <b>12 Sec.</b><br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>60</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Total_Eclipse: 'Your <b>Hex</b> blasts the target area for <span style="color: #60fa57"><b>1000</b></span> damage after <b>4 Sec.</b><br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>90</b></span> <img class="icon" src="/Icons/Magick.webp">',
+					Dark_Side: 'Your <b>Hex</b> turns you into an <b>Impervious</b> living nightmare with her own abilities for <b>5 Sec.</b><br>' +
+					'▸ Ready After:<br>' +
+					'<span style="color: #26e6ff"><b>80</b></span> <img class="icon" src="/Icons/Magick.webp">',
+				}[trait]
+				break
+			}
 			default:
 				description = 'default'
 		}
@@ -1192,7 +1270,7 @@
 		"Duo-Love_Handles": [['Flutter Strike', 'Flutter Flourish', 'Rapture Ring', 'Passion Rush', 'Glamour Gain'], ['Volcanic Strike', 'Volcanic Flourish', 'Smithy Sprint']], 
 		"Duo-Hot_Flash": [['Rapture Ring', "Passion Rush", 'Glamour Gain'], ['Flame Strike', 'Flame Flourish', 'Smolder Ring']],
 
-		"Duo-Chain_Reaction": [['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Hearth Gain', 'Soot Sprint']],
+		"Duo-Chain_Reaction": [['Flame Strike', 'Flame Flourish', 'Smolder Ring', 'Hearth Gain', 'Soot Sprint'], ['Volcanic Strike', 'Volcanic Flourish']],
 
 		'Zeus-Air_Quality': [['<b>3</b> <img class="icon" src="/Icons/Air.webp">']],
 		'Zeus-Lightning_Lance': [['Any <b>Ring</b> Boon']],
@@ -1332,7 +1410,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)}>
+					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)} on:mouseover={() => showDescription("Weapon-"+weapon)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("weapon", weapon)}>
 					</button>
 				</div>
@@ -1349,7 +1427,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.KEEPSAKE)}>
+					<button class="trait-button" on:click={() => openMenu(menus.KEEPSAKE)} on:mouseover={() => showDescription("Keepsake-"+keepsake)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
 					</button>
 				</div>
@@ -1357,7 +1435,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.FAMILIAR)}>
+					<button class="trait-button" on:click={() => openMenu(menus.FAMILIAR)} on:mouseover={() => showDescription("Familiar-"+familiar)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("familiar", familiar)}>
 					</button>
 				</div>
@@ -1365,7 +1443,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.HEX)}>
+					<button class="trait-button" on:click={() => openMenu(menus.HEX)} on:mouseover={() => showDescription("Hex-"+hex)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("hex", hex)}>
 					</button>
 				</div>
@@ -1504,7 +1582,7 @@
 				{#each weapons as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)} on:mouseover={() => showDescription("Weapon-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("weapon", option)}>
 							</button>
 						</div>
@@ -1532,7 +1610,7 @@
 				{#each keepsakes as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => keepsake = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => keepsake = option} on:mouseover={() => showDescription("Keepsake-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("keepsake", option)}>
 							</button>
 							
@@ -1547,7 +1625,7 @@
 				{#each familiars as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option} on:mouseover={() => showDescription("Familiar-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("familiar", option)}>
 							</button>
 						</div>
@@ -1561,7 +1639,7 @@
 				{#each hexes as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option} on:mouseover={() => showDescription("Hex-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("hex", option)}>
 							</button>
 						</div>
