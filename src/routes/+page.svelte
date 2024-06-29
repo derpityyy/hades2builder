@@ -969,6 +969,7 @@
 				break
 			case "Artemis":
 				description = {
+					None: '',
 					Pressure_Points: 'Any damage you deal may be <b>Critical</b>.<br>' +
 					'▸ Critical Chance:<br>' +
 					'<b>+3%/<span style="color: #4d82ff">4%</span>/<span style="color: #8b4dff">5%</span>/<span style="color: #ff4d4d">6%</span></b>',
@@ -994,6 +995,7 @@
 				break
 			case "Arachne":
 				description = {
+					None: '',
 					Lavender_Dress: 'Don a <span style="color: #60fa57"><b>+30</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you <b>Channel</b> <span style="color: #60fa57"><b>40%</b></span> faster.',
 					Scarlet_Dress: 'Don a <span style="color: #60fa57"><b>+10</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes your <b>Casts</b> deal <span style="color: #60fa57"><b>+100%</b></span> damage.',
 					Onyx_Dress: 'Don a <span style="color: #60fa57"><b>+60</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that creates <b>+1</b> <img class="icon" src="/Icons/FateFabric.webp"> now.',
@@ -1001,6 +1003,30 @@
 					Azure_Dress: 'Don a <span style="color: #60fa57"><b>+40</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you restore <span style="color: #26e6ff"><b>5</b></span> <img class="icon" src="/Icons/Magick.webp"> every <b>1 Sec.</b>',
 					Emerald_Dress: 'Don a <span style="color: #60fa57"><b>+50</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you restore <b>2</b> <img class="icon" src="/Icons/Health.webp"> whenever you exit a <b>Location</b>.'
 				}[trait]
+				break
+			case "Hades": 
+				description = {
+					None: '',
+					Howling_Soul: 'Your <b>Casts</b> launch a projectile dead ahead. The binding circle forms where it hits.<br>' +
+					'▸ Impact Damage:<br>' +
+					'<span style="color: #60fa57"><b>20</b></span>',
+					Deep_Dissent: 'In your confrontation, <b>Chronos</b> summons fewer reinforcements.<br>' +
+					'▸ Chronos Foes Summoned:<br>' +
+					'<span style="color: #60fa57"><b>50%</b></span>',
+					Last_Gasp: 'Deal more damage for each <i>spent</i> <b>Death Defiance</b>.<br>' +
+					'▸ Damage per <img class="icon" src="/Icons/DeathDefiance.webp"> Used:<br>' +
+					'<span style="color: #60fa57"><b>+10%</b></span>',
+					Unseen_Ire: 'After you take damage, go <b>Dark</b> for <b>10 Sec.</b> Recharges in <b>40 Sec.</b><br>' +
+					'▸ Damage While Dark:<br>' +
+					'<span style="color: #60fa57"><b>+100%</b></span>',
+					Life_Tax: 'Restore <img class="icon" src="/Icons/Health.webp"> for <b>1%</b> of damage you deal, until you reach the limit.<br>' +
+					'▸ Max Total Life Restored:<br>' +
+					'<span style="color: #60fa57"><b>100</b></span>',
+					Old_Grudge: 'In your confrontation, <b>Chronos</b> takes a burst of damage after the first <b>3 Sec.</b>' +
+					'▸ Chronos Life Reduced:<br>' +
+					'<span style="color: #60fa57"><b>-20%</b></span> <img class="icon" src="/Icons/Health.webp">'
+				}[trait]
+				break
 			default:
 				description = 'default'
 		}
@@ -1260,7 +1286,7 @@
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)} on:mouseover={() => showDescription(ArtemisTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Artemis", ArtemisTrait)}>
 					</button>
 					<img class="element" src={otherTraitElementImagePath(ArtemisTrait)}>
@@ -1269,7 +1295,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ARACHNE)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ARACHNE)} on:mouseover={() => showDescription("Arachne-"+ArachneTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Arachne", ArachneTrait)}>
 					</button>
 				</div>
@@ -1277,7 +1303,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.HADES)}>
+					<button class="trait-button" on:click={() => openMenu(menus.HADES)} on:mouseover={() => showDescription("Hades-"+HadesTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Hades", HadesTrait)}>
 					</button>
 				</div>
@@ -1474,7 +1500,7 @@
 				{#each Arachne as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArachneTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArachneTrait = option} on:mouseover={() => showDescription("Arachne-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Arachne", option)}>
 							</button>
 						</div>
@@ -1488,7 +1514,7 @@
 				{#each Hades as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => HadesTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => HadesTrait = option} on:mouseover={() => showDescription("Hades-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Hades", option)}>
 							</button>
 						</div>
