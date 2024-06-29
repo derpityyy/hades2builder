@@ -933,11 +933,63 @@
 					'▸ Blast Damage:<br>' +
 					'<span style="color: #60fa57"><b>300</b></span>',
 					Scalding_Vapor: 'If foes with <b>Slip</b> are struck by fire from <b>Hestia</b>, they are engulfed in <b>Steam</b>.<br>' +
-					'▸ Steam Damage <i>(every 0.2 Sec.)</i>:' +
+					'▸ Steam Damage <i>(every 0.2 Sec.)</i>:<br>' +
 					'<span style="color: #60fa57"><b>30</b></span>',				
-				
-				
-				
+					Freezer_Burn: 'Whenever you inflict <b>Freeze</b>, on a foe with <b>Scorch</b>, deal damage and remove <b>Scorch</b>.<br>' +
+					'▸ Damage from Scorch:<br>' +
+					'<span style="color: #60fa57"><b>200%</b></span>',
+					Room_Temperature: 'Your blast effects from <b>Hephaestus</b> clear <b>Freeze</b>, so you <b>Freeze</b> foes again right away.<br>' +
+					'▸ Freeze Re-Apply Time:<br>' +
+					'<span style="color: #60fa57"><b>0 Sec.</b></span>',
+					Hearty_Appetite: 'You deal more damage the more <img class="icon" src="/Icons/MaxHealth.webp"> you have.<br>' +
+					'▸ Bonus Damage per 100 Life:<br>' +
+					'<span style="color: #60fa57"><b>+10%</b></span>',
+					Boreal_Gust: 'While standing in a <b>Cyclone</b>>, you randomly fire gales every <b>0.3 Sec.</b><br>' +
+					'▸ Gale Damage <i>(every 0.5 Sec.)</i>:<br>' +
+					'<span style="color: #60fa57"><b>70</b></span>',
+					Rude_Awakening: 'Your blast effects from <b>Hephaestus</b> clear <b>Daze</b> and deal more damage if they do.<br>' +
+					'▸ Bonus Blast Damage:<br>' +
+					'<span style="color: #60fa57"><b>220</b></span>',
+					Phoenix_Skin: 'Give up <span style="color: #ba0202"><b>-100</b></span> <img class="icon" src="/Icons/MaxHealth.webp">. If you do not take or deal damage for <b>3 Sec.</b>, rapidly restore <img class="icon" src="/Icons/Health.webp">.<br>' +
+					'▸ Life Restoration <i>(every 1 Sec.)</i>:<br>' +
+					'<span style="color: #60fa57"><b>3</b></span>',
+					Sunny_Disposition: 'Whenever you create <b>Heartthrobs</b>, create more.<br>' +
+					'▸ Bonus Heartthrobs:<br>' +
+					'<span style="color: #60fa57"><b>+2</b></span>',
+					Hot_Flash: 'While foes are <b>Weak</b>, any <b>Scorch</b> they have does not diminish as it deals damage.<br>' +
+					'▸ Scorch Duration on Weak Foes:<br>' +
+					'<span style="color: #60fa57"><b>∞</b></span>',
+					Love_Handles: 'Your blast effects from <b>Hephaestus</b> also create a <b>Heartthrob</b>. The first time you would take damage each <b>Encounter</b>, get <img class="icon" src="/Icons/Health.webp"> instead.<br>' +
+					'▸ Heartthrob Area Damage:<br>' +
+					'<span style="color: #60fa57"><b>120</b></span>',
+					Chain_Reaction: 'If you use your blast effects from <b>Hephaestus</b> just after they recharge, they fire <b>2 times.<br>' +
+					'▸ Double Blast Timing:<br>' +
+					'<span style="color: #60fa57"><b>2 Sec.</b></span>'
+				}[trait]
+				break
+			case "Artemis":
+				description = {
+					Pressure_Points: 'Any damage you deal may be <b>Critical</b>.<br>' +
+					'▸ Critical Chance:<br>' +
+					'<b>+3%/<span style="color: #4d82ff">4%</span>/<span style="color: #8b4dff">5%</span>/<span style="color: #ff4d4d">6%</span></b>',
+					Silver_Streak: 'After you <b>Dash</b>, your <b>Ω Moves</b> deal more damage for <b>2 Sec.</b><br>' +
+					'▸ Bonus Omega Damage:<br>' +
+					'<b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">35%</span></b>',
+					First_Blood: 'Foes with at least <b>80%</b> <img class="icon" src="/Icons/Health.webp"> or <b>80% Armor</b> may take <b>Critical</b> damage.<br>' +
+					'▸ Critical Chance:<br>' +
+					'<b>15%/<span style="color: #4d82ff">23%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">38%</span></b>',
+					Lethal_Snare: 'Foes in your <b>Casts</b> may take <b>Critical</b> damage from your <b>Attacks</b>.<br>' +
+					'▸ Critical Chance:<br>' +
+					'<b>10%/<span style="color: #4d82ff">13%</span>/<span style="color: #8b4dff">16%</span>/<span style="color: #ff4d4d">19%</span></b>',
+					Easy_Shot: 'A piercing arrow fires towards any foe damaged by your <b>Ω Cast</b>.<br>' +
+					'▸ Arrow Damage:<br>' +
+					'<b>30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span></b>',
+					Support_Fire: 'After you hit with your <b>Attacks</b> or <b>Specials</b>, fire a seeking arrow.<br>' +
+					'▸ Arrow Damage:<br>' +
+					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
+					Death_Warrant: 'A random foe occasionally becomes <b>Marked</b>. If it takes <b>Critical</b> damage, this repeats.<br>' +
+					'▸ Time Between Marks:<br>' +
+					'<b>20/<span style="color: #4d82ff">18</span>/<span style="color: #8b4dff">16</span>/<span style="color: #ff4d4d">14</span> Sec.</b>',
 				}[trait]
 				break
 			default:
@@ -1199,7 +1251,7 @@
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Artemis", ArtemisTrait)}>
 					</button>
 					<img class="element" src={otherTraitElementImagePath(ArtemisTrait)}>
@@ -1398,7 +1450,7 @@
 				{#each Artemis as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArtemisTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArtemisTrait = option}  on:mouseover={() => showDescription(option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Artemis", option)}>
 							</button>
 							<img class="element" src={otherTraitElementImagePath(option)}>
