@@ -443,7 +443,7 @@
 					Proper_Upbringing: 'While you have at least <b>3</b> <img class="icon" src="/Icons/Earth.webp">, <b>all</b> your <b>Common Boons</b> gain <b>Rarity</b>.<br>' +
 					'▸ Improved Rarity:<br>' +
 					'<span style="color: #4d82ff"><b>Rare</b></span>',
-					Bridal_Glow: 'Your <b>Boons</b> become <b>Heroic</b>, then lose <b>Rarity</b> every <b>5 Encounters</b>.<br>' +
+					Bridal_Glow: 'Your <b>Boons</b> become <b>Heroic</b>, then lose <b>Rarity</b> every <b>5/<span style="color: #4d82ff">7</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">9</span></b> <b>Encounters</b>.<br>' +
 					'▸ Random Boons Affected:<br>' +
 					'<b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
 					Uncommon_Grace: 'While none of your other <b>Boons</b> are <b>Common</b>, deal more damage.<br>' +
@@ -451,7 +451,7 @@
 					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
 					Nasty_Comeback: 'After you take damage, inflict your foe with <b>Hitch</b> and deal damage in greater measure.<br>' +
 					'▸ Damage Reflected:<br>' +
-					'<b>500%/<span style="color: #4d82ff">700%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
+					'<b>500%/<span style="color: #4d82ff">750%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
 					Blood_Line: 'Your <b>Ω Moves</b> create a rift that strikes foes in front of and behind you, but use <span style="color: #26e6ff"><b>+15</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Rift Damage:<br>' +
 					'<b>100/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">140</span>/<span style="color: #ff4d4d">160</span></b>',
@@ -681,7 +681,7 @@
 					'<b>+10 <img class="icon" src="/Icons/Armor.webp">/<span style="color: #4d82ff">+15 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #8b4dff">+20 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #ff4d4d">+25 <img class="icon" src="/Icons/Armor.webp"></span></b>',
 					Grand_Caldera: 'Your blast effects from <b>Hephaestus</b> deal more damage and are <b>50%</b> larger.<br>' +
 					'▸ Bonus Blast Damage:<br>' +
-					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
+					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">100</span></b>',
 					Mint_Condition: 'At the start of each <b>Encounter</b>, you are briefly <b>Impervious</b>.<br>' +
 					'▸ Impervious Duration:<br>' +
 					'<b>8 Sec./<span style="color: #4d82ff">10 Sec.</span>/<span style="color: #8b4dff">12 Sec.</span>/<span style="color: #ff4d4d">14 Sec.</span></b>',
