@@ -1077,52 +1077,52 @@
 					description = {
 						"Witch's_Staff": 'You <b>Channel</b> your <b>Ω Moves</b> faster.<br>' +
 						'▸ Omega Channel Speed:<br>' +
-						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
 						Sister_Blades: 'Your <b>Attacks</b> and <b>Specials</b> deal more damage by striking foes from behind.<br>' +
 						'▸ Backstab Damage:<br>' +
-						'<b>+0%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">30%</span>/<span style="color: #ff9524">40%</span></b>',
+						'<b>+0/<span style="color: #4d82ff">10</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">40</span>/<span style="color: #60fa57">50</span>%</b>',
 						Umbral_Flames: 'Flames from your <b>Ω Special</b> burn longer before expiring.<br>' +
 						'▸ Omega Special Duration:<br>' +
-						'<b>+0/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">2.5</span> Sec.</b>',
+						'<b>+0/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">2.5</span>/<span style="color: #60fa57">3</span> Sec.</b>',
 						Moonstone_Axe: 'Gain bonus <b>Attack Power</b> and <img class="icon" src="/Icons/MaxHealth.webp"> this night.<br>' +
 						'▸ Attack Power & Max Life:<br>' +
-						'<b>+15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">35</span></b>',
+						'<b>+0/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">35</span>/<span style="color: #60fa57">40</span></b>',
 						Argent_Skull: 'Your <b>Attacks</b> have more <b>Power</b> for each <img class="icon" src="/Icons/Shell.webp"> <b>Shell</b> fired and not yet retrieved.<br>' +
 						'▸ Power per Spent Shell:<br>' +
-						'<b>+0/<span style="color: #4d82ff">5</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">15</span>/<span style="color: #ff9524">20</span></b>',
+						'<b>+0/<span style="color: #4d82ff">5</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">15</span>/<span style="color: #ff9524">20</span>/<span style="color: #60fa57">25</span></b>',
 					}[weapon]				
 				}else{
 					description = {
 						Circe: 'After your <b>Attack</b> or <b>Special</b> hit <b>12</b> times, gain <b>Serenity</b> with your next <b>Ω Move</b>.<br>' +
 						'▸ Serenity Omega Damage:<br>' +
-						'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span>/<span style="color: #ff9524">120%</span></b>',
+						'<b>+40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>/<span style="color: #ff9524">120</span>/<span style="color: #60fa57">140</span>%</b>',
 						Momus: 'Whenever you use <b>Ω moves</b>, each fires in place up to <b>3</b> times until you use it again.<br>' +
 						'▸ Delay Between Omega Bursts:<br>' +
-						'<b>3.5/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">2.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">1.5</span> Sec.</b>',
+						'<b>3.5/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">2.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">1.5</span>/<span style="color: #60fa57">1</span> Sec.</b>',
 						Artemis: 'While you <b>Channel</b> your <b>Ω Attack</b>, you occasionally <b>Parry</b>, then <b>Riposte</b> right after.<br>' +
 						'▸ Omega Attack Speed:<br>' +
-						'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span>/<span style="color: #ff9524">60%</span></b>',
+						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">70</span>%</b>',
 						Pan: 'Your <b>Specials</b> seek foes in your <b>Casts</b>, and fire more blades after you <b>Channel</b>.<br>' +
 						'▸ Omega Special Max Shots:<br>' +
-						'<b>+1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span>/<span style="color: #ff9524">5</span></b>',
+						'<b>+1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span>/<span style="color: #ff9524">5</span>/<span style="color: #60fa57">6</span></b>',
 						Moros: 'Your <b>Attacks</b> linger for <b>6 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.<br>' +
 						'▸ Blast Damage:<br>' +
-						'<b>+0%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">45%</span>/<span style="color: #ff9524">60%</span></b>',
+						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">45</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">75</span>%</b>',
 						Eos: 'Your <b>Ω Attack</b> fires a <b>Daybreaker</b> that deals damage in an area around it every <b>2 Sec.</b><br>' +
 						'▸ Daybreaker Blast Damage:<br>' +
-						'<b>100/<span style="color: #4d82ff">113</span>/<span style="color: #8b4dff">125</span>/<span style="color: #ff4d4d">138</span>/<span style="color: #ff9524">150</span></b>',
+						'<b>40/<span style="color: #4d82ff">80</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">160</span>/<span style="color: #ff9524">200</span>/<span style="color: #60fa57">240</span></b>',
 						Charon: 'Your <b>Cast</b> lasts <b>+3 Sec.</b>, and erupts like your <b>Ω Cast</b> if struck by your <b>Ω Special</b>.<br>' +
 						'▸ Cleave-Cast Size and Damage:<br>' +
-						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
 						Thanatos: 'Your <b>Attack</b> is faster, and each hit grants <b>Mortality</b> until you take damage.<br>' +
 						'▸ Attack Speed:<br>' +
-						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
 						Medea: 'Your <b>Attack</b> stays within reach, and explodes in a large area on impact by your <b>Special</b> or after <b>3 Sec.</b><br>' +
 						'▸ Attack & Special Damage:<br>' +
-						'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span>/<span style="color: #ff9524">60%</span></b>',
+						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">70</span>%</b>',
 						Persephone: 'Your <b>Ω Special</b> is enhanced, and damage from your <b>Casts</b> can extend it by up to <b>+2 Sec.</b><br>' +
 						'▸ Omega Move Damage:<br>' +
-						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
 					}[trait]
 				}
 				break
