@@ -1027,6 +1027,96 @@
 					'<span style="color: #60fa57"><b>-20%</b></span> <img class="icon" src="/Icons/Health.webp">'
 				}[trait]
 				break
+			case "Medea":
+				description = {
+					None: '',
+					Life_from_the_Dead: 'After a foe is slain, it has <b>5%</b> chance to drop <span style="color: #60fa57"><b>+10</b></span> <img class="icon" src="/Icons/HealHealth.webp">, limit <b>1</b> per <b>Encounter</b>.',
+					Malice_in_Kind: 'Whenever a foe makes you use <img class="icon" src="/Icons/DeathDefiance.webp"> <b>Death Defiance</b>, it loses <b>15%</b> <img class="icon" src="/Icons/Health.webp">.',
+					Wealth_from_the_Dead: 'After a foe is slain, it has <b>10%</b> chance to drop <span style="color: #fff933"><b>+20</b></span> <img class="icon" src="/Icons/Gold.webp">, limit <b>2</b> per <b>Encounter</b>.',
+					Suffering_on_Sight: 'After a foe joins the <b>Encounter</b>, it randomly takes <b>1</b> to <b>999</b> damage.',
+					Corrosion_on_Sight: 'After a foe joins the <b>Encounter</b>, it loses <b>50%</b> of any <b>Armor</b> it has.',
+					Enfeeblement_of_Cowards: "Foes' ranged shots have <b>-40%</b> travel speed.",
+					Traces_of_Spirit: 'After each <b>Encounter</b>, gain <span style="color: #26e6ff"><b>+10</b></span> <img class="icon" src="/Icons/MaxMagick.webp">.'
+				}[trait]
+				break
+			case "Circe":
+				description = {
+					None: '',
+					Lapis_Lazuli_Insight: 'Randomly draw <span style="color: #60fa57"><b>1</b></span> of your active <b>Arcana</b>, and upgrade it this night.',
+					Word_of_Greater_Girth: 'Grow in size, so that your strikes deal <span style="color: #60fa57"><b>+15%</b></span> damage.',
+					Word_of_Smaller_Stature: 'Shrink in size, so that you move <span style="color: #60fa57"><b>+15%</b></span> faster and have <span style="color: #60fa57"><b>+15%</b></span> chance to <b>Dodge</b>.',
+					Chants_to_the_Bewitched: 'Various <b>Animal Familiar</b> abilities are <span style="color: #60fa57"><b>100%</b></span> stronger this night.',
+					Old_Herbal_Remedy: 'Any <img class="icon" src="/Icons/HealHealth.webp"> effects are <span style="color: #60fa57"><b>+25%</b></span> stronger. Restore <span style="color: #60fa57"><b>50%</b></span> <img class="icon" src="/Icons/Health.webp"> now.',
+					Red_Citrine_Divination: 'Randomly draw <span style="color: #60fa57"><b>1</b></span> of your active <b>Arcana</b>, and upgrade it this night.',
+					Black_Night_Banishment: 'Randomly draw <span style="color: #60fa57"><b>1</b></span> of your active <b>Vows</b>, and remove its effect this night.'
+				}[trait]
+				break
+			case "Icarus":
+				description = {
+					None: '',
+					Destructive_Coating: 'Gain <span style="color: #60fa57"><b>+40</b></span> <img class="icon" src="/Icons/Armor.webp">. The next time you lose all your Armor, deal <b>4000</b> damage to nearby foes.',
+					Protective_Coating: 'Gain <span style="color: #60fa57"><b>+80</b></span> <img class="icon" src="/Icons/Armor.webp">. The next time you lose all your Armor, become <b>Impervious</b> for <b>8 Sec.</b>',
+					Hazard_Boom: 'Your <b>Casts</b> also blast the area after <b>4 Sec.</b>, dealing <b>500</b> damage to foes, but <span style="color: #ba0202"><b>20</b></span> to <i>you</i>.',
+					Ingenious_Strike: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp"> to give your <b>Attacks</b> <span style="color: #60fa57"><b>+10</b></span> <b>Power</b>.',
+					Ingenious_Flourish: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>40</b></span> <img class="icon" src="/Icons/Magick.webp"> to give your <b>Specials</b> <span style="color: #60fa57"><b>+20</b></span> <b>Power</b>.',
+					Explosive_Intent: 'Your <b>Ω Moves</b> also deal <span style="color: #60fa57"><b>50</b></span> damage in an area around foes they hit, but use <span style="color: #26e6ff"><b>+10</b></span> <img class="icon" src="/Icons/Magick.webp">.',
+					Supply_Chain: 'Each time you clear <b>5 Encounters</b>, receive <span style="color: #60fa57"><b>+10</b></span> <img class="icon" src="/Icons/MaxHealth.webp"> and <span style="color: #60fa57"><b>3</b></span> <img class="icon" src="/Icons/PomSlice.webp">.'
+				}[trait]
+				break
+			case "Aspect":
+				if(trait == "Melinoë"){
+					description = {
+						"Witch's_Staff": 'You <b>Channel</b> your <b>Ω Moves</b> faster.<br>' +
+						'▸ Omega Channel Speed:<br>' +
+						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						Sister_Blades: 'Your <b>Attacks</b> and <b>Specials</b> deal more damage by striking foes from behind.<br>' +
+						'▸ Backstab Damage:<br>' +
+						'<b>+0%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">30%</span>/<span style="color: #ff9524">40%</span></b>',
+						Umbral_Flames: 'Flames from your <b>Ω Special</b> burn longer before expiring.<br>' +
+						'▸ Omega Special Duration:<br>' +
+						'<b>+0/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">2.5</span> Sec.</b>',
+						Moonstone_Axe: 'Gain bonus <b>Attack Power</b> and <img class="icon" src="/Icons/MaxHealth.webp"> this night.<br>' +
+						'▸ Attack Power & Max Life:<br>' +
+						'<b>+15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">35</span></b>',
+						Argent_Skull: 'Your <b>Attacks</b> have more <b>Power</b> for each <img class="icon" src="/Icons/Shell.webp"> <b>Shell</b> fired and not yet retrieved.<br>' +
+						'▸ Power per Spent Shell:<br>' +
+						'<b>+0/<span style="color: #4d82ff">5</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">15</span>/<span style="color: #ff9524">20</span></b>',
+					}[weapon]				
+				}else{
+					description = {
+						Circe: 'After your <b>Attack</b> or <b>Special</b> hit <b>12</b> times, gain <b>Serenity</b> with your next <b>Ω Move</b>.<br>' +
+						'▸ Serenity Omega Damage:<br>' +
+						'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span>/<span style="color: #ff9524">120%</span></b>',
+						Momus: 'Whenever you use <b>Ω moves</b>, each fires in place up to <b>3</b> times until you use it again.<br>' +
+						'▸ Delay Between Omega Bursts:<br>' +
+						'<b>3.5/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">2.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">1.5</span> Sec.</b>',
+						Artemis: 'While you <b>Channel</b> your <b>Ω Attack</b>, you occasionally <b>Parry</b>, then <b>Riposte</b> right after.<br>' +
+						'▸ Omega Attack Speed:<br>' +
+						'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span>/<span style="color: #ff9524">60%</span></b>',
+						Pan: 'Your <b>Specials</b> seek foes in your <b>Casts</b>, and fire more blades after you <b>Channel</b>.<br>' +
+						'▸ Omega Special Max Shots:<br>' +
+						'<b>+1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span>/<span style="color: #ff9524">5</span></b>',
+						Moros: 'Your <b>Attacks</b> linger for <b>6 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.<br>' +
+						'▸ Blast Damage:<br>' +
+						'<b>+0%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">45%</span>/<span style="color: #ff9524">60%</span></b>',
+						Eos: 'Your <b>Ω Attack</b> fires a <b>Daybreaker</b> that deals damage in an area around it every <b>2 Sec.</b><br>' +
+						'▸ Daybreaker Blast Damage:<br>' +
+						'<b>100/<span style="color: #4d82ff">113</span>/<span style="color: #8b4dff">125</span>/<span style="color: #ff4d4d">138</span>/<span style="color: #ff9524">150</span></b>',
+						Charon: 'Your <b>Cast</b> lasts <b>+3 Sec.</b>, and erupts like your <b>Ω Cast</b> if struck by your <b>Ω Special</b>.<br>' +
+						'▸ Cleave-Cast Size and Damage:<br>' +
+						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						Thanatos: 'Your <b>Attack</b> is faster, and each hit grants <b>Mortality</b> until you take damage.<br>' +
+						'▸ Attack Speed:<br>' +
+						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+						Medea: 'Your <b>Attack</b> stays within reach, and explodes in a large area on impact by your <b>Special</b> or after <b>3 Sec.</b><br>' +
+						'▸ Attack & Special Damage:<br>' +
+						'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span>/<span style="color: #ff9524">60%</span></b>',
+						Persephone: 'Your <b>Ω Special</b> is enhanced, and damage from your <b>Casts</b> can extend it by up to <b>+2 Sec.</b><br>' +
+						'▸ Omega Move Damage:<br>' +
+						'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span>/<span style="color: #ff9524">30%</span></b>',
+					}[trait]
+				}
+				break
 			default:
 				description = 'default'
 		}
@@ -1251,7 +1341,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ASPECT)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ASPECT)} on:mouseover={() => showDescription("Aspect-"+aspect)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath(weapon, aspect)}>
 					</button>
 				</div>
@@ -1311,7 +1401,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.MEDEA)}>
+					<button class="trait-button" on:click={() => openMenu(menus.MEDEA)} on:mouseover={() => showDescription("Medea-"+MedeaTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Medea", MedeaTrait)}>
 					</button>
 				</div>
@@ -1319,7 +1409,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.CIRCE)}>
+					<button class="trait-button" on:click={() => openMenu(menus.CIRCE)} on:mouseover={() => showDescription("Circe-"+CirceTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Circe", CirceTrait)}>
 					</button>
 				</div>
@@ -1327,7 +1417,7 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ICARUS)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ICARUS)} on:mouseover={() => showDescription("Icarus-"+IcarusTrait)} on:mouseout={hideDescription}>
 						<img class="trait-image" src={genImagePath("Icarus", IcarusTrait)}>
 					</button>
 				</div>
@@ -1428,7 +1518,7 @@
 				{#each aspects as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option} on:mouseover={() => showDescription("Aspect-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath(weapon, option)}>
 							</button>
 						</div>
@@ -1528,7 +1618,7 @@
 				{#each Medea as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => MedeaTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => MedeaTrait = option} on:mouseover={() => showDescription("Medea-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Medea", option)}>
 							</button>
 						</div>
@@ -1542,7 +1632,7 @@
 				{#each Circe as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => CirceTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => CirceTrait = option} on:mouseover={() => showDescription("Circe-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Circe", option)}>
 							</button>
 						</div>
@@ -1556,7 +1646,7 @@
 				{#each Icarus as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => IcarusTrait = option}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => IcarusTrait = option} on:mouseover={() => showDescription("Icarus-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Icarus", option)}>
 							</button>
 						</div>
@@ -1667,6 +1757,7 @@
 		color: rgb(223, 239, 255);
 		margin: 0;
 		text-align: center;
+		text-wrap: warp;
 	}
 	button{
 		font-family: "Helvetica";
