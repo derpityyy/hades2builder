@@ -992,6 +992,15 @@
 					'<b>20/<span style="color: #4d82ff">18</span>/<span style="color: #8b4dff">16</span>/<span style="color: #ff4d4d">14</span> Sec.</b>',
 				}[trait]
 				break
+			case "Arachne":
+				description = {
+					Lavender_Dress: 'Don a <span style="color: #60fa57"><b>+30</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you <b>Channel</b> <span style="color: #60fa57"><b>40%</b></span> faster.',
+					Scarlet_Dress: 'Don a <span style="color: #60fa57"><b>+10</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes your <b>Casts</b> deal <span style="color: #60fa57"><b>+100%</b></span> damage.',
+					Onyx_Dress: 'Don a <span style="color: #60fa57"><b>+60</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that creates <b>+1</b> <img class="icon" src="/Icons/FateFabric.webp"> now.',
+					Moonlight_Dress: 'Don a <span style="color: #60fa57"><b>+20</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that grants <b>+5</b> <img class="icon" src="/Icons/Gold.webp"> whenever you exit a <b>Location.</b>',
+					Azure_Dress: 'Don a <span style="color: #60fa57"><b>+40</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you restore <span style="color: #26e6ff"><b>5</b></span> <img class="icon" src="/Icons/Magick.webp"> every <b>1 Sec.</b>',
+					Emerald_Dress: 'Don a <span style="color: #60fa57"><b>+50</b></span> <img class="icon" src="/Icons/Armor.webp"> <b>Outfit</b> that makes you restore <b>2</b> <img class="icon" src="/Icons/Health.webp"> whenever you exit a <b>Location</b>.'
+				}[trait]
 			default:
 				description = 'default'
 		}
