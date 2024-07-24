@@ -200,11 +200,11 @@
 				break
 			case "Sister_Blades":
 				aspects = ["Melinoë", "Artemis", "Pan"]
-				otherTraits["Hammer"] = ["Hammer-Final_Slice", "Hammer-Skulking_Slice", "Hammer-Explosive_Ambush", "Hammer-Sudden_Flurry", "Hammer-Flick_Knives", "Hammer-Escalating_Ambush", "Hammer-Rapid_Onslaught", "Hammer-Melting_Dart", "Hammer-Spiral_Knives", "Hammer-Dancing_Knives", "Hammer-Sureshot_Flurry", "Hammer-Hook_Knives"]
+				otherTraits["Hammer"] = ["Hammer-Final_Slice", "Hammer-Skulking_Slice", "Hammer-Explosive_Ambush", "Hammer-Sudden_Flurry", "Hammer-Flick_Knives", "Hammer-Wicked_Onslaught", "Hammer-Rapid_Onslaught", "Hammer-Melting_Dart", "Hammer-Spiral_Knives", "Hammer-Dancing_Knives", "Hammer-Sureshot_Flurry", "Hammer-Hook_Knives"]
 				break
 			case "Umbral_Flames":
 				aspects = ["Melinoë", "Moros", "Eos"]
-				otherTraits["Hammer"] = ["Hammer-Sustained_Spark", "Hammer-Clean_Candle", "Hammer-Inverted_Spark", "Hammer-Triple_Helix", "Hammer-Rising_Coil", "Hammer-Mega_Spark", "Hammer-Origin_Coil", "Hammer-Crushing_Comet", "Hammer-Melting_Coil", "Hammer-Clean_Helix", "Hammer-Leaden_Spark", "Hammer-Split_Spark"]
+				otherTraits["Hammer"] = ["Hammer-Sustained_Spark", "Hammer-Clean_Candle", "Hammer-Inverted_Spark", "Hammer-Triple_Helix", "Hammer-Rising_Coil", "Hammer-Mega_Spark", "Hammer-Whirling_Coil", "Hammer-Triple_Comet", "Hammer-Melting_Coil", "Hammer-Clean_Helix", "Hammer-Leaden_Spark", "Hammer-Split_Spark"]
 				break
 			case "Moonstone_Axe":
 				aspects = ["Melinoë", "Charon", "Thanatos"]
@@ -230,7 +230,7 @@
 
 	let otherTraits = {
 		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
-		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Family_Trade", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
+		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Rousing_Reception", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
 		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
 		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Crispy_Coating", "Hestia-Natural_Gas", "Hestia-Pyro_Technique", "Hestia-Highly_Flammable", "Hestia-Fire_Walk"],
 		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Grand_Caldera", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
@@ -406,15 +406,15 @@
 					Static_Shock: 'After you enter a <b>Location</b>, <b>Prime <span style="color: #26e6ff">50</span></b> <img class="icon" src="/Icons/Magick.webp"> to make your strikes emit chain-lightning.<br>' +
 					'▸ Lightning Damage:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
-					Spirit_Surge: 'While you have no more than <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp">, <b>all</b> foes are occasionally struck by lightning.<br>' +
-					'▸ Bolt Damage <i>(every 5 Sec.)</i>:<br>' +
-					'<b>60/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">105</span></b>',
+					Spirit_Surge: 'Whenever you use <img class="icon" src="/Icons/Magick.webp">, a random surrounding foe is struck by lightning.<br>' +
+					'▸ Bolt Damage <i>(every 0.25 Sec.)</i>:<br>' +
+					'<b>20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span></b>',
 					Double_Strike: 'Your lightning bolt effects may strike <b>1</b> more time.<br>' +
 					'▸ Bonus Strike Chance:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Toasting_Fork: 'Your <b>Blitz</b> effects deal damage even if they expire without being activated.<br>' +
 					'▸ Blitz Expiration Damage:<br>' +
-					'<b>75%/<span style="color: #4d82ff">100%</span>/<span style="color: #8b4dff">125%</span>/<span style="color: #ff4d4d">150%</span></b>',
+					'<b>75/<span style="color: #4d82ff">100</span>/<span style="color: #8b4dff">125</span>/<span style="color: #ff4d4d">150</span>%</b>',
 					Electric_Overload: 'Whenever your <b>Blitz</b> effects activate, a bolt of chain-lightning fires from the foe.<br>' +
 					'▸ Lightning Damage:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
@@ -427,12 +427,12 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage and inflict <b>Hitch</b>.<br>' +
 					'▸ Attack Damage:<br>' + 
-					'<b>+50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
+					'<b>+50/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">70</span>/<span style="color: #ff4d4d">80</span>%</b>',
 					Special: 'Your <b>Specials</b> deal more damage and inflict <b>Hitch</b>.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
-					Cast: 'Your <b>Casts</b> deal damage and inflict <b>Hitch</b> whenever foes join the <b>Encounter</b>, anywhere!<br>' +
-					'▸ On-Spawn Damage:<br>' +
+					'<b>+50/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">70</span>/<span style="color: #ff4d4d">80</span>%</b>',
+					Cast: 'Your <b>Casts</b> inflict <b>Hitch</b>. Whenever foes within are slain, they damage surrounding foes.<br>' +
+					'▸ Death Blast Damage: <br>' +
 					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Sprint: 'Your <b>Sprint</b> inflicts <b>Hitch</b> on contact with foes, and deals damage when it does.<br>' +
 					'▸ Damage with Hitch:<br>' +
@@ -448,19 +448,19 @@
 					'<b>2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
 					Uncommon_Grace: 'While none of your other <b>Boons</b> are <b>Common</b>, deal more damage.<br>' +
 					'▸ Common-Less Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Nasty_Comeback: 'After you take damage, inflict your foe with <b>Hitch</b> and deal damage in greater measure.<br>' +
 					'▸ Damage Reflected:<br>' +
-					'<b>500%/<span style="color: #4d82ff">750%</span>/<span style="color: #8b4dff">1000%</span>/<span style="color: #ff4d4d">1250%</span></b>',
+					'<b>500/<span style="color: #4d82ff">750</span>/<span style="color: #8b4dff">1000</span>/<span style="color: #ff4d4d">1250</span>%</b>',
 					Blood_Line: 'Your <b>Ω Moves</b> create a rift that strikes foes in front of and behind you, but use <span style="color: #26e6ff"><b>+15</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Rift Damage:<br>' +
 					'<b>100/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">140</span>/<span style="color: #ff4d4d">160</span></b>',
-					Family_Trade: 'Any <b>Sacrifice Boons</b> you choose are stronger. One will be offered as soon as possible.<br>' +
-					'▸ Bonus Levels: <br>' +
-					'<b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
+					Rousing_Reception: 'Your <b>Casts</b> damage any foes as they join the <b>Encounter</b>, wherever they appear.<br>' +
+					'▸ On-Spawn Damage:<br>' +
+					'<b>60/<span style="color: #4d82ff">80</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">120</span></b>',
 					Hereditary_Bane: 'Your <b>Hitch</b> effects deal more damage and last <b>+5 Sec.</b><br>' +
 					'▸ Hitch Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Dying_Wish: 'Whenever <b>Hitch</b>-afflicted foes are slain, damage <b>all</b> other <b>Hitch</b>-afflicted foes.<br>' +
 					'▸ Hitch Death Damage:<br>' +
 					'<b>40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span></b>',
@@ -485,16 +485,16 @@
 					'<b>80/<span style="color: #4d82ff">120</span>/<span style="color: #8b4dff">160</span>/<span style="color: #ff4d4d">200</span></b>',
 					Gain: 'After you strike foes with your <b>Weapon</b>, a <b>Spirit Bubble</b> may appear.<br>' +
 					'▸ Spirit Bubble Chance:<br>' +
-					'<b>10%/<span style="color: #4d82ff">12%</span>/<span style="color: #8b4dff">14%</span>/<span style="color: #ff4d4d">16%</span></b>',
+					'<b>10/<span style="color: #4d82ff">12</span>/<span style="color: #8b4dff">14</span>/<span style="color: #ff4d4d">16</span>%</b>',
 					Water_Fitness: 'Gain <img class="icon" src="/Icons/MaxHealth.webp"> for each <img class="icon" src="/Icons/Water.webp"> you have.<br>' +
 					'▸ Max Life per Watyer Boon:<br>' +
 					'<span style="color: #60fa57"><b>+15</b></span>',
 					Double_Up: 'Whenever you claim rewards other than <b>Boons</b>, <img class="icon" src="/Icons/Hammer.webp">, or rare resources, a copy may appear.<br>' +
 					'▸ Double Reward Chance:<br>' +
-					'<b>20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">35%</span></b>',
+					'<b>20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span>%</b>',
 					Hydraulic_Might: 'At the start of each <b>Encounter</b>, your <b>Attacks</b> and <b>Specials</b> are stronger for <b>10 Sec.</b><br>' +
 					'▸ Initial Damage Bonus:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">133%</span>/<span style="color: #8b4dff">166%</span>/<span style="color: #ff4d4d">200%</span></b>',
+					'<b>+100/<span style="color: #4d82ff">133</span>/<span style="color: #8b4dff">166</span>/<span style="color: #ff4d4d">200</span>%</b>',
 					Flood_Control: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp"> to reduce any damage you would take.<br>' +
 					'▸ Damage Reduction per Hit:<br>' +
 					'<b>-2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span></b>',
@@ -503,13 +503,13 @@
 					'<b>50/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">90</span>/<span style="color: #ff4d4d">110</span></b>',
 					"Ocean's_Bounty": 'Any <b>Minor Finds</b> and <img class="icon" src="/Icons/Gold.webp"> are worth more. Receive <img class="icon" src="/Icons/Gold.webp">, <img class="icon" src="/Icons/MaxHealth.webp">, and sometimes <img class="icon" src="/Icons/Ashes.webp"> and <img class="icon" src="/Icons/Psyche.webp">, now.<br>' +
 					'▸ Reward Value:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">55%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">65%</span></b>',
+					'<b>+50/<span style="color: #4d82ff">55</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">65</span>%</b>',
 					Geyser_Spout: 'Your <b>Ω Cast</b> immediately detonates, dealing damage and knocking foes away.<br>' +
 					'▸ Omega Cast Damage:<br>' +
 					'<b>200/<span style="color: #4d82ff">240</span>/<span style="color: #8b4dff">280</span>/<span style="color: #ff4d4d">320</span></b>',
 					Slippery_Slope: 'Your splash effects from <b>Poseidon</b> also inflict <b>Slip</b> on foes.<br>' +
 					'▸ Slip Bonus Damage:<br>' +
-					'<b>+5%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">15%</span>/<span style="color: #ff4d4d">20%</span></b>',
+					'<b>+5/<span style="color: #4d82ff">10</span>/<span style="color: #8b4dff">15</span>/<span style="color: #ff4d4d">20</span>%</b>',
 					King_Tide: 'Your splash effects from <b>Poseidon</b> are larger and deal bonus damage to <b>Guardians</b>.<br>' +
 					'▸ Splash Damage vs. Guardians:<br>' +
 					'<span style="color: #60fa57"><b>+200%</b></span>'
@@ -519,10 +519,10 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage and inflict <b>Freeze</b>.<br>' +
 					'▸ Attack Damage:<br>' +
-					'<b>+30%/<span style="color: #4d82ff">45%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">75%</span></b>',
+					'<b>+30/<span style="color: #4d82ff">45</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">75</span>%</b>',
 					Special: 'Your <b>Specials</b> now deal more damage and inflict <b>Freeze</b>.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
+					'<b>+40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>%</b>',
 					Cast: 'Your <b>Casts</b> repeatedly deal damage in the area and inflict <b>Freeze</b>.<br>' +
 					'▸ Special Damage <i>(every 0.5 Sec.)</i>:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
@@ -531,7 +531,7 @@
 					'<b>4/<span style="color: #4d82ff">6</span>/<span style="color: #8b4dff">8</span>/<span style="color: #ff4d4d">10</span></b>',
 					Gain: 'After remaining inactive for <b>1 Sec.</b>, rapidly restore <img class="icon" src="/Icons/Magick.webp"> until you act.<br>' +
 					'▸ Magick Restoration <i>(every 1 Sec.)</i>:<br>' +
-					'<b>40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
+					'<b>40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>%</b>',
 					Frosty_Veneer: 'While you have at least <b>6</b> <img class="icon" src="/Icons/Water.webp">, you cannot take more damage per hit than the limit.<br>' +
 					'▸ Max Damage per Hit:<br>' +
 					'<span style="color: #60fa57"><b>15</b></span>',
@@ -540,7 +540,7 @@
 					'<b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b>',
 					Local_Climate: 'Your <b>Ω Cast</b> deals bonus damage and follows you, even as you start to <b>Channel</b> it.<br>' +
 					'▸ Cast Damage:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span></b>',
+					'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>%</b>',
 					Gale_Force: 'Your <b>Casts</b> also create a <b>Cyclone</b> at the binding circle.<br>' +
 					'▸ Cyclone Damage <i>(every 0.25 Sec.)</i>:<br>' +
 					'<b>4/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">12</span>/<span style="color: #ff4d4d">16</span></b>',
@@ -552,7 +552,7 @@
 					'<b>20/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">5</span></b>',
 					Weed_Killer: 'Your <b>Ω Attack</b> deals more damage, but uses <span style="color: #26e6ff"><b>+10</b></span> <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Attack Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>',
+					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span>%</b>',
 					Cold_Storage: 'Your <b>Freeze</b> effects last longer.<br>' +
 					'▸ Freeze Duration:<br>' +
 					'<b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">5</span> Sec.</b>',
@@ -565,16 +565,16 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage in a larger area.<br>' +
 					'▸ Attack Damage:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">80%</span>/<span style="color: #ff4d4d">100%</span></b>',
+					'<b>+40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>%</b>',
 					Special: 'Your <b>Specials</b> deal more damage in a larger area.<br>' +
 					'▸ Special Damage:<br>' +
-					'<b>+60%/<span style="color: #4d82ff">80%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">120%</span></b>',
+					'<b>+60/<span style="color: #4d82ff">80</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">120</span>%</b>',
 					Cast: 'Your <b>Casts</b> inflict <b>Daze</b>, and deal a burst of damage before they expire.<br>' +
 					'▸ Cast Damage:<br>' +
 					'<b>60/<span style="color: #4d82ff">90</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">150</span></b>',
 					Sprint: 'Your <b>Sprint</b> is faster and inflicts <b>Daze</b> on nearby foes.<br>' +
 					'▸ Sprint Speed:<br>' +
-					'<b>+30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b>',
+					'<b>+30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span>%</b>',
 					Gain: 'If you stand in your <b>Casts</b> when they expire, immediately restore <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Magick Restored:<br>' +
 					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
@@ -583,25 +583,25 @@
 					'<span style="color: #60fa57"><b>30%</b></span>',
 					Super_Nova: 'Your <b>Casts</b> expand in size until they expire.<br>' +
 					'▸ Max Cast Size:<br>' +
-					'<b>40%/<span style="color: #4d82ff">50%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">70%</span></b>',
+					'<b>40/<span style="color: #4d82ff">50</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">70</span>%</b>',
 					Light_Smite: 'After you take damage, your foe takes damage and you inflict <b>Daze</b> on <b>all</b> foes.<br>' +
 					'▸ Revenge Damage:<br>' +
 					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
 					Extra_Dose: 'Your <b>Attack</b> has a chance to hit <b>2</b> times.<br>' +
 					'▸ Double Strike Chance:<br>' +
-					'<b>+5%/<span style="color: #4d82ff">8%</span>/<span style="color: #8b4dff">10%</span>/<span style="color: #ff4d4d">13%</span></b>',
+					'<b>+5/<span style="color: #4d82ff">8</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">13</span>%</b>',
 					Perfect_Image: 'In each <b>Encounter</b>, you deal more damage until you take damage. If you take no more for <b>15 Sec.</b>, regain this.<br>' +
 					'▸ No-Hit Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Back_Burner: 'Foes with <b>Daze</b> take more damage if struck from behind.<br>' +
 					'▸ Backstab Damage:<br>' +
-					'<b>+50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>',
+					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span>%</b>',
 					Prominence_Flare: 'After your <b>Ω Cast</b> expires, rapidly deal damage in the area for <b>2 Sec.</b><br>' +
 					'▸ Omega Cast Damage <i>(every .13 Sec.)</i>:<br>' +
 					'<b>10/<span style="color: #4d82ff">12</span>/<span style="color: #8b4dff">14</span>/<span style="color: #ff4d4d">16</span></b>',
 					Dazzling_Display: 'Your attacks may inflict <b>Daze</b>.<br>' +
 					'▸ Daze Chance:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Exceptional_Talent: 'Your <b>Ω Attack</b> and <b>Ω Special</b> fire <b>2</b> times, but use more <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Move Cost:<br>' +
 					'<span style="color: #ba0202"><b>+20</b></span> <img class="icon" src="/Icons/Magick.webp">'
@@ -611,10 +611,10 @@
 				description = {
 					Attack: 'Your <b>Attacks</b> deal more damage to nearby foes.<br>' +
 					'▸ Close-Up Damage:<br>' +
-					'<b>+80%/<span style="color: #4d82ff">100%</span>/<span style="color: #8b4dff">120%</span>/<span style="color: #ff4d4d">140%</span></b>',
+					'<b>+80/<span style="color: #4d82ff">100</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">140</span>%</b>',
 					Special:'Your <b>Specials</b> deal more damage to nearby foes.<br>' +
 					'▸ Close-Up Damage:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">150%</span>/<span style="color: #8b4dff">200%</span>/<span style="color: #ff4d4d">250%</span></b>',
+					'<b>+100/<span style="color: #4d82ff">150</span>/<span style="color: #8b4dff">200</span>/<span style="color: #ff4d4d">250</span>%</b>',
 					Cast: 'Your <b>Casts</b> inflict <b>Weak</b>, and damage foes while dragging them toward the center.<br>' +
 					'▸ Weak Damage Reduction:<br>' +
 					'<b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span></b>',
@@ -629,25 +629,25 @@
 					'<span style="color: #60fa57"><b>+3%</b></span>',
 					Healthy_Rebound: 'Whenever you exit a <b>Location</b>, restore <b>100%</b> <img class="icon" src="/Icons/Health.webp"> if you have not lost too much.<br>' +
 					'▸ Min Life Required:<br>' +
-					'<b>80%/<span style="color: #4d82ff">70%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">50%</span></b>',
+					'<b>80/<span style="color: #4d82ff">70</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">50</span>%</b>',
 					Secret_Crush: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp"> to add <b>Power</b> to your <b>Attack</b>.<br>' +
 					'▸ Attack Power:<br>' +
 					'<b>+5/<span style="color: #4d82ff">7</span>/<span style="color: #8b4dff">9</span>/<span style="color: #ff4d4d">11</span></b>',
 					Life_Affirmation: 'Any <img class="icon" src="/Icons/MaxHealth.webp"> rewards you find have greater effect.<br>' +
 					'▸ Bonus Life Gain:<br>' +
-					'<b>+40%/<span style="color: #4d82ff">50%</span>/<span style="color: #8b4dff">60%</span>/<span style="color: #ff4d4d">70%</span></b>',
+					'<b>+40/<span style="color: #4d82ff">50</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">70</span>%</b>',
 					Shameless_Attitude: 'You deal more damage. While you have at least <b>80%</b> <img class="icon" src="/Icons/Health.webp">, the bonus is doubled.<br>' +
 					'▸ High-Life Bonus Damage:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Heart_Breaker: 'Whenever you use <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp">, create a <b>Heartthrob</b>.<br>' +
 					'▸ Heartthrob Damage:<br>' +
 					'<b>120/<span style="color: #4d82ff">180</span>/<span style="color: #8b4dff">240</span>/<span style="color: #ff4d4d">300</span></b>',
 					Broken_Resolve: 'Your <b>Weak</b> effects are more potent.<br>' +
 					'▸ Weak Damage Reduction:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">12%</span>/<span style="color: #8b4dff">14%</span>/<span style="color: #ff4d4d">16%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">12</span>/<span style="color: #8b4dff">14</span>/<span style="color: #ff4d4d">16</span>%</b>',
 					Sweet_Surrender: '<b>Weak</b>-afflicted foes take more damage.<br>' +
 					'▸ Damage vs. Weak:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Nervous_Wreck: "Whenever you inflict <b>Weak</b>, also randomly inflict other gods' <b>Curses</b>.<br>" +
 					'▸ Bonus Random Curses:<br>' +
 					'<span style="color: #60fa57"><b>3</b></span>'
@@ -675,7 +675,7 @@
 					'<span style="color: #60fa57"><b>+5%</b></span>',
 					Molten_Touch: 'Your <b>Attacks</b> and <b>Specials</b> deal bonus damage to <b>Armor</b>.<br>' +
 					'▸ Damage vs. Armor:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">+30%</span>/<span style="color: #8b4dff">+40%</span>/<span style="color: #ff4d4d">+50%</span></b>',
+					'<b>+20/<span style="color: #4d82ff">+30</span>/<span style="color: #8b4dff">+40</span>/<span style="color: #ff4d4d">+50</span>%</b>',
 					Trusty_Shield: 'After you enter a <b>Location</b>, <b>Prime</b> <span style="color: #26e6ff"><b>30</b></span> <img class="icon" src="/Icons/Magick.webp"> to gain <b>Armor</b> until the next <b>Location</b>.<br>' +
 					'▸ Starting Armor:<br>' +
 					'<b>+10 <img class="icon" src="/Icons/Armor.webp">/<span style="color: #4d82ff">+15 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #8b4dff">+20 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #ff4d4d">+25 <img class="icon" src="/Icons/Armor.webp"></span></b>',
@@ -690,7 +690,7 @@
 					'<b>+50 <img class="icon" src="/Icons/Armor.webp">/<span style="color: #4d82ff">+75 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #8b4dff">+100 <img class="icon" src="/Icons/Armor.webp"></span>/<span style="color: #ff4d4d">+125 <img class="icon" src="/Icons/Armor.webp"></span></b>',
 					Uncanny_Fortitude: 'Gain bonus <img class="icon" src="/Icons/MaxHealth.webp"> based on your <img class="icon" src="/Icons/Magick.webp"> limit.<br>' +
 					'▸ Max Life from Magick:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">+30%</span>/<span style="color: #8b4dff">+40%</span>/<span style="color: #ff4d4d">+50%</span></b>',
+					'<b>+20/<span style="color: #4d82ff">+30</span>/<span style="color: #8b4dff">+40</span>/<span style="color: #ff4d4d">+50</span>%</b>',
 					Furnace_Blast: 'Your blast effects from <b>Hephaestus</b> also inflict <b>Vent</b> on foes.<br>' +
 					'▸ Vent Damage:<br>' +
 					'<b>300/<span style="color: #4d82ff">400</span>/<span style="color: #8b4dff">500</span>/<span style="color: #ff4d4d">600</span></b>',
@@ -730,7 +730,7 @@
 					'<b>+50/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">70</span>/<span style="color: #ff4d4d">80</span></b>',
 					Crispy_Coating: 'Your <b>Scorch</b> effects deal bonus damage to <b>Armor</b>.<br>' +
 					'▸ Scorch Damage vs. Armor:<br>' +
-					'<b>+100%/<span style="color: #4d82ff">150%</span>/<span style="color: #8b4dff">200%</span>/<span style="color: #ff4d4d">250%</span></b>',
+					'<b>+100/<span style="color: #4d82ff">150</span>/<span style="color: #8b4dff">200</span>/<span style="color: #ff4d4d">250</span>%</b>',
 					Highly_Flammable: 'Whenever you inflict <b>Scorch</b> on a foe for the first time, inflict more.<br>' +
 					'▸ First-Time Scorch Damage:<br>' +
 					'<b>+50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span></b>',
@@ -742,7 +742,7 @@
 					'<span style="color: #60fa57"><b>20</b></span>',
 					Pyro_Technique: 'Your <b>Scorch</b> effects deal damage faster.<br>' +
 					'▸ Scorch Damage Rate:<br>' +
-					'<b>50%/<span style="color: #4d82ff">75%</span>/<span style="color: #8b4dff">100%</span>/<span style="color: #ff4d4d">125%</span></b>'
+					'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span>%</b>'
 				}[trait]
 				break
 			case "Hermes": 
@@ -752,34 +752,34 @@
 					'<span style="color: #60fa57"><b>+20%</b></span>',
 					Greater_Evasion: 'Whenever you are struck, you may <b>Dodge</b> any damage.<br>' +
 					'▸ Dodge Chance:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Saved_Breath: 'Your <b>Ω Cast</b> uses less <img class="icon" src="/Icons/Magick.webp">.<br>' +
 					'▸ Omega Cast Cost:<br>' +
-					'<b>-50%/<span style="color: #4d82ff">60%</span>/<span style="color: #8b4dff">70%</span>/<span style="color: #ff4d4d">80%</span></b>',
+					'<b>-50/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">70</span>/<span style="color: #ff4d4d">80</span>%</b>',
 					Nimble_Mind: 'Your <b>Ω Moves</b> are faster.<br>' +
 					'▸ Omega Move Speed:<br>' +
-					'<b>+15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
+					'<b>+15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>%</b>',
 					Nimble_Limbs: 'Your <b>Attack</b>, <b>Special</b>, and <b>Cast</b> are faster.<br>' +
 					'▸ Strike Speed:<br>' +
-					'<b>+10%/<span style="color: #4d82ff">15%</span>/<span style="color: #8b4dff">20%</span>/<span style="color: #ff4d4d">25%</span></b>',
+					'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>%</b>',
 					Midnight_Oil: 'While your <b>Hex</b> is ready, you move and strike faster.<br>' +
 					'▸ Bonus Move & Weapon Speed:<br>' +
-					'<b>+15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
+					'<b>+15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>%</b>',
 					Quick_Buck: 'You find <img class="icon" src="/Icons/Gold.webp"> in greater quantities. Receive <span style="color: #fff933"><b>100</b></span> <img class="icon" src="/Icons/Gold.webp"> now, plus the bonus!<br>' +
 					'▸ Bonus Gold:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">50%</span></b>',
+					'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>%</b>',
 					Hard_Target: "Most foes' ranged shots are slower.<br>" +
 					'▸ Foe Projectile Speed:<br>' +
-					'<b>-30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b>',
+					'<b>-30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span>%</b>',
 					Witty_Retort: 'Your <b>Hex</b> requires using less <img class="icon" src="/Icons/Magick.webp"> before it is ready.<br>' +
 					'▸ Reduced Magick Cost:<br>' +
-					'<b>-15%/<span style="color: #4d82ff">20%</span>/<span style="color: #8b4dff">25%</span>/<span style="color: #ff4d4d">30%</span></b>',
+					'<b>-15/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>%</b>',
 					Nitro_Boost: 'Your <b>Sprint</b> is <b>15%</b> faster and gives you a barrier that ignores instances of damage.<br>' +
 					'▸ Hits Blocked per Encounter:<br>' +
 					'<b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b>',
 					Mean_Streak: 'Each time you slay a foe, deal more damage for the next <b>30 Sec.</b><br>' +
 					'▸ Bonus Damage per Slain Foe:<br>' +
-					'<b>+1%/<span style="color: #4d82ff">1.5%</span>/<span style="color: #8b4dff">2%</span>/<span style="color: #ff4d4d">2.5%</span></b>',
+					'<b>+1/<span style="color: #4d82ff">1.5</span>/<span style="color: #8b4dff">2</span>/<span style="color: #ff4d4d">2.5</span>%</b>',
 					Close_Call: 'Gain <b>+1</b> use of <b>Death Defiance</b> that makes everything else move <b>90%</b> slower.<br>' +
 					'▸ Slow Duration:<br>' +
 					'<span style="color: #60fa57"><b>8 Sec.</b></span>'
@@ -787,22 +787,22 @@
 				break
 			case "Chaos":
 				description = {
-					Strike: 'Your <b>Attacks</b> deal <br><b>+20%–50%/<span style="color: #4d82ff">30%–75%</span>/<span style="color: #8b4dff">40%–100%</span>/<span style="color: #ff4d4d">50%–125%</span></b> damage.',
-					Flourish: 'Your <b>Specials</b> deal <br><b>+30%–60%/<span style="color: #4d82ff">45%–90%</span>/<span style="color: #8b4dff">60%–120%</span>/<span style="color: #ff4d4d">75%–150%</span></b> damage.',
-					Chasm: 'Your <b>Casts</b> deal <br><b>+20%–50%/<span style="color: #4d82ff">30%–75%</span>/<span style="color: #8b4dff">40%–100%</span>/<span style="color: #ff4d4d">50%–125%</span></b> damage.',
+					Strike: 'Your <b>Attacks</b> deal <br><b>+20–50/<span style="color: #4d82ff">30–75</span>/<span style="color: #8b4dff">40–100</span>/<span style="color: #ff4d4d">50–125</span>%</b> damage.',
+					Flourish: 'Your <b>Specials</b> deal <br><b>+30–60/<span style="color: #4d82ff">45–90</span>/<span style="color: #8b4dff">60–120</span>/<span style="color: #ff4d4d">75–150</span>%</b> damage.',
+					Chasm: 'Your <b>Casts</b> deal <br><b>+20–50/<span style="color: #4d82ff">30–75</span>/<span style="color: #8b4dff">40–100</span>/<span style="color: #ff4d4d">50–125</span>%</b> damage.',
 					Soul: 'Gain <br><b>26–35/<span style="color: #4d82ff">52–70</span>/<span style="color: #8b4dff">78–105</span>/<span style="color: #ff4d4d">104–140</span></b> <img class="icon" src="/Icons/MaxHealth.webp">.',
 					Mind: 'Gain <br><b>30–40/<span style="color: #4d82ff">45–60</span>/<span style="color: #8b4dff">60–80</span>/<span style="color: #ff4d4d">75–100</span></b> <img class="icon" src="/Icons/Magick.webp">.',
 					Will: 'Restore <br><b>4–6/<span style="color: #4d82ff">8–12</span>/<span style="color: #8b4dff">12–18</span>/<span style="color: #ff4d4d">16–24</span></b> <img class="icon" src="/Icons/Magick.webp"> every 1 second.',
 					Prowess: 'Your <b>Attacks</b> deal <br><b>+10–14/<span style="color: #4d82ff">15–21</span>/<span style="color: #8b4dff">20–28</span>/<span style="color: #ff4d4d">25–35</span></b> damage.',
 					Finesse: 'Your <b>Specials</b> deal <br><b>+15–20/<span style="color: #4d82ff">22–30</span>/<span style="color: #8b4dff">30–40</span>/<span style="color: #ff4d4d">37–50</span></b> damage.',
-					Revelation: 'Channel your <b>Ω</b> moves <br><b>10%–15%/<span style="color: #4d82ff">15%–22%</span>/<span style="color: #8b4dff">20%–30%</span>/<span style="color: #ff4d4d">25%–37%</span></b> faster.',
-					Favor: 'Boons have a <br><b>+40%–50%/<span style="color: #4d82ff">54%–67%</span>/<span style="color: #8b4dff">67%–84%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to be <span style="color: #4d82ff"><b>Rare</b></span> or better.',
-					Affluence: 'Any <img class="icon" src="/Icons/Gold.webp"> you find is worth <b>+40%–60%/<span style="color: #4d82ff">80%–120%</span>/<span style="color: #8b4dff">120%–180%</span>/<span style="color: #ff4d4d">160%–240%</span></b> more.',
+					Revelation: 'Channel your <b>Ω</b> moves <br><b>10–15/<span style="color: #4d82ff">15–22</span>/<span style="color: #8b4dff">20–30</span>/<span style="color: #ff4d4d">25–37</span>%</b> faster.',
+					Favor: 'Boons have a <br><b>+40–50/<span style="color: #4d82ff">54–67</span>/<span style="color: #8b4dff">67–84</span>/<span style="color: #ff4d4d">80–100</span>%</b> chance to be <span style="color: #4d82ff"><b>Rare</b></span> or better.',
+					Affluence: 'Any <img class="icon" src="/Icons/Gold.webp"> you find is worth <b>+40–60/<span style="color: #4d82ff">80–120</span>/<span style="color: #8b4dff">120–180</span>/<span style="color: #ff4d4d">160–240</span>%</b> more.',
 					Creation: 'Gain <b>1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span></b> <img class="icon" src="/Icons/Earth.webp"> <img class="icon" src="/Icons/Water.webp"> <img class="icon" src="/Icons/Air.webp"> <img class="icon" src="/Icons/Fire.webp"> <img class="icon" src="/Icons/Aether.webp">',
-					Talent: 'You use <b>20%–30%/<span style="color: #4d82ff">30%–45%</span>/<span style="color: #8b4dff">40%–60%</span>/<span style="color: #ff4d4d">50%–75%</span></b> less <img class="icon" src="/Icons/Magick.webp">.',
-					Celerity: 'You move and sprint <b>30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">60%</span></b> faster',
+					Talent: 'You use <b>20–30/<span style="color: #4d82ff">30–45</span>/<span style="color: #8b4dff">40–60</span>/<span style="color: #ff4d4d">50–75</span>%</b> less <img class="icon" src="/Icons/Magick.webp">.',
+					Celerity: 'You move and sprint <b>30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span>%</b> faster',
 					Blood: 'Whenever you exit a location, restore <b>3–4/<span style="color: #4d82ff">9–12</span>/<span style="color: #8b4dff">15–20</span>/<span style="color: #ff4d4d">21–28</span></b> <img class="icon" src="/Icons/Health.webp">.',
-					Discovery: 'You have a <b>+56%–70%/<span style="color: #4d82ff">64%–80%</span>/<span style="color: #8b4dff">72%–90%</span>/<span style="color: #ff4d4d">80%–100%</span></b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.',
+					Discovery: 'You have a <b>+56–70/<span style="color: #4d82ff">64–80</span>/<span style="color: #8b4dff">72–90</span>/<span style="color: #ff4d4d">80–100</span>%</b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.',
 					Chant: 'Your <b>Ω Moves</b> deal additional damage for each <img class="icon" src="/Icons/Aether.webp"> you have.',
 					Defiance: 'Gain <b>+1</b> use of <b>Death Defiance</b> this night.'
 
@@ -818,17 +818,17 @@
 					Rapid_Moonshot: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>+25%</b></span> faster.',
 					Shimmering_Moonshot: 'Your <b>Specials</b> bounce toward up to <b>2</b> more foes, dealing <span style="color: #60fa57"><b>+10%</b></span> for each hit.',
 					Extending_Wallop: 'Your <b>Attack</b> has more range and deals <span style="color: #60fa57"><b>+100%</b></span> damage to distant foes.',
-					Mirrored_Thrasher: 'Your <b>Attacks</b> hit <b>2</b> times, but you take <span style="color: #ba0202"><b>+30%</b></span> damage.',
+					Mirrored_Thrasher: 'Your <b>Attacks</b> hit <b>2</b> times, but use <span style="color: #26e6ff"><b>+5</b></span> <img class="icon" src="/Icons/Magick.webp">.',
 					Aetheric_Moonburst: 'Your <b>Ω Special</b> gains a power shot that deals <span style="color: #60fa57"><b>+50%</b></span> damage and restores <span style="color: #26e6ff"><b>20</b></span> <img class="icon" src="/Icons/Magick.webp">.',
 					Giga_Moonburst: 'You can <b>Channel</b> <span style="color: #26e6ff"><b>+30</b></span> <img class="icon" src="/Icons/Magick.webp"> into your <b>Ω Special</b> to deal <span style="color: #60fa57"><b>+300%</b></span> damage in a larger area.',
 					Dual_Moonshot: 'Your Specials fire <b>2</b> projectiles, but have <span style="color: #ba0202"><b>-40%</b></span> range.',
 
 					Final_Slice: 'The last strike in your <b>Attack</b> sequence deals <span style="color: #60fa57"><b>+300%</b></span> damage in a larger area.',
-					Skulking_Slice: 'Your <b>Attacks</b> deal <span style="color: #60fa57"><b>+200%</b></span> damage striking foes from behind.',
+					Skulking_Slice: 'Your <b>Attacks</b> deal <span style="color: #60fa57"><b>+150%</b></span> damage striking foes from behind.',
 					Explosive_Ambush: 'Your <b>Ω Attack</b> hits a wide area and deals <span style="color: #60fa57"><b>+400%</b></span> damage, but uses <span style="color: #26e6ff"><b>+20</b></span> <img class="icon" src="/Icons/Magick.webp">.',
 					Sudden_Flurry: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>+40%</b></span> faster. ',
 					Flick_Knives: 'Your <b>Dash-Strike</b> also fires your <b>Special</b> <span style="color: #60fa57"><b>3</b></span> times at once in a fan pattern.',
-					Escalating_Ambush: 'In each <b>Encounter</b>, your <b>Ω Attack</b> gains <span style="color: #60fa57"><b>+15</b></span> <b>Power</b> for each foe you slay with it.',
+					Wicked_Onslaught: 'Your <b>Attacks</b> have <span style="color: #60fa57"><b>+20</b></span> <b>Power</b>.',
 					Rapid_Onslaught: 'Your <b>Attacks</b> are <span style="color: #60fa57"><b>+25%</b></span> faster.',
 					Melting_Dart: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>50%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
 					Spiral_Knives: 'Your <b>Specials</b> deal <span style="color: #60fa57"><b>+20%</b></span> damage and your <b>Ω Special</b> fires up to <b>16</b> shots around you.',
@@ -838,18 +838,18 @@
 
 					Sustained_Spark: 'While you <b>Channel</b> your <b>Attacks</b>, you move and fire <span style="color: #60fa57"><b>20%</b></span> faster.',
 					Clean_Candle: 'You <b>Channel</b> your <b>Ω Attack</b> <span style="color: #60fa57"><b>50%</b></span> faster, and it uses <span style="color: #26e6ff"><b>-1</b></span> <img class="icon" src="/Icons/Magick.webp">.',
-					Inverted_Spark: 'Whenever you <b>Dash</b>, shots from your <b>Attacks</b> reverse direction and can strike again.',
+					Inverted_Spark: 'Your <b>Attacks</b> linger for <span style="color: #60fa57"><b>+2 Sec.</b></span> and launch back towards you after you <b>Dash</b>',
 					Triple_Helix: 'Your <b>Ω Special</b> creates <span style="color: #60fa57"><b>+1</b></span> flame.',
 					Rising_Coil: 'Your <b>Specials</b> grow in size and deal up to <span style="color: #60fa57"><b>+25%</b></span> damage the longer they are active.',
 					Mega_Spark: 'Your <b>Attacks</b> fire <span style="color: #60fa57"><b>20%</b></span> farther and deal <span style="color: #60fa57"><b>+30%</b></span> damage.',
-					Origin_Coil: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>60%</b></span> faster and orbit where you fire them.',
-					Crushing_Comet: 'Your Special has <span style="color: #60fa57"><b>+75%</b></span> Power, but dissipates after striking foes. ',
+					Whirling_Coil: 'Your <b>Ω Special</b> projectiles orbit <span style="color: #60fa57"><b>40%</b></span> faster.',
+					Triple_Comet: 'Your Special fires <span style="color: #60fa57"><b>+2</b></span> projectiles.',
 					Melting_Coil: 'Your Specials destroy <span style="color: #60fa57"><b>20%</b></span> of any <b>Armor</b> <i>(based on the total)</i>.',
 					Clean_Helix: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>+20%</b></span> faster, and it uses <span style="color: #26e6ff"><b>-10</b></span> <img class="icon" src="/Icons/Magick.webp">. ',
 					Leaden_Spark: 'Your <b>Attacks</b> knock foes away and have <span style="color: #60fa57"><b>+10</b></span> <b>Power</b>. ',
 					Split_Spark: 'Your <b>Attacks</b> split in <span style="color: #60fa57"><b>2</b></span> the first time they strike foes.',
 
-					Melting_Shredder: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>20%</b></span> of any <b>Armor</b> <i>(based on the total)</i>. ',
+					Melting_Shredder: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>35%</b></span> of any <b>Armor</b> <i>(based on the total)</i>. ',
 					Rapid_Slash: 'Your <b>Attack</b> is <span style="color: #60fa57"><b>30%</b></span> faster.',
 					Empowering_Guard: 'After blocking a foe with your <b>Special</b>, deal <span style="color: #60fa57"><b>+50%</b></span> damage for <b>15 Sec.</b>',
 					Sudden_Cleaver: 'You <b>Channel</b> your <b>Ω Special</b> <span style="color: #60fa57"><b>25%</b></span> faster.',
@@ -868,11 +868,11 @@
 					Twisting_Crash: 'After your <b>Ω Special</b> projectiles fire, they fire again towards you. ',
 					Mega_Driver: 'Your <b>Specials</b> travel farther and deal <span style="color: #60fa57"><b>+50%</b></span> damage. ',
 					Possessed_Array: 'Your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> fire your <b>Ω Attack</b> for <span style="color: #26e6ff"><b>10</b></span> <img class="icon" src="/Icons/Magick.webp"> whenever retrieved. ',
-					Destructive_Array: 'Every <b>2.5 Sec.</b>, your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> deal damage around them based on <span style="color: #60fa57"><b>50%</b></span> of your <b>Attack</b>. ',
+					Destructive_Array: 'Whenever your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> land, they deal <span style="color: #60fa57"><b>50%</b></span> of your <b>Attack</b> damage around them. ',
 					Melting_Tackle: 'Your <b>Special</b> destroys <span style="color: #60fa57"><b>50%</b></span> of any <b>Armor</b> <i>(based on the total)</i>. ',
 					Sudden_Driver: 'Your <b>Specials</b> are <span style="color: #60fa57"><b>+35%</b></span> faster. ',
 					Full_Salvo: 'Your <b>Attacks</b> fire your <img class="icon" src="/Icons/Shell.webp"> <b>Shells</b> all at once in a spread pattern. ',
-					Rocket_Bombard: 'Your <b>Ω Attack</b> fires straight ahead and has <span style="color: #60fa57"><b>+20</b></span> <b>Power</b>. ',
+					Rocket_Bombard: 'Your <b>Ω Attack</b> fires straight ahead and has <span style="color: #60fa57"><b>+60</b></span> <b>Power</b>. ',
 					Colossus_Driver: 'Your <b>Specials</b> have <span style="color: #60fa57"><b>+30</b></span> <b>Power</b> and you take <span style="color: #60fa57"><b>-30%</b></span> damage while using them. '
 				}[trait]
 				break
@@ -911,9 +911,9 @@
 					Cherished_Heirloom: 'Most other <b>Keepsakes</b> you equip are stronger this night <i>(if possible)</i>.<br>' +
 					'▸ Bonus Keepsake Ranks:<br>' +
 					'<span style="color: #60fa57"><b>+1</b></span>',
-					Golden_Rule: 'You deal more damage the more gold you have.<br>' +
+					Golden_Rule: 'You deal more damage the more <img class="icon" src="/Icons/Gold.webp"> you have.<br>' +
 					'▸ Bonus Damage per 100 Gold:<br>' +
-					'<span style="color: #60fa57"><b>+10%</b></span>',
+					'<span style="color: #60fa57"><b>+3%</b></span>',
 					Sun_Worshipper: 'In each <b>Encounter</b>, the first foe you slay returns to fight for you.<br>' +
 					'▸ Servant Damage:<br>' +
 					'<span style="color: #60fa57"><b>+200%</b></span>',
@@ -930,7 +930,7 @@
 					'▸ Blast Recharge Time:<br>' +
 					'<span style="color: #60fa57"><b>6 Sec.</b></span>',
 					Beach_Ball: 'Your <b>Sprint</b> creates a watery sphere behind you, which surges ahead once you stop.<br>' +
-					'▸ Blast Damage:<br>' +
+					'▸ Blast Damage <i>(after 2 Sec.)</i>:<br>' +
 					'<span style="color: #60fa57"><b>300</b></span>',
 					Scalding_Vapor: 'If foes with <b>Slip</b> are struck by fire from <b>Hestia</b>, they are engulfed in <b>Steam</b>.<br>' +
 					'▸ Steam Damage <i>(every 0.2 Sec.)</i>:<br>' +
@@ -972,16 +972,16 @@
 					None: '',
 					Pressure_Points: 'Any damage you deal may be <b>Critical</b>.<br>' +
 					'▸ Critical Chance:<br>' +
-					'<b>+3%/<span style="color: #4d82ff">4%</span>/<span style="color: #8b4dff">5%</span>/<span style="color: #ff4d4d">6%</span></b>',
+					'<b>+3/<span style="color: #4d82ff">4</span>/<span style="color: #8b4dff">5</span>/<span style="color: #ff4d4d">6</span>%</b>',
 					Silver_Streak: 'After you <b>Dash</b>, your <b>Ω Moves</b> deal more damage for <b>2 Sec.</b><br>' +
 					'▸ Bonus Omega Damage:<br>' +
-					'<b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">35%</span></b>',
+					'<b>+20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">35</span>%</b>',
 					First_Blood: 'Foes with at least <b>80%</b> <img class="icon" src="/Icons/Health.webp"> or <b>80% Armor</b> may take <b>Critical</b> damage.<br>' +
 					'▸ Critical Chance:<br>' +
-					'<b>15%/<span style="color: #4d82ff">23%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">38%</span></b>',
+					'<b>15/<span style="color: #4d82ff">23</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">38</span>%</b>',
 					Lethal_Snare: 'Foes in your <b>Casts</b> may take <b>Critical</b> damage from your <b>Attacks</b>.<br>' +
 					'▸ Critical Chance:<br>' +
-					'<b>10%/<span style="color: #4d82ff">13%</span>/<span style="color: #8b4dff">16%</span>/<span style="color: #ff4d4d">19%</span></b>',
+					'<b>10/<span style="color: #4d82ff">13</span>/<span style="color: #8b4dff">16</span>/<span style="color: #ff4d4d">19</span>%</b>',
 					Easy_Shot: 'A piercing arrow fires towards any foe damaged by your <b>Ω Cast</b>.<br>' +
 					'▸ Arrow Damage:<br>' +
 					'<b>30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">60</span></b>',
@@ -1077,52 +1077,52 @@
 					description = {
 						"Witch's_Staff": 'You <b>Channel</b> your <b>Ω Moves</b> faster.<br>' +
 						'▸ Omega Channel Speed:<br>' +
-						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
+						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">45</span>%</b>',
 						Sister_Blades: 'Your <b>Attacks</b> and <b>Specials</b> deal more damage by striking foes from behind.<br>' +
 						'▸ Backstab Damage:<br>' +
-						'<b>+0/<span style="color: #4d82ff">10</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">40</span>/<span style="color: #60fa57">50</span>%</b>',
+						'<b>+0/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">80</span>/<span style="color: #ff9524">100</span>/<span style="color: #60fa57">200</span>%</b>',
 						Umbral_Flames: 'Flames from your <b>Ω Special</b> burn longer before expiring.<br>' +
 						'▸ Omega Special Duration:<br>' +
-						'<b>+0/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">2.5</span>/<span style="color: #60fa57">3</span> Sec.</b>',
+						'<b>+0/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">2.5</span>/<span style="color: #60fa57">4</span> Sec.</b>',
 						Moonstone_Axe: 'Gain bonus <b>Attack Power</b> and <img class="icon" src="/Icons/MaxHealth.webp"> this night.<br>' +
 						'▸ Attack Power & Max Life:<br>' +
-						'<b>+0/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">35</span>/<span style="color: #60fa57">40</span></b>',
+						'<b>+0/<span style="color: #4d82ff">20</span>/<span style="color: #8b4dff">25</span>/<span style="color: #ff4d4d">30</span>/<span style="color: #ff9524">35</span>/<span style="color: #60fa57">50</span></b>',
 						Argent_Skull: 'Your <b>Attacks</b> have more <b>Power</b> for each <img class="icon" src="/Icons/Shell.webp"> <b>Shell</b> fired and not yet retrieved.<br>' +
 						'▸ Power per Spent Shell:<br>' +
-						'<b>+0/<span style="color: #4d82ff">5</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">15</span>/<span style="color: #ff9524">20</span>/<span style="color: #60fa57">25</span></b>',
+						'<b>+0/<span style="color: #4d82ff">5</span>/<span style="color: #8b4dff">10</span>/<span style="color: #ff4d4d">15</span>/<span style="color: #ff9524">20</span>/<span style="color: #60fa57">35</span></b>',
 					}[weapon]				
 				}else{
 					description = {
 						Circe: 'After your <b>Attack</b> or <b>Special</b> hit <b>12</b> times, gain <b>Serenity</b> with your next <b>Ω Move</b>.<br>' +
 						'▸ Serenity Omega Damage:<br>' +
-						'<b>+40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>/<span style="color: #ff9524">120</span>/<span style="color: #60fa57">140</span>%</b>',
+						'<b>+40/<span style="color: #4d82ff">60</span>/<span style="color: #8b4dff">80</span>/<span style="color: #ff4d4d">100</span>/<span style="color: #ff9524">120</span>/<span style="color: #60fa57">180</span>%</b>',
 						Momus: 'Whenever you use <b>Ω moves</b>, each fires in place up to <b>3</b> times until you use it again.<br>' +
 						'▸ Delay Between Omega Bursts:<br>' +
-						'<b>3.5/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">2.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">1.5</span>/<span style="color: #60fa57">1</span> Sec.</b>',
+						'<b>3.5/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">2.5</span>/<span style="color: #ff4d4d">2</span>/<span style="color: #ff9524">1.5</span>/<span style="color: #60fa57">0.5</span> Sec.</b>',
 						Artemis: 'While you <b>Channel</b> your <b>Ω Attack</b>, you occasionally <b>Parry</b>, then <b>Riposte</b> right after.<br>' +
 						'▸ Omega Attack Speed:<br>' +
-						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">70</span>%</b>',
+						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">90</span>%</b>',
 						Pan: 'Your <b>Specials</b> seek foes in your <b>Casts</b>, and fire more blades after you <b>Channel</b>.<br>' +
 						'▸ Omega Special Max Shots:<br>' +
-						'<b>+1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span>/<span style="color: #ff9524">5</span>/<span style="color: #60fa57">6</span></b>',
+						'<b>+1/<span style="color: #4d82ff">2</span>/<span style="color: #8b4dff">3</span>/<span style="color: #ff4d4d">4</span>/<span style="color: #ff9524">5</span>/<span style="color: #60fa57">8</span></b>',
 						Moros: 'Your <b>Attacks</b> linger for <b>6 Sec.</b>, and explode in a blast if struck by your <b>Specials</b>.<br>' +
 						'▸ Blast Damage:<br>' +
-						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">45</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">75</span>%</b>',
+						'<b>+0/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">45</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">105</span>%</b>',
 						Eos: 'Your <b>Ω Attack</b> fires a <b>Daybreaker</b> that deals damage in an area around it every <b>2 Sec.</b><br>' +
 						'▸ Daybreaker Blast Damage:<br>' +
-						'<b>40/<span style="color: #4d82ff">80</span>/<span style="color: #8b4dff">120</span>/<span style="color: #ff4d4d">160</span>/<span style="color: #ff9524">200</span>/<span style="color: #60fa57">240</span></b>',
+						'<b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">125</span>/<span style="color: #ff9524">150</span>/<span style="color: #60fa57">200</span></b>',
 						Charon: 'Your <b>Cast</b> lasts <b>+3 Sec.</b>, and erupts like your <b>Ω Cast</b> if struck by your <b>Ω Special</b>.<br>' +
 						'▸ Cleave-Cast Size and Damage:<br>' +
-						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">45</span>%</b>',
 						Thanatos: 'Your <b>Attack</b> is faster, and each hit grants <b>Mortality</b> until you take damage.<br>' +
 						'▸ Attack Speed:<br>' +
-						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">45</span>%</b>',
 						Medea: 'Your <b>Attack</b> stays within reach, and explodes in a large area on impact by your <b>Special</b> or after <b>3 Sec.</b><br>' +
 						'▸ Attack & Special Damage:<br>' +
-						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">70</span>%</b>',
+						'<b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">50</span>/<span style="color: #ff9524">60</span>/<span style="color: #60fa57">90</span>%</b>',
 						Persephone: 'Your <b>Ω Special</b> is enhanced, and damage from your <b>Casts</b> can extend it by up to <b>+2 Sec.</b><br>' +
 						'▸ Omega Move Damage:<br>' +
-						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">35</span>%</b>',
+						'<b>+10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">25</span>/<span style="color: #ff9524">30</span>/<span style="color: #60fa57">45</span>%</b>',
 					}[trait]
 				}
 				break
@@ -1130,22 +1130,22 @@
 				description = {
 					None: '',
 					Silver_Wheel: 'After you use <img class="icon" src="/Icons/Magick.webp">, restore it over <b>3 Sec.</b>, up to a total of <b>1000/<span style="color: #4d82ff">1500</span>/<span style="color: #8b4dff">2000</span>/<span style="color: #ff4d4d">3000</span></b> <img class="icon" src="/Icons/Magick.webp"> this night.',
-					Knuckle_Bones: 'The next <b>Guardian</b> loses <b>-5%/<span style="color: #4d82ff">10%</span>/<span style="color: #8b4dff">15%</span>/<span style="color: #ff4d4d">25%</span></b> <img class="icon" src="/Icons/Health.webp">. You take <b>-15%</b> damage from <b>Guardians</b>.',
-					Luckier_Tooth: 'After you fall to <span style="color: #ba0202"><b>0</b></span> <img class="icon" src="/Icons/Health.webp">, automatically restore <b>51/<span style="color: #4d82ff">76</span>/<span style="color: #8b4dff">101</span>/<span style="color: #ff4d4d">121</span></b> <img class="icon" src="/Icons/Health.webp"> once this night. ',
+					Knuckle_Bones: 'The next <b>Guardian</b> loses <b>-5/<span style="color: #4d82ff">10</span>/<span style="color: #8b4dff">15</span>/<span style="color: #ff4d4d">25</span>%</b> <img class="icon" src="/Icons/Health.webp">. You take <b>-15%</b> damage from <b>Guardians</b>.',
+					Luckier_Tooth: 'After you fall to <span style="color: #ba0202"><b>0</b></span> <img class="icon" src="/Icons/Health.webp">, automatically restore <b>51/<span style="color: #4d82ff">76</span>/<span style="color: #8b4dff">101</span>/<span style="color: #ff4d4d">151</span></b> <img class="icon" src="/Icons/Health.webp"> once this night. ',
 					Ghost_Onion: 'Whenever you exit a <b>Location</b>, fully restore your <img class="icon" src="/Icons/Health.webp">, up to a total of <b>50/<span style="color: #4d82ff">75</span>/<span style="color: #8b4dff">100</span>/<span style="color: #ff4d4d">150</span></b> <img class="icon" src="/Icons/HealHealth.webp"> this night. ',
-					Evil_Eye: 'Deal <b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">40%</span></b> to the last foe that vanquished you.',
+					Evil_Eye: 'Deal <b>+20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">40</span>%</b> to the last foe that vanquished you.',
 					Engraved_Pin: 'After you fall to <span style="color: #ba0202"><b>0</b></span> <img class="icon" src="/Icons/Health.webp">, become <b>Impervious</b> for <b>10 Sec.</b> If no foes remain, restore <b>30/<span style="color: #4d82ff">45</span>/<span style="color: #8b4dff">60</span>/<span style="color: #ff4d4d">90</span></b> <img class="icon" src="/Icons/Health.webp">. ',
-					Discordant_Bell: 'After each <b>Encounter</b>, you deal <b>+0.5%/<span style="color: #4d82ff">1%</span>/<span style="color: #8b4dff">1.5%</span></b> damage, but also take that much more.', 
+					Discordant_Bell: 'After each <b>Encounter</b>, you deal <b>+0.5/<span style="color: #4d82ff">1</span>/<span style="color: #8b4dff">1.5</span>%</b> damage, but also take that much more.', 
 					Gold_Purse: 'Gain <b>+100/<span style="color: #4d82ff">125</span>/<span style="color: #8b4dff">150</span>/<span style="color: #ff4d4d">200</span></b> <img class="icon" src="/Icons/Gold.webp"> once this night.',
 					Metallic_Droplet: 'You move, strike, and <b>Channel 20%</b> faster for the next <b>200/<span style="color: #4d82ff">250</span>/<span style="color: #8b4dff">300</span>/<span style="color: #ff4d4d">400</span> Sec.</b>',
-					White_Antler: 'For the next <b>Region</b>, gain <b>+20%/<span style="color: #4d82ff">25%</span>/<span style="color: #8b4dff">30%</span>/<span style="color: #ff4d4d">50%</span></b> chance to deal Critical damage, but you have <span style="color: #ba0202"><b>30</b></span> <img class="icon" src="/Icons/MaxHealth.webp">',
+					White_Antler: 'For the next <b>Region</b>, gain <b>+20/<span style="color: #4d82ff">25</span>/<span style="color: #8b4dff">30</span>/<span style="color: #ff4d4d">50</span>%</b> chance to deal Critical damage, but you have <span style="color: #ba0202"><b>30</b></span> <img class="icon" src="/Icons/MaxHealth.webp">',
 					Moon_Beam: 'A reward from <b>Selene</b> is likely. The next <b>Path of Stars</b> you find grants <b>+3/<span style="color: #4d82ff">4</span>/<span style="color: #8b4dff">5</span>/<span style="color: #ff4d4d">7</span></b> upgrades. ',
-					Lion_Fang: 'Deal <b>+30%/<span style="color: #4d82ff">40%</span>/<span style="color: #8b4dff">50%</span>/<span style="color: #ff4d4d">70%</span></b> bonus damage, but lose <b>5%</b> of this after each <b>Encounter</b>. ',
-					Blackened_Fleece: 'After you take <b>250</b> damage, your <b>Ω Moves</b> deal <b>+20%/<span style="color: #4d82ff">30%</span>/<span style="color: #8b4dff">40%</span>/<span style="color: #ff4d4d">60%</span></b> damage.',
+					Lion_Fang: 'Deal <b>+30/<span style="color: #4d82ff">40</span>/<span style="color: #8b4dff">50</span>/<span style="color: #ff4d4d">70</span>%</b> bonus damage, but lose <b>5%</b> of this after each <b>Encounter</b>. ',
+					Blackened_Fleece: 'After you take <b>250</b> damage, your <b>Ω Moves</b> deal <b>+20/<span style="color: #4d82ff">30</span>/<span style="color: #8b4dff">40</span>/<span style="color: #ff4d4d">60</span>%</b> damage.',
 					Crystal_Figurine: 'After the next <b>Guardian</b>, activate a random level <b><img class="icon" src="/Icons/ArcanaCommon.webp">/<img class="icon" src="/Icons/ArcanaRare.webp">/<img class="icon" src="/Icons/ArcanaEpic.webp">/<img class="icon" src="/Icons/ArcanaHeroic.webp"> Arcana Card</b>.',
 					Silken_Sash: 'Gain <b>+20</b> <img class="icon" src="/Icons/Armor.webp">. While you have at least <b>1</b> <img class="icon" src="/Icons/Armor.webp">, gain <b>+2/<span style="color: #4d82ff">3</span>/<span style="color: #8b4dff">4</span>/<span style="color: #ff4d4d">6</span></b> <img class="icon" src="/Icons/Armor.webp"> after each <b>Location</b>.',
 					Aromatic_Phial: 'Fountains restore <b>+20%</b> <img class="icon" src="/Icons/Health.webp">. The next makes <b>1</b> random <b>Common Boon</b> of yours <b><span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span>/<span style="color: #ff4d4d">Heroic</span></b>.',
-					Concave_Stone: 'After choosing a <b>Boon</b>, <b>25%/<span style="color: #4d82ff">50%</span>/<span style="color: #8b4dff">75%</span>/<span style="color: #ff4d4d">100%</span></b> of the time randomly take <b>1</b> more, once this night. ',
+					Concave_Stone: 'After choosing a <b>Boon</b>, <b>25/<span style="color: #4d82ff">50</span>/<span style="color: #8b4dff">75</span>/<span style="color: #ff4d4d">100</span>%</b> of the time randomly take <b>1</b> more, once this night. ',
 					Experimental_Hammer: 'Gain <b>1</b> random <img class="icon" src="/Icons/Hammer.webp"> that lasts for <b>10/<span style="color: #4d82ff">15</span>/<span style="color: #8b4dff">20</span>/<span style="color: #ff4d4d">30</span></b> <b>Encounters</b>.',
 					Transcendent_Embryo: 'Gain a random <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span>/<span style="color: #ff4d4d">Heroic</span></b> <b>Chaos</b> blessing once this night. Every <b>8 Encounters</b>, replace it. ',
 					Cloud_Bangle: 'A Boon of <b>Zeus</b> is likely. You can <b>Rarify</b> his <b>Common/<span style="color: #4d82ff">Rare</span>/<span style="color: #8b4dff">Epic</span></b> blessings once this night.',
