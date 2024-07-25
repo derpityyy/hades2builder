@@ -2,6 +2,23 @@
 // @ts-nocheck
 
 	import {slide} from 'svelte/transition'
+	import {page} from '$app/stores'
+
+	const startUrl = JSON.parse(atob($page.url.hash.substring(1)) || "{}")
+	$: console.log(startUrl)
+
+	// use default if url is undefined
+	let build = {
+		attackTrait: startUrl?.attackTrait || "None",
+		specialTrait: startUrl?.specialTrait || "None",
+		castTrait: startUrl?.castTrait || "None",
+		sprintTrait: startUrl?.sprintTrait || "None",
+	}
+
+	function updateBuild(type, value){
+		build[type] = value
+		window.location.hash = btoa(JSON.stringify(build))
+	}
 	const menus = Object.freeze({
 		NONE: 0,
 		ATTACK: 1,
@@ -26,10 +43,6 @@
 
 	const mainGods = ["None", "Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia"]
 
-	let attackTrait = "None"
-	let specialTrait = "None"
-	let castTrait = "None"
-	let sprintTrait = "None"
 	let gainTrait = "None"
 
 	const mainTraitNames = {
@@ -279,6 +292,16 @@
 		chosenTraits = chosenTraits.filter(function(a) { return a != trait })
 		otherTraits[source].push(trait)
 		otherTraits = otherTraits
+	}
+
+	function addTraitNonUnique(trait){
+		const source = trait.split("-")[0]
+		chosenTraits.push(trait)
+		chosenTraits = chosenTraits
+	}
+
+	function removeTraitNonUnique(trait){
+		chosenTraits = chosenTraits.filter(function(a) { return a != trait })
 	}
 
 	function isInfusion(trait){
@@ -804,7 +827,7 @@
 					Blood: 'Whenever you exit a location, restore <b>3–4/<span style="color: #4d82ff">9–12</span>/<span style="color: #8b4dff">15–20</span>/<span style="color: #ff4d4d">21–28</span></b> <img class="icon" src="/Icons/Health.webp">.',
 					Discovery: 'You have a <b>+56–70/<span style="color: #4d82ff">64–80</span>/<span style="color: #8b4dff">72–90</span>/<span style="color: #ff4d4d">80–100</span>%</b> chance to find <span style="color: #60fa57"><b>+100%</b></span> resources with your <b>gathering tools</b>.',
 					Chant: 'Your <b>Ω Moves</b> deal additional damage for each <img class="icon" src="/Icons/Aether.webp"> you have.',
-					Defiance: 'Gain <b>+1</b> use of <b>Death Defiance</b> this night.'
+					Defiance: 'Gain <span style="color: #60fa57"><b>+1</b></span> use of <img class="icon" src="/Icons/DeathDefiance.webp"> <b>Death Defiance</b> this night.'
 
 				}[trait]
 				break
@@ -1329,7 +1352,7 @@
 	let hasRequirements = false
 
 	function updateRequirements(){
-		currentTraitsWithRequirements = chosenTraits.filter(trait => traitsWithRequirements.includes(trait))
+		currentTraitsWithRequirements = chosenTraits.filter((trait, i) => !chosenTraits.includes(trait, i+1)).filter(trait => traitsWithRequirements.includes(trait))
 		if (currentTraitsWithRequirements.length == 0){
 			hasRequirements = false
 		}else{
@@ -1343,6 +1366,16 @@
 
 	function removeAndUpdate(trait){
 		removeTrait(trait)
+		updateRequirements()
+	}
+
+	function addAndUpdateNonUnique(trait){
+		addTraitNonUnique(trait)
+		updateRequirements()
+	}
+
+	function removeAndUpdateNonUnique(trait){
+		removeTraitNonUnique(trait)
 		updateRequirements()
 	}
 </script>
@@ -1362,42 +1395,43 @@
 		<h1>Hades 2 Build Creator</h1>
 		<h5>Created by derpity</h5>
 		<h5>Please contact me on discord if you have ideas for additions or high resolution image files!</h5>
+		<h5>Updated as of EA Patch 4</h5>
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)} on:mouseover={() => showDescription(attackTrait + "-Attack")}>
-						<img class="trait-image" src={genImagePath("attack", attackTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ATTACK)} on:mouseover={() => showDescription(build.attackTrait + "-Attack")}>
+						<img class="trait-image" src={genImagePath("attack", build.attackTrait)}>
 					</button>
-					<img class="element" src={mainTraitElementImagePath("attack", attackTrait)}>
+					<img class="element" src={mainTraitElementImagePath("attack", build.attackTrait)}>
 				</div>
-				<h5>{mainTraitName("attack", attackTrait)}</h5>
+				<h5>{mainTraitName("attack", build.attackTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.SPECIAL)} on:mouseover={() => showDescription(specialTrait + "-Special")} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("special", specialTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.SPECIAL)} on:mouseover={() => showDescription(build.specialTrait + "-Special")} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("special", build.specialTrait)}>
 					</button>
-					<img class="element" src={mainTraitElementImagePath("special", specialTrait)}>
+					<img class="element" src={mainTraitElementImagePath("special", build.specialTrait)}>
 				</div>
-				<h5>{mainTraitName("special", specialTrait)}</h5>
+				<h5>{mainTraitName("special", build.specialTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.CAST)} on:mouseover={() => showDescription(castTrait + "-Cast")} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("cast", castTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.CAST)} on:mouseover={() => showDescription(build.castTrait + "-Cast")} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("cast", build.castTrait)}>
 					</button>
-					<img class="element" src={mainTraitElementImagePath("cast", castTrait)}>
+					<img class="element" src={mainTraitElementImagePath("cast", build.castTrait)}>
 				</div>
-				<h5>{mainTraitName("cast", castTrait)}</h5>
+				<h5>{mainTraitName("cast", build.castTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.SPRINT)} on:mouseover={() => showDescription(sprintTrait + "-Sprint")} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("sprint", sprintTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.SPRINT)} on:mouseover={() => showDescription(build.sprintTrait + "-Sprint")} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("sprint", build.sprintTrait)}>
 					</button>
-					<img class="element" src={mainTraitElementImagePath("sprint", sprintTrait)}>
+					<img class="element" src={mainTraitElementImagePath("sprint", build.sprintTrait)}>
 				</div>
-				<h5>{mainTraitName("sprint", sprintTrait)}</h5>
+				<h5>{mainTraitName("sprint", build.sprintTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
@@ -1507,7 +1541,7 @@
 				{#each mainGods as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => attackTrait = option} on:mouseover={() => showDescription(option + "-Attack")} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.attackTrait = option} on:click = {() => updateBuild("attackTrait", option)} on:mouseover={() => showDescription(option + "-Attack")} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("attack", option)}>
 							</button>
 							<img class="element" src={mainTraitElementImagePath("attack", option)}>
@@ -1522,7 +1556,7 @@
 				{#each mainGods as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => specialTrait = option} on:mouseover={() => showDescription(option + "-Special")} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.specialTrait = option} on:click = {() => updateBuild("specialTrait", option)} on:mouseover={() => showDescription(option + "-Special")} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("special", option)}>
 							</button>
 							<img class="element" src={mainTraitElementImagePath("special", option)}>
@@ -1537,7 +1571,7 @@
 				{#each mainGods as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => castTrait = option} on:mouseover={() => showDescription(option + "-Cast")} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.castTrait = option} on:click = {() => updateBuild("castTrait", option)} on:mouseover={() => showDescription(option + "-Cast")} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("cast", option)}>
 							</button>
 							<img class="element" src={mainTraitElementImagePath("cast", option)}>
@@ -1552,7 +1586,7 @@
 				{#each mainGods as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => sprintTrait = option} on:mouseover={() => showDescription(option + "-Sprint")} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.sprintTrait = option} on:click = {() => updateBuild("sprintTrait", option)} on:mouseover={() => showDescription(option + "-Sprint")} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("sprint", option)}>
 							</button>
 							<img class="element" src={mainTraitElementImagePath("sprint", option)}>
@@ -1735,15 +1769,27 @@
 		{/if}
 		<div class="trait-box">
 			{#each chosenTraits as trait}
-				<div class="slot">
-					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
-							<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
-						</button>
-						<img class="element" src={otherTraitElementImagePath(trait)}>
+				{#if trait.split('-')[0] == "Chaos"}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeAndUpdateNonUnique(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+								<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
+							</button>
+							<img class="element" src={otherTraitElementImagePath(trait)}>
+						</div>
+						<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
 					</div>
-					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
-				</div>
+				{:else}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => removeAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+								<img class="trait-image" src={genImagePath(trait.split("-")[0], trait)}>
+							</button>
+							<img class="element" src={otherTraitElementImagePath(trait)}>
+						</div>
+						<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
+					</div>
+				{/if}
 			{/each}
 		</div>
 		<div class="tab-menu">
@@ -1755,15 +1801,27 @@
 		</div>
 		<div class="trait-menu">
 			{#each otherTraits[tab] as trait}
-				<div class="slot">
-					<div class="trait-container">
-						<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
-							<img class="trait-image" src={genImagePath(tab, trait)}>
-						</button>
-						<img class="element" src={otherTraitElementImagePath(trait)}>
+				{#if tab == "Chaos"}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addAndUpdateNonUnique(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+								<img class="trait-image" src={genImagePath(tab, trait)}>
+							</button>
+							<img class="element" src={otherTraitElementImagePath(trait)}>
+						</div>
+						<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
 					</div>
-					<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
-				</div>
+				{:else}
+					<div class="slot">
+						<div class="trait-container">
+							<button class="trait-button" class:legendary={isLegendary(trait)} class:infusion={isInfusion(trait)} class:duo={isDuo(trait)} on:click={() => addAndUpdate(trait)} on:mouseover={() => showDescription(trait)} on:mouseout={hideDescription}>
+								<img class="trait-image" src={genImagePath(tab, trait)}>
+							</button>
+							<img class="element" src={otherTraitElementImagePath(trait)}>
+						</div>
+						<h5>{replaceUnderscore(trait.split("-")[1])}</h5>
+					</div>
+				{/if}
 			{/each}
 		</div>
 		{#if descriptionActive}
