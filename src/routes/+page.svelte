@@ -13,6 +13,70 @@
 		specialTrait: startUrl?.specialTrait || "None",
 		castTrait: startUrl?.castTrait || "None",
 		sprintTrait: startUrl?.sprintTrait || "None",
+		gainTrait: startUrl?.gainTrait || "None",
+		keepsake: startUrl?.keepsake || "None",
+		hex: startUrl?.hex || "None",
+		weapon: startUrl?.weapon || "Witch's_Staff",
+		aspect: startUrl?.aspect || "Melinoë",
+		familiar: startUrl?.familiar || "None",
+		ArtemisTrait: startUrl?.ArtemisTrait || "Artemis-None",
+		ArachneTrait: startUrl?.ArachneTrait || "None",
+		HadesTrait: startUrl?.HadesTrait || "None",
+		MedeaTrait: startUrl?.MedeaTrait || "None",
+		CirceTrait: startUrl?.CirceTrait || "None",
+		IcarusTrait: startUrl?.IcarusTrait || "None",
+		chosenTraits: startUrl?.chosenTraits || [],
+	}
+	let otherTraits = {
+	Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
+	Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Rousing_Reception", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
+	Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
+	Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Crispy_Coating", "Hestia-Natural_Gas", "Hestia-Pyro_Technique", "Hestia-Highly_Flammable", "Hestia-Fire_Walk"],
+	Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Grand_Caldera", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
+	Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
+	Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
+	Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
+	Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Nimble_Mind", "Hermes-Nimble_Limbs", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
+	Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
+	Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
+	Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
+	"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
+	"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
+	"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
+	"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
+	"Duo-Love_Handles", "Duo-Hot_Flash",
+	"Duo-Chain_Reaction"]
+	}
+
+	for(const trait of build.chosenTraits){
+		const source = trait.split("-")[0]
+		if(source == "Chaos"){
+			break
+		}
+		otherTraits[source].filter(a => !a == trait)
+
+	}
+
+
+	let aspects
+	switch(build.weapon){
+		case "Witch's_Staff":
+			aspects = ["Melinoë", "Circe", "Momus"]
+			break
+		case "Sister_Blades":
+			aspects = ["Melinoë", "Artemis", "Pan"]
+			break
+		case "Umbral_Flames":
+			aspects = ["Melinoë", "Moros", "Eos"]
+			break
+		case "Moonstone_Axe":
+			aspects = ["Melinoë", "Charon", "Thanatos"]
+			break
+		case "Argent_Skull":
+			aspects = ["Melinoë", "Medea", "Persephone"]
+			break
+		default:
+			aspects = ["Melinoë", "Circe", "Momus"]
 	}
 
 	function updateBuild(type, value){
@@ -43,7 +107,6 @@
 
 	const mainGods = ["None", "Zeus", "Hera", "Poseidon", "Demeter", "Apollo", "Aphrodite", "Hephaestus", "Hestia"]
 
-	let gainTrait = "None"
 
 	const mainTraitNames = {
 		attack: {
@@ -190,21 +253,15 @@
 		return "/element/" + element + ".webp"
 	}
 
-	let keepsake = "None"
 	const keepsakes = ["None", "Silver_Wheel", "Knuckle_Bones", "Luckier_Tooth", "Ghost_Onion", "Evil_Eye", "Engraved_Pin", "Discordant_Bell", "Gold_Purse", "Metallic_Droplet", "White_Antler", "Moon_Beam", "Cloud_Bangle", "Iridescent_Fan", "Vivid_Sea", "Barley_Sheaf", "Purest_Hope", "Beautiful_Mirror", "Adamant_Shard", "Everlasting_Ember", "Lion_Fang", "Blackened_Fleece", "Crystal_Figurine","Silken_Sash", "Aromatic_Phial", "Concave_Stone", "Experimental_Hammer", "Transcendent_Embryo"]
 
-	let hex = "None"
 	const hexes = ["None", "Phase_Shift", "Twilight_Curse", "Lunar_Ray", "Wolf_Howl", "Moon_Water", "Night_Bloom", "Total_Eclipse", "Dark_Side"]
 
-	let weapon = "Witch's_Staff"
 	const weapons = ["Witch's_Staff", "Sister_Blades", "Umbral_Flames", "Moonstone_Axe", "Argent_Skull"]
 
-	let aspect = "Melinoë"
-	let aspects = ["Melinoë", "Circe", "Momus"]
-
 	function resetAspects(weapon){
-		aspect = "Melinoë"
-		chosenTraits = chosenTraits.filter(function(a) { return a.split("-")[0] != "Hammer" })
+		build.aspect = "Melinoë"
+		build.chosenTraits = build.chosenTraits.filter(function(a) { return a.split("-")[0] != "Hammer" })
 
 		switch(weapon){
 			case "Witch's_Staff":
@@ -232,76 +289,46 @@
 		}
 	}
 
-	let familiar = "None"
 	const familiars = ["None", "Frinos", "Toula"]
 
 	function replaceUnderscore(str){
 		return str.replace(/_/g, " ")
 	}
 
-	let chosenTraits = []
-
-	let otherTraits = {
-		Zeus: ["Zeus-Air_Quality", "Zeus-Divine_Vengeance", "Zeus-Lightning_Lance", "Zeus-Static_Shock", "Zeus-Spirit_Surge", "Zeus-Double_Strike", "Zeus-Toasting_Fork", "Zeus-Electric_Overload", "Zeus-Shocking_Loss"],
-		Hera: ["Hera-Proper_Upbringing", "Hera-Bridal_Glow", "Hera-Uncommon_Grace", "Hera-Nasty_Comeback", "Hera-Blood_Line", "Hera-Rousing_Reception", "Hera-Hereditary_Bane", "Hera-Dying_Wish", "Hera-Brave_Face"],
-		Poseidon: ["Poseidon-Water_Fitness", "Poseidon-Double_Up", "Poseidon-Hydraulic_Might", "Poseidon-Flood_Control", "Poseidon-Splash_Fount", "Poseidon-Ocean's_Bounty", "Poseidon-Geyser_Spout","Poseidon-Slippery_Slope", "Poseidon-Splash_Fount", "Poseidon-King_Tide"],
-		Hestia: ["Hestia-Slow_Cooker", "Hestia-Glowing_Coal", "Hestia-Controlled_Burn", "Hestia-Burnt_Offering", "Hestia-Crispy_Coating", "Hestia-Natural_Gas", "Hestia-Pyro_Technique", "Hestia-Highly_Flammable", "Hestia-Fire_Walk"],
-		Hephaestus: ["Hephaestus-Martial_Art", "Hephaestus-Molten_Touch", "Hephaestus-Trusty_Shield", "Hephaestus-Grand_Caldera", "Hephaestus-Mint_Condition", "Hephaestus-Heavy_Metal", "Hephaestus-Uncanny_Fortitude", "Hephaestus-Furnace_Blast", "Hephaestus-Fine_Tuning"],
-		Apollo: ["Apollo-Self_Healing", "Apollo-Super_Nova", "Apollo-Light_Smite", "Apollo-Extra_Dose", "Apollo-Perfect_Image", "Apollo-Back_Burner", "Apollo-Prominence_Flare", "Apollo-Dazzling_Display", "Apollo-Exceptional_Talent"],
-		Aphrodite: ["Aphrodite-Wispy_Wiles", "Aphrodite-Healthy_Rebound", "Aphrodite-Secret_Crush", "Aphrodite-Life_Affirmation", "Aphrodite-Shameless_Attitude", "Aphrodite-Heart_Breaker", "Aphrodite-Broken_Resolve", "Aphrodite-Sweet_Surrender", "Aphrodite-Nervous_Wreck"],
-		Demeter: ["Demeter-Frosty_Veneer", "Demeter-Rare_Crop", "Demeter-Local_Climate", "Demeter-Gale_Force", "Demeter-Plentiful_Forage", "Demeter-Winter_Coat", "Demeter-Weed_Killer", "Demeter-Cold_Storage", "Demeter-Winter_Harvest"],
-		Hermes: ["Hermes-Tall_Order", "Hermes-Greater_Evasion", "Hermes-Saved_Breath", "Hermes-Nimble_Mind", "Hermes-Nimble_Limbs", "Hermes-Midnight_Oil", "Hermes-Quick_Buck", "Hermes-Hard_Target", "Hermes-Witty_Retort", "Hermes-Nitro_Boost", "Hermes-Mean_Streak", "Hermes-Close_Call"],
-		Hammer: ["Hammer-Rapid_Thrasher", "Hammer-Melting_Swipe", "Hammer-Wicked_Thrasher", "Hammer-Cross_Cataclysm", "Hammer-Vampiric_Cataclysm", "Hammer-Rapid_Moonshot", "Hammer-Shimmering_Moonshot", "Hammer-Extending_Wallop", "Hammer-Mirrored_Thrasher", "Hammer-Aetheric_Moonburst", "Hammer-Giga_Moonburst", "Hammer-Dual_Moonshot"],
-		Chaos: ["Chaos-Strike", "Chaos-Flourish", "Chaos-Chasm", "Chaos-Soul", "Chaos-Mind", "Chaos-Will", "Chaos-Prowess", "Chaos-Finesse", "Chaos-Revelation", "Chaos-Favor", "Chaos-Affluence", "Chaos-Creation", "Chaos-Talent", "Chaos-Celerity", "Chaos-Blood", "Chaos-Discovery", "Chaos-Chant", "Chaos-Defiance"],
-		Duo: ["Duo-Glorious_Disaster", "Duo-Hail_Storm", "Duo-Thermal_Dynamics", "Duo-Killer_Current", "Duo-Master_Conductor", "Duo-Romantic_Spark", "Duo-King's_Ransom",
-		"Duo-Elementary_Particles", "Duo-Spiteful_Strength", "Duo-Cherished_Heirloom", "Duo-Ecstatic_Obsession", "Duo-Golden_Rule", "Duo-Sun_Worshipper", "Duo-Queen's_Ransom",
-		"Duo-Island_Getaway", "Duo-Natural_Selection", "Duo-Seismic_Hammer", "Duo-Beach_Ball", "Duo-Scalding_Vapor",
-		"Duo-Boreal_Gust", "Duo-Room_Temperature", "Duo-Freezer_Burn", "Duo-Hearty_Appetite",
-		"Duo-Phoenix_Skin", "Duo-Sunny_Disposition", "Duo-Rude_Awakening",
-		"Duo-Love_Handles", "Duo-Hot_Flash",
-		"Duo-Chain_Reaction"]
-	}
-
-
 	let Artemis = ["Artemis-None", "Artemis-Pressure_Points", "Artemis-Silver_Streak", "Artemis-First_Blood", "Artemis-Lethal_Snare", "Artemis-Easy_Shot", "Artemis-Support_Fire", "Artemis-Death_Warrant"]
 	let Arachne = ["None", "Scarlet_Dress", "Onyx_Dress", "Moonlight_Dress", "Azure_Dress", "Emerald_Dress"]
 	let Hades = ["None", "Howling_Soul", "Deep_Dissent", "Last_Gasp", "Unseen_Ire", "Life_Tax", "Old_Grudge"]
-
-	let ArtemisTrait = "Artemis-None"
-	let ArachneTrait = "None"
-	let HadesTrait = "None"
-
 	
 	let Medea = ["None", "Life_from_the_Dead", "Malice_in_Kind", "Wealth_from_the_Dead", "Suffering_on_Sight", "Corrosion_on_Sight", "Enfeeblement_of_Cowards", "Traces_of_Spirit"]
 	let Circe = ["None", "Lapis_Lazuli_Insight", "Word_of_Greater_Girth", "Word_of_Smaller_Stature", "Chants_to_the_Bewitched", "Old_Herbal_Remedy", "Red_Citrine_Divination", "Black_Night_Banishment"]
 	let Icarus = ["None", "Destructive_Coating", "Protective_Coating", "Hazard_Boom", "Ingenious_Strike", "Ingenious_Flourish", "Explosive_Intent", "Supply_Chain"]
-
-	let MedeaTrait = "None"
-	let CirceTrait = "None"
-	let IcarusTrait = "None"
 	
 	function addTrait(trait){
 		const source = trait.split("-")[0]
-		chosenTraits.push(trait)
-		chosenTraits = chosenTraits
+		build.chosenTraits.push(trait)
+		build.chosenTraits = build.chosenTraits
 		otherTraits[source] = otherTraits[source].filter(function(a) { return a != trait })
+		updateBuild("chosenTraits", build.chosenTraits)
 	}
 
 	function removeTrait(trait){
 		const source = trait.split("-")[0]
-		chosenTraits = chosenTraits.filter(function(a) { return a != trait })
+		build.chosenTraits = build.chosenTraits.filter(function(a) { return a != trait })
 		otherTraits[source].push(trait)
 		otherTraits = otherTraits
+		updateBuild("chosenTraits", build.chosenTraits)
 	}
 
 	function addTraitNonUnique(trait){
 		const source = trait.split("-")[0]
-		chosenTraits.push(trait)
-		chosenTraits = chosenTraits
+		build.chosenTraits.push(trait)
+		build.chosenTraits = build.chosenTraits
+		updateBuild("chosenTraits", build.chosenTraits)
 	}
 
 	function removeTraitNonUnique(trait){
-		chosenTraits = chosenTraits.filter(function(a) { return a != trait })
+		build.chosenTraits = build.chosenTraits.filter(function(a) { return a != trait })
+		updateBuild("chosenTraits", build.chosenTraits)
 	}
 
 	function isInfusion(trait){
@@ -1352,13 +1379,15 @@
 	let hasRequirements = false
 
 	function updateRequirements(){
-		currentTraitsWithRequirements = chosenTraits.filter((trait, i) => !chosenTraits.includes(trait, i+1)).filter(trait => traitsWithRequirements.includes(trait))
+		currentTraitsWithRequirements = build.chosenTraits.filter((trait, i) => !build.chosenTraits.includes(trait, i+1)).filter(trait => traitsWithRequirements.includes(trait))
 		if (currentTraitsWithRequirements.length == 0){
 			hasRequirements = false
 		}else{
 			hasRequirements = true
 		}
 	}
+	updateRequirements()
+
 	function addAndUpdate(trait){
 		addTrait(trait)
 		updateRequirements()
@@ -1395,7 +1424,7 @@
 		<h1>Hades 2 Build Creator</h1>
 		<h5>Created by derpity</h5>
 		<h5>Please contact me on discord if you have ideas for additions or high resolution image files!</h5>
-		<h5>Updated as of EA Patch 4</h5>
+		<h5>Updated as of Early Access Patch 4</h5>
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
@@ -1435,105 +1464,105 @@
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.GAIN)} on:mouseover={() => showDescription(gainTrait + "-Gain")} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("gain", gainTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.GAIN)} on:mouseover={() => showDescription(build.gainTrait + "-Gain")} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("gain", build.gainTrait)}>
 					</button>
-					<img class="element" src={mainTraitElementImagePath("gain", gainTrait)}>
+					<img class="element" src={mainTraitElementImagePath("gain", build.gainTrait)}>
 				</div>
-				<h5>{mainTraitName("gain", gainTrait)}</h5>
+				<h5>{mainTraitName("gain", build.gainTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)} on:mouseover={() => showDescription("Weapon-"+weapon)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("weapon", weapon)}>
+					<button class="trait-button" on:click={() => openMenu(menus.WEAPON)} on:mouseover={() => showDescription("Weapon-"+build.weapon)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("weapon", build.weapon)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(weapon)}</h5>
+				<h5>{replaceUnderscore(build.weapon)}</h5>
 
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ASPECT)} on:mouseover={() => showDescription("Aspect-"+aspect)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath(weapon, aspect)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ASPECT)} on:mouseover={() => showDescription("Aspect-"+build.aspect)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath(build.weapon, build.aspect)}>
 					</button>
 				</div>
-				<h5>{"Aspect of " + aspect}</h5>
+				<h5>{"Aspect of " + build.aspect}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.KEEPSAKE)} on:mouseover={() => showDescription("Keepsake-"+keepsake)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("keepsake", keepsake)}>
+					<button class="trait-button" on:click={() => openMenu(menus.KEEPSAKE)} on:mouseover={() => showDescription("Keepsake-"+build.keepsake)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("keepsake", build.keepsake)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(keepsake)}</h5>
+				<h5>{replaceUnderscore(build.keepsake)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.FAMILIAR)} on:mouseover={() => showDescription("Familiar-"+familiar)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("familiar", familiar)}>
+					<button class="trait-button" on:click={() => openMenu(menus.FAMILIAR)} on:mouseover={() => showDescription("Familiar-"+build.familiar)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("familiar", build.familiar)}>
 					</button>
 				</div>
-				<h5>{familiar}</h5>
+				<h5>{build.familiar}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.HEX)} on:mouseover={() => showDescription("Hex-"+hex)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("hex", hex)}>
+					<button class="trait-button" on:click={() => openMenu(menus.HEX)} on:mouseover={() => showDescription("Hex-"+build.hex)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("hex", build.hex)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(hex)}</h5>
+				<h5>{replaceUnderscore(build.hex)}</h5>
 			</div>
 		</div>
 
 		<div class="trait-box">
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)} on:mouseover={() => showDescription(ArtemisTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Artemis", ArtemisTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ARTEMIS)} on:mouseover={() => showDescription(build.ArtemisTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Artemis", build.ArtemisTrait)}>
 					</button>
-					<img class="element" src={otherTraitElementImagePath(ArtemisTrait)}>
+					<img class="element" src={otherTraitElementImagePath(build.ArtemisTrait)}>
 				</div>
-				<h5>{replaceUnderscore(ArtemisTrait.split("-")[1])}</h5>
+				<h5>{replaceUnderscore(build.ArtemisTrait.split("-")[1])}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ARACHNE)} on:mouseover={() => showDescription("Arachne-"+ArachneTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Arachne", ArachneTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ARACHNE)} on:mouseover={() => showDescription("Arachne-"+build.ArachneTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Arachne", build.ArachneTrait)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(ArachneTrait)}</h5>
+				<h5>{replaceUnderscore(build.ArachneTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.HADES)} on:mouseover={() => showDescription("Hades-"+HadesTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Hades", HadesTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.HADES)} on:mouseover={() => showDescription("Hades-"+build.HadesTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Hades", build.HadesTrait)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(HadesTrait)}</h5>
+				<h5>{replaceUnderscore(build.HadesTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.MEDEA)} on:mouseover={() => showDescription("Medea-"+MedeaTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Medea", MedeaTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.MEDEA)} on:mouseover={() => showDescription("Medea-"+build.MedeaTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Medea", build.MedeaTrait)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(MedeaTrait)}</h5>
+				<h5>{replaceUnderscore(build.MedeaTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.CIRCE)} on:mouseover={() => showDescription("Circe-"+CirceTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Circe", CirceTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.CIRCE)} on:mouseover={() => showDescription("Circe-"+build.CirceTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Circe", build.CirceTrait)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(CirceTrait)}</h5>
+				<h5>{replaceUnderscore(build.CirceTrait)}</h5>
 			</div>
 			<div class="slot">
 				<div class="trait-container">
-					<button class="trait-button" on:click={() => openMenu(menus.ICARUS)} on:mouseover={() => showDescription("Icarus-"+IcarusTrait)} on:mouseout={hideDescription}>
-						<img class="trait-image" src={genImagePath("Icarus", IcarusTrait)}>
+					<button class="trait-button" on:click={() => openMenu(menus.ICARUS)} on:mouseover={() => showDescription("Icarus-"+build.IcarusTrait)} on:mouseout={hideDescription}>
+						<img class="trait-image" src={genImagePath("Icarus", build.IcarusTrait)}>
 					</button>
 				</div>
-				<h5>{replaceUnderscore(IcarusTrait)}</h5>
+				<h5>{replaceUnderscore(build.IcarusTrait)}</h5>
 			</div>
 		</div>
 		{#if currentMenu == menus.ATTACK}
@@ -1601,7 +1630,7 @@
 				{#each mainGods as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => gainTrait = option} on:mouseover={() => showDescription(option + "-Gain")} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.gainTrait = option} on:click = {() => updateBuild("gainTrait", option)} on:mouseover={() => showDescription(option + "-Gain")} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("gain", option)}>
 							</button>
 							<img class="element" src={mainTraitElementImagePath("gain", option)}>
@@ -1616,7 +1645,7 @@
 				{#each weapons as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => weapon = option} on:click={() => resetAspects(option)} on:mouseover={() => showDescription("Weapon-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.weapon = option} on:click = {() => updateBuild("weapon", option)} on:click={() => resetAspects(option)} on:click = {() => updateBuild("weapon", option)} on:mouseover={() => showDescription("Weapon-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("weapon", option)}>
 							</button>
 						</div>
@@ -1630,8 +1659,8 @@
 				{#each aspects as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => aspect = option} on:mouseover={() => showDescription("Aspect-"+option)} on:mouseout={hideDescription}>
-								<img class="trait-image" src={genImagePath(weapon, option)}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.aspect = option} on:click = {() => updateBuild("aspect", option)} on:mouseover={() => showDescription("Aspect-"+option)} on:mouseout={hideDescription}>
+								<img class="trait-image" src={genImagePath(build.weapon, option)}>
 							</button>
 						</div>
 						<h5>{"Aspect of " + option}</h5>
@@ -1644,7 +1673,7 @@
 				{#each keepsakes as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => keepsake = option} on:mouseover={() => showDescription("Keepsake-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.keepsake = option} on:click = {() => updateBuild("keepsake", option)} on:mouseover={() => showDescription("Keepsake-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("keepsake", option)}>
 							</button>
 							
@@ -1659,7 +1688,7 @@
 				{#each familiars as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => familiar = option} on:mouseover={() => showDescription("Familiar-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.familiar = option} on:click = {() => updateBuild("familiar", option)} on:mouseover={() => showDescription("Familiar-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("familiar", option)}>
 							</button>
 						</div>
@@ -1673,7 +1702,7 @@
 				{#each hexes as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => hex = option} on:mouseover={() => showDescription("Hex-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.hex = option} on:click = {() => updateBuild("hex", option)} on:mouseover={() => showDescription("Hex-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("hex", option)}>
 							</button>
 						</div>
@@ -1687,7 +1716,7 @@
 				{#each Artemis as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArtemisTrait = option}  on:mouseover={() => showDescription(option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.ArtemisTrait = option} on:click = {() => updateBuild("ArtemisTrait", option)} on:mouseover={() => showDescription(option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Artemis", option)}>
 							</button>
 							<img class="element" src={otherTraitElementImagePath(option)}>
@@ -1702,7 +1731,7 @@
 				{#each Arachne as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => ArachneTrait = option} on:mouseover={() => showDescription("Arachne-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.ArachneTrait = option} on:click = {() => updateBuild("ArachneTrait", option)} on:mouseover={() => showDescription("Arachne-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Arachne", option)}>
 							</button>
 						</div>
@@ -1716,7 +1745,7 @@
 				{#each Hades as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => HadesTrait = option} on:mouseover={() => showDescription("Hades-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.HadesTrait = option} on:click = {() => updateBuild("HadesTrait", option)} on:mouseover={() => showDescription("Hades-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Hades", option)}>
 							</button>
 						</div>
@@ -1730,7 +1759,7 @@
 				{#each Medea as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => MedeaTrait = option} on:mouseover={() => showDescription("Medea-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.MedeaTrait = option} on:click = {() => updateBuild("MedeaTrait", option)} on:mouseover={() => showDescription("Medea-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Medea", option)}>
 							</button>
 						</div>
@@ -1744,7 +1773,7 @@
 				{#each Circe as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => CirceTrait = option} on:mouseover={() => showDescription("Circe-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.CirceTrait = option} on:click = {() => updateBuild("CirceTrait", option)} on:mouseover={() => showDescription("Circe-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Circe", option)}>
 							</button>
 						</div>
@@ -1758,7 +1787,7 @@
 				{#each Icarus as option}
 					<div class="slot">
 						<div class="trait-container">
-							<button class="trait-button" on:click = {closeMenu} on:click = {() => IcarusTrait = option} on:mouseover={() => showDescription("Icarus-"+option)} on:mouseout={hideDescription}>
+							<button class="trait-button" on:click = {closeMenu} on:click = {() => build.IcarusTrait = option} on:click = {() => updateBuild("IcarusTrait", option)} on:mouseover={() => showDescription("Icarus-"+option)} on:mouseout={hideDescription}>
 								<img class="trait-image" src={genImagePath("Icarus", option)}>
 							</button>
 						</div>
@@ -1768,7 +1797,7 @@
 			</div>
 		{/if}
 		<div class="trait-box">
-			{#each chosenTraits as trait}
+			{#each build.chosenTraits as trait}
 				{#if trait.split('-')[0] == "Chaos"}
 					<div class="slot">
 						<div class="trait-container">
